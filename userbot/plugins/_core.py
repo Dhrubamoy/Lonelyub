@@ -26,7 +26,7 @@ async def send(event):
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     the_1plugin_file = "./userbot/plugins/Abuse/{}.py".format(input_str)
     the_2plugin_file = "./userbot/plugins/Spam/{}.py".format(input_str)
-    "./userbot/plugins/Xtra_Plugin/{}.py".format(input_str)
+    the_3plugin_file = "./userbot/plugins/Xtra_Plugin/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
         lauda = await event.client.send_file(
             event.chat_id,
@@ -59,7 +59,7 @@ async def send(event):
             reply_to=message_id,
         )
         await event.delete()
-    elif os.path.exists(the_2plugin_file):
+    elif os.path.exists(the_3plugin_file):
         lauda = await event.client.send_file(
             event.chat_id,
             the_plugin_file,
