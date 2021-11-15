@@ -20,7 +20,7 @@ async def boobs(event):
         return
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-    pic_loc = os.path.join(Comfig.TMP_DOWNLOAD_DIRECTORY, "bobs.jpg")
+    pic_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "bobs.jpg")
     a = await event.reply("Finding some big boobs for u 🧐")
     await asyncio.sleep(0.5)
     await a.edit("Sending Some Bigs Boobs")
