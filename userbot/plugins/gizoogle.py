@@ -2,8 +2,7 @@ import re
 
 import bs4
 import requests
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-
+from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -39,9 +38,5 @@ def text(input_text: str) -> str:
     giz_text = giz[37].strip("\r\n")  # Hacky, but consistent.
     return giz_text
 
-
 CmdHelp("gizoogle").add_command(
-    "giz",
-    "<your sentence>",
-    "Gives you the provided sentence in gangsters language. #Dope_AF",
-)
+  "giz", "<your sentence>", "Gives you the provided sentence in gangsters language. #Dope_AF")

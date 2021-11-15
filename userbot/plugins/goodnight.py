@@ -1,15 +1,10 @@
 import asyncio
-
-from userbot.cmdhelp import CmdHelp
-
 from . import *
-
-
+from userbot.cmdhelp import CmdHelp
 @bot.on(admin_cmd(pattern="gn"))
 async def _(event):
-    await asyncio.sleep(1)
-    await event.edit(
-        """
+	await asyncio.sleep(1)
+	await event.edit("""
   ┌▀█┌▀█┌▀█┌▀█┌▀█┌▀█┌▀█
 ┌▀█╔══╗╔══╗╔══╗╔══╗▀█
 ┌▀█║╔═╣║╔╗║║╔╗║╚╗╗║▀█
@@ -31,8 +26,12 @@ async def _(event):
                      🌙.     *       ☄️      
 🌟   .  *       .         
                        *   .      🛰     .        ✨      *
-"""
-    )
+""")
+
+	
+	
+CmdHelp("gи").add_command(
+	'gn', None, 'Use and See'
+).add()
 
 
-CmdHelp("gи").add_command("gn", None, "Use and See").add()

@@ -1,12 +1,10 @@
 """Get information about an user on GitHub
 Syntax: .github USERNAME"""
 import requests
-
-from userbot import *
+from github import Github
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply, eor
 from userbot.cmdhelp import CmdHelp
-from userbot.utils import admin_cmd, eor, sudo_cmd
-
-
+from userbot import *
 @bot.on(admin_cmd(pattern="gthub (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="gthub (.*)", allow_sudo=True))
 async def gitsearch(event):
@@ -51,9 +49,9 @@ async def gitsearch(event):
         upic,
         caption=fullusr,
         link_preview=False,
-    )
-
-
-CmdHelp("gthub").add_command("gthub", "None", "Use and See").add_info(
-    "Its help u to find detail of any github a count"
+    ) 
+CmdHelp("gthub").add_command(
+    'gthub', 'None', 'Use and See'
+    ).add_info(
+    'Its help u to find detail of any github a count'
 ).add()
