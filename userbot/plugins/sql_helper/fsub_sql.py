@@ -1,5 +1,7 @@
-from sqlalchemy import Column, String, Numeric, Boolean
-from . import SESSION, BASE
+from sqlalchemy import Column, Numeric, String
+
+from . import BASE, SESSION
+
 
 class forceSubscribe(BASE):
     __tablename__ = "forceSubscribe"
@@ -12,6 +14,7 @@ class forceSubscribe(BASE):
 
 
 forceSubscribe.__table__.create(checkfirst=True)
+
 
 def fs_settings(chat_id):
     try:
@@ -28,7 +31,11 @@ def fs_settings(chat_id):
 
 def is_fsub(chat_id):
     try:
-        return SESSION.query(forceSubscribe).filter(forceSubscribe.chat_id == chat_id).one()
+        return (
+            SESSION.query(forceSubscribe)
+            .filter(forceSubscribe.chat_id == chat_id)
+            .one()
+        )
     except:
         return None
     finally:
@@ -40,18 +47,17 @@ def add_fsub(chat_id, channel):
     if adder:
         adder.channel = channel
     else:
-        adder = forceSubscribe(
-            chat_id,
-            channel
-        )
+        adder = forceSubscribe(chat_id, channel)
     SESSION.add(adder)
     SESSION.commit()
+
 
 def rm_fsub(chat_id):
     rem = SESSION.query(forceSubscribe).get(chat_id)
     if rem:
         SESSION.delete(rem)
         SESSION.commit()
+
 
 def all_fsub():
     rem = SESSION.query(forceSubscribe).all()

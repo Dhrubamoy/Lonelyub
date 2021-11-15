@@ -1,9 +1,13 @@
 import asyncio
 from collections import deque
-from . import *
-from userbot import *
+
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+
+from userbot import *
 from userbot.cmdhelp import CmdHelp
+
+from . import *
+
 
 @bot.on(admin_cmd(pattern=f"bigoof$", outgoing=True))
 async def _(event):
@@ -27,14 +31,17 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 7])
-        
+
+
 @bot.on(admin_cmd(pattern="birthday$", outgoing=True))
 @bot.on(sudo_cmd(pattern="birthday$", allow_sudo=True))
 async def gn(event):
     if event.fwd_from:
         return
-    await edit_or_reply(event, "╔╗╔╦══╦═╦═╦╗╔╗\n║╚╝║══║═║═║╚╝║\n║╔╗║╔╗║╔╣╔╩╗╔╝\n╚╝╚╩╝╚╩╝╚╝• B-day •"
+    await edit_or_reply(
+        event, "╔╗╔╦══╦═╦═╦╗╔╗\n║╚╝║══║═║═║╚╝║\n║╔╗║╔╗║╔╣╔╩╗╔╝\n╚╝╚╩╝╚╩╝╚╝• B-day •"
     )
+
 
 @bot.on(admin_cmd(pattern=f"g1$", outgoing=True))
 async def payf(event):
@@ -163,6 +170,7 @@ async def payf(event):
     )
     await event.edit(pay)
 
+
 @bot.on(admin_cmd(pattern=f"^uff$", outgoing=True))
 async def _(event):
     if event.fwd_from:
@@ -188,6 +196,7 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 13])
 
+
 @bot.on(admin_cmd(pattern=f"ctext$", outgoing=True))
 async def payf(event):
     paytext = event.pattern_match.group(1)
@@ -206,6 +215,7 @@ async def payf(event):
         paytext * 8,
     )
     await event.edit(pay)
+
 
 @bot.on(admin_cmd(pattern=f"ftext$", outgoing=True))
 async def payf(event):
@@ -237,6 +247,7 @@ async def _(event):
         r == 1
         await event.edit("╭━━━╮\n┃╭━━╯\n┃╰━━╮\n┃╭━━╯\n┃┃\n╰╯")
 
+
 @bot.on(admin_cmd(pattern=f"f$", outgoing=True))
 async def payf(e):
     paytext = e.pattern_match.group(1)
@@ -250,7 +261,8 @@ async def payf(e):
         paytext * 1,
     )
     await event.edit(pay)
-    
+
+
 @bot.on(admin_cmd(pattern=f"animate$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"animate$", allow_sudo=True))
 async def _(event):
@@ -266,17 +278,17 @@ async def _(event):
         f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{name}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
         f"⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**{name}**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n",
         f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{name}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
-        f"⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**{name}**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n", 
+        f"⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**{name}**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n",
         f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{name}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
         f"⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️..**{name}**..⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n",
-        f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{name}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n", 
+        f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{name}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
         f"⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️..**{name}**..⚪️⚫️⚪️\n⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️\n⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️⚫️⚪️\n",
     ]
     for i in animation_ttl:
-        await asyncio.sleep(animation_interval) 
-        await event.edit(animation_chars[i%192])
-        
-        
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 192])
+
+
 @borg.on(admin_cmd(pattern=r"^Tlol"))
 async def _(event):
     if event.fwd_from:
@@ -286,7 +298,8 @@ async def _(event):
         await asyncio.sleep(1)
         await event.edit("".join(deq))
         deq.rotate(1)
-    
+
+
 @borg.on(admin_cmd(pattern=r"^Lol"))
 async def _(event):
     if event.fwd_from:
@@ -296,6 +309,7 @@ async def _(event):
         await asyncio.sleep(1)
         await event.edit("".join(deq))
         deq.rotate(1)
+
 
 @bot.on(admin_cmd(pattern=f"chutiye$"))
 @bot.on(sudo_cmd(pattern=f"chutiye$", allow_sudo=True))
@@ -394,87 +408,65 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 82])
 
+
 @borg.on(admin_cmd(pattern=f"sadmin", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 1
     animation_ttl = range(0, 13)
     await event.edit("sadmin")
     animation_chars = [
-
-
-
-            "@aaaaaaaaaaaaadddddddddddddmmmmmmmmmmmmmiiiiiiiiiiiiinnnnnnnnnnnnn",
-
-            "@aaaaaaaaaaaaddddddddddddmmmmmmmmmmmmiiiiiiiiiiiinnnnnnnnnnnn",    
-
-            "@aaaaaaaaaaadddddddddddmmmmmmmmmmmiiiiiiiiiiinnnnnnnnnnn",
-
-            "@aaaaaaaaaaddddddddddmmmmmmmmmmiiiiiiiiiinnnnnnnnnn",
-
-            "@aaaaaaaaadddddddddmmmmmmmmmiiiiiiiiinnnnnnnnn",
-
-            "@aaaaaaaaddddddddmmmmmmmmiiiiiiiinnnnnnnn",
-
-            "@aaaaaaadddddddmmmmmmmiiiiiiinnnnnnn",
-
-            "@aaaaaaddddddmmmmmmiiiiiinnnnnn",
-
-            "@aaaaadddddmmmmmiiiiinnnnn",    
-
-            "@aaaaddddmmmmiiiinnnn",
-
-            "@aaadddmmmiiinnn",
-
-            "@aaddmmiinn",
-
-            "@admin"
-
-        ]
+        "@aaaaaaaaaaaaadddddddddddddmmmmmmmmmmmmmiiiiiiiiiiiiinnnnnnnnnnnnn",
+        "@aaaaaaaaaaaaddddddddddddmmmmmmmmmmmmiiiiiiiiiiiinnnnnnnnnnnn",
+        "@aaaaaaaaaaadddddddddddmmmmmmmmmmmiiiiiiiiiiinnnnnnnnnnn",
+        "@aaaaaaaaaaddddddddddmmmmmmmmmmiiiiiiiiiinnnnnnnnnn",
+        "@aaaaaaaaadddddddddmmmmmmmmmiiiiiiiiinnnnnnnnn",
+        "@aaaaaaaaddddddddmmmmmmmmiiiiiiiinnnnnnnn",
+        "@aaaaaaadddddddmmmmmmmiiiiiiinnnnnnn",
+        "@aaaaaaddddddmmmmmmiiiiiinnnnnn",
+        "@aaaaadddddmmmmmiiiiinnnnn",
+        "@aaaaddddmmmmiiiinnnn",
+        "@aaadddmmmiiinnn",
+        "@aaddmmiinn",
+        "@admin",
+    ]
 
     for i in animation_ttl:
-            await asyncio.sleep(1)
-            await event.edit(animation_chars[i % 13])
+        await asyncio.sleep(1)
+        await event.edit(animation_chars[i % 13])
 
 
-CmdHelp("shoutadmin").add_command(
-    'sadmin', None, 'υѕє αи∂ ѕєє'
-).add()
-CmdHelp("animations6").add_command(
-  'bigoof', None, '🇮🇳🇮🇳🇮🇳'
+CmdHelp("shoutadmin").add_command("sadmin", None, "υѕє αи∂ ѕєє").add()
+CmdHelp("animations6").add_command("bigoof", None, "🇮🇳🇮🇳🇮🇳").add_command(
+    "g1", None, "Use and see"
+).add_command("uff", None, "Use and see").add_command(
+    "ctext", None, "Use and see"
 ).add_command(
-  'g1', None, 'Use and see'
+    "ftext", None, "Use and see"
 ).add_command(
-  'uff', None, 'Use and see'
+    "animate", None, "Use a d See"
 ).add_command(
-  'ctext', None, 'Use and see'
+    "kf", None, "Use and see"
 ).add_command(
-  'ftext', None, 'Use and see'
+    "f", None, "Use and see"
 ).add_command(
-  'animate', None, 'Use a d See'
+    "muth", None, "Use And See"
 ).add_command(
-  'kf', None, 'Use and see'
+    "birthday", None, "Use And See"
 ).add_command(
-  'f', None, 'Use and see'
+    "^Lol", None, "Use and See"
 ).add_command(
-  'muth', None, 'Use And See'
+    "^Tlol", None, "Use and See"
 ).add_command(
-  'birthday', None, 'Use And See'
+    "chutiye", None, "Animation Abuse"
 ).add_command(
-  '^Lol', None, 'Use and See'
-).add_command(
-  '^Tlol', None, 'Use and See'
-).add_command(
-  'chutiye', None, 'Animation Abuse'
-).add_command(
-  "sadmin", None, "Its Shout Admin"
+    "sadmin", None, "Its Shout Admin"
 ).add_info(
-  "Its all Animation Use As Anywhere"
+    "Its all Animation Use As Anywhere"
 ).add_warning(
-  "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-  "Addons"
+    "Addons"
 ).add()
 
-#legendbot
+# legendbot

@@ -1,7 +1,8 @@
 import asyncio
 
-from userbot import ALIVE_NAME, CMD_HELP
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+
+from userbot import ALIVE_NAME
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND user"
@@ -316,11 +317,9 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 30])
 
-        
+
 @bot.on(admin_cmd(pattern=r"wow$", outgoing=True))
-
 @bot.on(sudo_cmd(pattern="wow$", allow_sudo=True))
-
 async def _(event):
 
     if event.fwd_from:
@@ -334,7 +333,6 @@ async def _(event):
     event = await edit_or_reply(event, "wow")
 
     animation_chars = [
-
         "**💗💗                     💗💗**",
         "**💗💗                     💗💗**",
         "**💗💗                     💗💗**",
@@ -345,7 +343,6 @@ async def _(event):
         "**💗💗   💗💗  💗💗   💗💗**",
         "**💗💗💗💗      💗💗💗💗**",
         "**💗💗💗        💗💗💗**",
-
         "**💖💖💖💖💖**",
         "**💖💖💖💖💖💖💖**",
         "**💖💖          💖💖**",
@@ -354,12 +351,13 @@ async def _(event):
         "**💖💖                💖💖**",
         "**💖💖              💖💖**",
         "**💗   **",
-    ]           
+    ]
     for i in animation_ttl:
 
         await asyncio.sleep(animation_interval)
 
         await event.edit(animation_chars[i % 30])
+
 
 @bot.on(admin_cmd(pattern=f"nikal$", outgoing=True))
 @bot.on(sudo_cmd(pattern="nikal$", allow_sudo=True))
@@ -458,28 +456,27 @@ async def _(event):
     )
     await asyncio.sleep(6)
 
+
 CmdHelp("animations3").add_command(
-  'kiler', '<text>', 'Cool killing animation with name'
+    "kiler", "<text>", "Cool killing animation with name"
+).add_command("eye", None, "Use and see").add_command(
+    "thinking", None, "Use and see"
 ).add_command(
-  'eye', None, 'Use and see'
+    "snake", None, "Use and see"
 ).add_command(
-  'thinking', None, 'Use and see'
+    "human", None, "Use and see"
 ).add_command(
-  'snake', None, 'Use and see'
+    "mc", None, "Use and see"
 ).add_command(
-  'human', None, 'Use and see'
+    "virus", None, "Use and see"
 ).add_command(
-  'mc', None, 'Use and see'
+    "repe", None, "Use and see"
 ).add_command(
-  'virus', None, 'Use and see'
+    "nikal", None, "Use and see"
 ).add_command(
-  'repe', None, 'Use and see'
+    "music", None, "Use and see"
 ).add_command(
-  'nikal', None, 'Use and see'
-).add_command(
-  'music', None, 'Use and see'
-).add_command(
-  'squ', None, 'Use and see'
+    "squ", None, "Use and see"
 ).add_type(
-  "Addons"
+    "Addons"
 ).add()

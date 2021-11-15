@@ -1,6 +1,5 @@
-from sqlalchemy import Column, String
-
 from LEGENDBOT.plugins.sql_helper import BASE, SESSION
+from sqlalchemy import Column, String
 
 
 class Blockedid(BASE):

@@ -1,18 +1,17 @@
-import asyncio
 import os
-import io
-from datetime import datetime
-from pathlib import Path
-from telethon import events, functions, types
-from telethon.tl.types import InputMessagesFilterDocument
+
 from LEGENDBOT.utils import *
+
 from userbot import *
-from . import *
 from userbot.plugins import *
+
+from . import *
+
 DELETE_TIMEOUT = 5
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "『Lêɠêɳ̃dẞø†』"
 legend = bot.uid
 LEGEND = f"[{DEFAULTUSER}](tg://user?id={legend})"
+
 
 @bot.on(admin_cmd(pattern=r"sendx (?P<shortname>\w+)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"sendx (?P<shortname>\w+)", allow_sudo=True))

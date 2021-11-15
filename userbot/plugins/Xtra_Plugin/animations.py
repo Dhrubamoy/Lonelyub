@@ -1,12 +1,13 @@
 import asyncio
 
-from telethon.tl.functions.users import GetFullUserRequest
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ν2.ο"
+
+
 @bot.on(admin_cmd(pattern="think$"))
 @bot.on(sudo_cmd(pattern="think$", allow_sudo=True))
 async def _(event):
@@ -577,7 +578,7 @@ async def _(event):
         "❤️",
         "🧡",
         "💛",
-        "💚",                           
+        "💚",
         "💙",
         "💜",
         "🖤",
@@ -596,7 +597,7 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 18])
-        
+
 
 @bot.on(admin_cmd(pattern="unoobs$"))
 @bot.on(sudo_cmd(pattern="unoobs$", allow_sudo=True))
@@ -894,83 +895,78 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 7])
-        
-        
 
-CmdHelp("animation").add_command(
-  'eye', None, 'Use And see'
+
+CmdHelp("animation").add_command("eye", None, "Use And see").add_command(
+    "think", None, "Use and see"
+).add_command("snakes", None, "Use and see").add_command(
+    "humans", None, "Use and see"
 ).add_command(
-  'think', None, 'Use and see'
+    "mcs", None, "Use and see"
 ).add_command(
-  'snakes', None, 'Use and see'
+    "viruses", None, "Use and see"
 ).add_command(
-  'humans', None, 'Use and see'
+    "raping", None, "Use and see"
 ).add_command(
-  'mcs', None, 'Use and see'
+    "nikl", None, "Use and see"
 ).add_command(
-  'viruses', None, 'Use and see'
+    "musics", None, "Use and see"
 ).add_command(
-  'raping', None, 'Use and see'
+    "squeeze", None, "Use and see"
 ).add_command(
-  'nikl', None, 'Use and see'
+    "loadings", None, "use and see"
 ).add_command(
-  'musics', None, 'Use and see'
+    "squares", None, "Use and see"
 ).add_command(
-  'squeeze', None, 'Use and see'
+    "ups", None, "Use and see"
 ).add_command(
-  'loadings', None, 'use and see'
+    "rounds", None, "use and see"
 ).add_command(
-  'squares', None, 'Use and see'
+    "hearts", None, "Use And See"
 ).add_command(
-  'ups', None, 'Use and see'
+    "animes", None, "Use And See"
 ).add_command(
-  'rounds', None, 'use and see'
+    "fmls", None, "Use And See"
 ).add_command(
-  'hearts', None, 'Use And See'
+    "monkeys", None, "Use and see"
 ).add_command(
-  'animes', None, 'Use And See'
+    "herbers", None, "Use and see"
 ).add_command(
-  'fmls', None, 'Use And See'
+    "hands", None, "Use and see"
 ).add_command(
-  'monkeys', None, 'Use and see'
+    "gsgs", None, "Use and see"
 ).add_command(
-  'herbers', None, 'Use and see'
+    "unoobs", None, "Use and see"
 ).add_command(
-  'hands', None, 'Use and see'
+    "menoobs", None, "Use and see"
 ).add_command(
-  'gsgs', None, 'Use and see'
+    "upros", None, "Use and see"
 ).add_command(
-  'unoobs', None, 'Use and see'
+    "mepros", None, "Use and see"
 ).add_command(
-  'menoobs', None, 'Use and see'
+    "thearts", None, "Use and see"
 ).add_command(
-  'upros', None, 'Use and see'
+    "quickheal", None, "use and see"
 ).add_command(
-  'mepros', None, 'Use and see'
+    "sqhs", None, "Use and see"
 ).add_command(
-  'thearts', None, 'Use and see'
+    "medkit", None, "Use and see"
 ).add_command(
-  'quickheal', None, 'use and see'
+    "macos", None, "use and see"
 ).add_command(
-  'sqhs', None, 'Use and see'
+    "window", None, "Use And See"
 ).add_command(
-  'medkit', None, 'Use and see'
+    "linuxs", None, "Use And See"
 ).add_command(
-  'macos', None, 'use and see'
+    "stocks", None, "Use And See"
 ).add_command(
-  'window', None, 'Use And See'
-).add_command(
-  'linuxs', None, 'Use And See'
-).add_command(
-  'stocks', None, 'Use And See'
-).add_command(
-  'oss', None, 'Use And See'
+    "oss", None, "Use And See"
 ).add_type(
-  "Official"
+    "Official"
 ).add_info(
-       "Its Very Useful Module too much just use these u must(might) have fun"
+    "Its Very Useful Module too much just use these u must(might) have fun"
 ).add_warning(
-       "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-       "Addons"
+    "Addons"
 ).add()

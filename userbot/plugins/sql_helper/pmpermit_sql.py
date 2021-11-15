@@ -42,6 +42,3 @@ def get_all_approved():
     rem = SESSION.query(PMPermit).all()
     SESSION.close()
     return rem
-
-
-   

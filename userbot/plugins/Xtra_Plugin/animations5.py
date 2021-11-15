@@ -1,10 +1,8 @@
 import asyncio
-from collections import deque
 
-from telethon.tl.functions.users import GetFullUserRequest
+from LEGENDBOT.utils import admin_cmd
 
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
@@ -242,60 +240,29 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 5])
 
-CmdHelp("animations5").add_command(
 
-  'bufferedd', None, 'use and see'
-
+CmdHelp("animations5").add_command("bufferedd", None, "use and see").add_command(
+    "dabba", None, "Use and see"
+).add_command("kein", None, "Use and see").add_command(
+    "dhab", None, "Use and see"
 ).add_command(
-
-  'dabba', None, 'Use and see'
-
+    "hart", None, "Use and see"
 ).add_command(
-
-  'kein', None, 'Use and see'
-
+    "raped", None, "Use and see"
 ).add_command(
-
-  'dhab', None, 'Use and see'
-
+    "fnl", None, "Use and see"
 ).add_command(
-
-  'hart', None, 'Use and see'
-
+    "monkey", None, "Use and see"
 ).add_command(
-
-  'raped', None, 'Use and see'
-
+    "herber", None, "Use and see"
 ).add_command(
-
-  'fnl', None, 'Use and see'
-
+    "hand", None, "Use and see"
 ).add_command(
-
-  'monkey', None, 'Use and see'
-
+    "gsg", None, "Big off animation"
 ).add_command(
-
-  'herber', None, 'Use and see'
-
+    "thearts", None, "Use and see"
 ).add_command(
-
-  'hand', None, 'Use and see'
-
-).add_command(
-
-  'gsg', None, 'Big off animation'
-
-).add_command(
-
-  'thearts', None, 'Use and see'
-
-).add_command(
-
-  'fdance', None, 'Shitty Yooooo animations. Like who wants it.. duhh'
-
+    "fdance", None, "Shitty Yooooo animations. Like who wants it.. duhh"
 ).add_type(
     "Addons"
 ).add()
-
-
