@@ -5,9 +5,9 @@ import os
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    from userbot.Config import Config
+    pass
 else:
     if os.path.exists("exampleconfig.py"):
-        from exampleconfig import Development as Config
+        pass
 
 # legendbot
