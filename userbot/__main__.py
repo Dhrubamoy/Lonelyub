@@ -1,23 +1,28 @@
-from userbot import bot
-from sys import argv
-import sys
 import os
-from telethon import TelegramClient
-from var import Var
-from userbot.Config import Config
-from telethon.tl.functions.channels import InviteToChannelRequest, JoinChannelRequest
-from userbot.utils import load_module, start_assistant, load_addons, load_abuse, start_spam
-from userbot.utils import *
-from userbot import LOAD_PLUG, LOGS, LEGENDversion
+import sys
 from pathlib import Path
-import asyncio
-import glob
+
 import telethon.utils
+from telethon import TelegramClient
+from telethon.tl.functions.channels import JoinChannelRequest
+
+from userbot import LOGS, LEGENDversion, bot
+from userbot.Config import Config
+from userbot.utils import (
+    load_abuse,
+    load_addons,
+    load_module,
+    start_assistant,
+    start_spam,
+)
+from var import Var
+
 LEGEND_STRING = "Protected By LegendBot"
 
-l2= Config.SUDO_COMMAND_HAND_LER
+l2 = Config.SUDO_COMMAND_HAND_LER
 LEGEND_PIC = "https://telegra.ph/file/e753315316673cff51085.mp4"
 l1 = Config.COMMAND_HAND_LER
+
 
 async def add_bot(bot_token):
     try:
@@ -27,8 +32,8 @@ async def add_bot(bot_token):
     except Exception as e:
         print(f"LEGEND_STRING - {str(e)}")
         sys.exit()
-        
-        
+
+
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
@@ -53,37 +58,46 @@ print("📍⚜Loading Modules / Plugins⚜✔")
 
 
 async def module():
-  import glob
-  path = 'userbot/plugins/*.py'
-  files = glob.glob(path)
-  for name in files:
-    with open(name) as f:
-      path1 = Path(f.name)
-      shortname = path1.stem
-      load_module(shortname.replace(".py", ""))
-    
+    import glob
+
+    path = "userbot/plugins/*.py"
+    files = glob.glob(path)
+    for name in files:
+        with open(name) as f:
+            path1 = Path(f.name)
+            shortname = path1.stem
+            load_module(shortname.replace(".py", ""))
+
+
 assistant = os.environ.get("ASSISTANT", None)
+
+
 async def assistants():
     if assistant == "ON":
         import glob
-        path = 'userbot/plugins/assistant/*.py'
+
+        path = "userbot/plugins/assistant/*.py"
         files = glob.glob(path)
         for name in files:
             with open(name) as f:
                 path1 = Path(f.name)
                 shortname = path1.stem
                 try:
-                    start_assistant(shortname.replace(".py", ""))   
+                    start_assistant(shortname.replace(".py", ""))
                 except Exception as e:
                     print(e)
     else:
         print("⚠️Assistant Not Loaded⚠️")
 
-addon = os.environ.get("EXTRA_PLUGIN", None)             
+
+addon = os.environ.get("EXTRA_PLUGIN", None)
+
+
 async def addons():
     if addon == "ON":
         import glob
-        path = 'userbot/plugins/Xtra_Plugin/*.py'
+
+        path = "userbot/plugins/Xtra_Plugin/*.py"
         files = glob.glob(path)
         for name in files:
             with open(name) as f:
@@ -95,43 +109,48 @@ async def addons():
                     print(e)
     else:
         print("⚠️Addons Not Loading⚠️")
-       
 
 
-abuse = os.environ.get("ABUSE", None) 
+abuse = os.environ.get("ABUSE", None)
+
+
 async def abuses():
     if abuse == "ON":
         import glob
-        path = 'userbot/plugins/Abuse/*.py'
+
+        path = "userbot/plugins/Abuse/*.py"
         files = glob.glob(path)
         for name in files:
             with open(name) as f:
                 path1 = Path(f.name)
                 shortname = path1.stem
                 try:
-                    load_abuse(shortname.replace(".py", ""))    
+                    load_abuse(shortname.replace(".py", ""))
                 except Exception as e:
-                    print(e)     
+                    print(e)
     else:
         print("⚠️Abuse Not Loading⚠️")
 
+
 spam = os.environ.get("SPAM", None)
+
+
 async def spams():
     if spam == "ON":
         import glob
-        path = 'userbot/plugins/Spam/*.py'
+
+        path = "userbot/plugins/Spam/*.py"
         files = glob.glob(path)
         for name in files:
             with open(name) as f:
                 path1 = Path(f.name)
                 shortname = path1.stem
                 try:
-                    start_spam(shortname.replace(".py", ""))  
+                    start_spam(shortname.replace(".py", ""))
                 except Exception as e:
-                    print(e)       
+                    print(e)
     else:
         print("⚠️Spam Not Loading⚠️")
-
 
 
 bot.loop.run_until_complete(module())
@@ -140,7 +159,8 @@ bot.loop.run_until_complete(abuses())
 bot.loop.run_until_complete(assistants())
 bot.loop.run_until_complete(spams())
 
-print(f"""♥️🇮🇳♥️⚜♥️
+print(
+    f"""♥️🇮🇳♥️⚜♥️
 ╔════❰LEGENDBOT❱═❍⊱❁۪۪
 ║┣⪼ OWNER - LEGEND
 ║┣⪼ Group - @Legend_Userbot
@@ -148,7 +168,9 @@ print(f"""♥️🇮🇳♥️⚜♥️
 ║┣⪼ TELETHON - 1.2.0
 ║┣⪼ ✨ 『🔱🇱 🇪 🇬 🇪 🇳 🇩 🔱』𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨
 ║╰━━━━━━━━━━━━━━━➣
-╚══════════════════❍⊱""")
+╚══════════════════❍⊱"""
+)
+
 
 async def legend_op():
     try:
@@ -162,7 +184,7 @@ async def legend_op():
     except Exception as e:
         print(str(e))
 
-# Join LegndBot Channel after deploying 🤐😅
+    # Join LegndBot Channel after deploying 🤐😅
     try:
         await bot(JoinChannelRequest("@Official_LegendBot"))
     except BaseException:
@@ -171,7 +193,8 @@ async def legend_op():
     try:
         await bot(JoinChannelRequest("@Legend_Userbot"))
     except BaseException:
-         pass
+        pass
+
 
 bot.loop.create_task(legend_op())
 if len(sys.argv) not in (1, 3, 4):

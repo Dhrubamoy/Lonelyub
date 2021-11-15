@@ -8,27 +8,18 @@ import os
 import re
 import sys
 import time
-import shlex
 import traceback
-import functools
 from pathlib import Path
 from time import gmtime, strftime
-from typing import Tuple
-from telethon import functions, types
-from userbot import LOGS
+
 from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
-from telethon.tl.functions.messages import GetPeerDialogsRequest
-import subprocess
-import datetime
-from typing import List
-from var import Var
-from userbot.helpers.exceptions import CancelProcess
+
+from userbot import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, Legend, LegendBot, bot
 from userbot.Config import Config
-from userbot import bot, Legend, LegendBot, LOGS
-from userbot.helpers.tools import media_type
-from userbot import CMD_LIST, SUDO_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot, tbot
+from userbot.helpers.exceptions import CancelProcess
+from var import Var
 
 bothandler = Config.BOT_HANDLER
 ENV = bool(os.environ.get("ENV", False))
@@ -37,14 +28,14 @@ if ENV:
 else:
     if os.path.exists("config.py"):
         from config import Development as Config
-      
-            
+
 
 def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
         import userbot.utils
+
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -53,13 +44,14 @@ def load_module(shortname):
         LOGS.info("Lêɠêɳ̃dẞø† ~ " + shortname)
     else:
         import userbot.utils
+
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = Legend
         mod.borg = bot
-        #mod.LEGENDBOT = Legend
+        # mod.LEGENDBOT = Legend
         mod.LegendBot = LegendBot
         mod.tbot = LegendBot
         mod.Legend = Legend
@@ -73,7 +65,7 @@ def load_module(shortname):
         mod.edit_or_reply = edit_or_reply
         mod.delete_LEGEND = delete_LEGEND
         mod.eod = delete_LEGEND
-        mod.admin_cmd = admin_cmd 
+        mod.admin_cmd = admin_cmd
         mod.legend_cmd = admin_cmd
         mod.sudo_cmd = sudo_cmd
         # support for LEGENDBOT originals
@@ -85,6 +77,7 @@ def load_module(shortname):
         # for imports
         sys.modules["userbot.plugins." + shortname] = mod
         LOGS.info("🔥⚡Lêɠêɳ̃dẞø†⚡🔥 ~ " + shortname)
+
 
 def start_assistant(shortname):
     if shortname.startswith("__"):
@@ -105,9 +98,9 @@ def start_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.assistant" + shortname] = mod
-        print("[🤴Assistant🤴 3.0] ~ HAS ~ 💞Installed💞 ~" + shortname)  
+        print("[🤴Assistant🤴 3.0] ~ HAS ~ 💞Installed💞 ~" + shortname)
 
-   
+
 def start_spam(shortname):
     if shortname.startswith("__"):
         pass
@@ -115,6 +108,7 @@ def start_spam(shortname):
         import importlib
         import sys
         from pathlib import Path
+
         path = Path(f"userbot/plugins/Spam/{shortname}.py")
         name = "userbot.plugins.Spam.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -126,6 +120,7 @@ def start_spam(shortname):
         import importlib
         import sys
         from pathlib import Path
+
         path = Path(f"userbot/plugins/Spam/{shortname}.py")
         name = "userbot.plugins.Spam.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -133,18 +128,19 @@ def start_spam(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["Spam" + shortname] = mod
-        print("[🔰Spam🔰 3.0] ~ HAS ~ 💞Installed💞 ~" + shortname)  
-
+        print("[🔰Spam🔰 3.0] ~ HAS ~ 💞Installed💞 ~" + shortname)
 
 
 def load_addons(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import userbot.utils
-        import sys
         import importlib
+        import sys
         from pathlib import Path
+
+        import userbot.utils
+
         path = Path(f"userbot/plugins/Xtra_Plugin/{shortname}.py")
         name = "userbot.plugins.LegendBot-Addons.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -152,10 +148,12 @@ def load_addons(shortname):
         spec.loader.exec_module(mod)
         LOGS.info("♦️Extra Plugin♦️ ~ " + shortname)
     else:
-        import userbot.utils
-        import sys
         import importlib
+        import sys
         from pathlib import Path
+
+        import userbot.utils
+
         path = Path(f"userbot/plugins/Xtra_Plugin/{shortname}.py")
         name = "userbot.plugins.Xtra_Plugin.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -190,14 +188,17 @@ def load_addons(shortname):
         sys.modules["LegendBot-Addons." + shortname] = mod
         LOGS.info("📍Extra Plugin📍 ~ " + shortname)
 
+
 def load_abuse(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import userbot.utils
-        import sys
         import importlib
+        import sys
         from pathlib import Path
+
+        import userbot.utils
+
         path = Path(f"userbot/plugins/Abuse/{shortname}.py")
         name = "userbot/plugins/Abuse.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -205,10 +206,12 @@ def load_abuse(shortname):
         spec.loader.exec_module(mod)
         LOGS.info("LegendBot-Abuse ~ " + shortname)
     else:
-        import userbot.utils
-        import sys
         import importlib
+        import sys
         from pathlib import Path
+
+        import userbot.utils
+
         path = Path(f"userbot/plugins/Abuse/{shortname}.py")
         name = "userbot/plugins/Abuse.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
@@ -256,8 +259,8 @@ def assistant_cmd(add_cmd, is_args=False):
         serena.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
         )
-    return cmd
 
+    return cmd
 
 
 def remove_plugin(shortname):
@@ -276,7 +279,6 @@ def remove_plugin(shortname):
                     del bot._event_builders[i]
     except BaseException:
         raise ValueError
-
 
 
 def admin_cmd(pattern=None, command=None, **args):
@@ -343,6 +345,7 @@ def admin_cmd(pattern=None, command=None, **args):
 
     return events.NewMessage(**args)
 
+
 def legend_command(**args):
     args["func"] = lambda e: e.via_bot_id is None
 
@@ -355,30 +358,26 @@ def legend_command(**args):
     else:
         pattern = args.get("pattern", None)
         allow_sudo = args.get("allow_sudo", None)
-        allow_edited_updates = args.get('allow_edited_updates', False)
+        allow_edited_updates = args.get("allow_edited_updates", False)
         args["incoming"] = args.get("incoming", False)
         args["outgoing"] = True
         if bool(args["incoming"]):
             args["outgoing"] = False
 
         try:
-            if pattern is not None and not pattern.startswith('(?i)'):
-                args['pattern'] = '(?i)' + pattern
+            if pattern is not None and not pattern.startswith("(?i)"):
+                args["pattern"] = "(?i)" + pattern
         except BaseException:
             pass
 
-        reg = re.compile('(.*)')
+        reg = re.compile("(.*)")
         if pattern is not None:
             try:
                 cmd = re.search(reg, pattern)
                 try:
-                    cmd = cmd.group(1).replace(
-                        "$",
-                        "").replace(
-                        "\\",
-                        "").replace(
-                        "^",
-                        "")
+                    cmd = (
+                        cmd.group(1).replace("$", "").replace("\\", "").replace("^", "")
+                    )
                 except BaseException:
                     pass
 
@@ -400,7 +399,7 @@ def legend_command(**args):
             pass
 
         if "allow_edited_updates" in args:
-            del args['allow_edited_updates']
+            del args["allow_edited_updates"]
 
         def decorator(func):
             if allow_edited_updates:
@@ -473,6 +472,7 @@ def sudo_cmd(pattern=None, command=None, **args):
     # check if the plugin should listen for outgoing 'messages'
     return events.NewMessage(**args)
 
+
 # https://t.me/c/1220993104/623253
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
 async def edit_or_reply(
@@ -540,6 +540,7 @@ async def edit_or_reply(
     await event.delete()
     os.remove(file_name)
 
+
 async def eor(
     event,
     text,
@@ -605,6 +606,7 @@ async def eor(
     await event.delete()
     os.remove(file_name)
 
+
 async def delete_LEGEND(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
     link_preview = link_preview or False
@@ -626,7 +628,6 @@ async def delete_LEGEND(event, text, time=None, parse_mode=None, link_preview=No
     return await LEGENDevent.delete()
 
 
-
 def on(**args):
     def decorator(func):
         async def wrapper(event):
@@ -646,10 +647,7 @@ def errors_handler(func):
         except BaseException:
 
             date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-            new = {
-                'error': str(sys.exc_info()[1]),
-                'date': datetime.datetime.now()
-            }
+            new = {"error": str(sys.exc_info()[1]), "date": datetime.datetime.now()}
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
@@ -676,24 +674,24 @@ def errors_handler(func):
             ftext += str(sys.exc_info()[1])
             ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
 
-            command = "git log --pretty=format:\"%an: %s\" -5"
+            command = 'git log --pretty=format:"%an: %s" -5'
 
             ftext += "\n\n\nLast 5 commits:\n"
 
             process = await asyncio.create_subprocess_shell(
-                command,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE)
+                command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+            )
             stdout, stderr = await process.communicate()
-            result = str(stdout.decode().strip()) \
-                + str(stderr.decode().strip())
+            result = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
             ftext += result
 
     return wrapper
 
 
-async def progress(current, total, event, start, type_of_ps, file_name=None, is_cancelled=None):
+async def progress(
+    current, total, event, start, type_of_ps, file_name=None, is_cancelled=None
+):
     """Generic progress_callback for uploads and downloads."""
     now = time.time()
     diff = now - start
@@ -919,4 +917,3 @@ def command(**args):
         return func
 
     return decorator
-

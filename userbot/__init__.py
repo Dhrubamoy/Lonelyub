@@ -1,16 +1,20 @@
 import os
 import sys
 import time
-from telethon.sessions import StringSession
+
 from telethon import TelegramClient
+from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
+from telethon.sessions import StringSession
+
 from userbot.Config import Config
 from var import Var
-from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
+
 BOTLOG = True
 StartTime = time.time()
 LEGENDversion = "𝚅3.0"
 botversion = "𝚅3.0"
 from .k import *
+
 if Config.LEGEND_STRING:
     session = StringSession(str(Config.LEGEND_STRING))
 else:
@@ -61,13 +65,14 @@ LEGEND_ID = ["2082798662"]
 
 """ PPE initialization. """
 
-from logging import basicConfig, getLogger, INFO, DEBUG
-from distutils.util import strtobool as sb
 import asyncio
+from distutils.util import strtobool as sb
+from logging import DEBUG, INFO, basicConfig, getLogger
 
 import pylast
 from pySmartDL import SmartDL
 from requests import get
+
 # Bot Logs setup:
 if bool(ENV):
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -78,8 +83,9 @@ if bool(ENV):
             level=DEBUG,
         )
     else:
-        basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                    level=INFO)
+        basicConfig(
+            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=INFO
+        )
     LOGS = getLogger("[Lêɠêɳ̃dẞø† 3.0]")
 
 try:
@@ -93,18 +99,14 @@ except:
     HEROKU_APP = None
 
 
-    
-
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
-if not os.path.exists('bin'):
-    os.mkdir('bin')
+if not os.path.exists("bin"):
+    os.mkdir("bin")
 
 binaries = {
-    "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown":
-    "bin/megadown",
-    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
-    "bin/cmrudl"
+    "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown": "bin/megadown",
+    "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py": "bin/cmrudl",
 }
 
 for binary, path in binaries.items():
@@ -123,5 +125,5 @@ AFKREASON = None
 SUDO_LIST = {}
 
 
-from userbot.helpers import *
 from userbot.cmdhelp import CmdHelp
+from userbot.helpers import *
