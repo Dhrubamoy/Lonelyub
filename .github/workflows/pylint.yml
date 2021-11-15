@@ -32,4 +32,4 @@ jobs:
           repository: .
           commit_user_name: LEGEND-OS
           commit_user_email: LEGEND-OS@users.noreply.github.com
-          commit_author: LEGEND-OS <LEGEND-OS@users.noreply.github.com>
+          commit_author: LEGEND-OS<LEGEND-OS@users.noreply.github.com>
