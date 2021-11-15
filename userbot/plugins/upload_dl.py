@@ -12,12 +12,11 @@ import time
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
-from userbot import CMD_HELP, LOGS
-from userbot import TMP_DOWNLOAD_DIRECTORY
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import LOGS, TMP_DOWNLOAD_DIRECTORY
 from userbot.cmdhelp import CmdHelp
 
 
@@ -83,7 +82,7 @@ def time_formatter(milliseconds: int) -> str:
 @bot.on(admin_cmd(pattern=r"download(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"download(?: |$)(.*)", allow_sudo=True))
 async def download(target_file):
-    """ For .dl command, download files to the userbot's server. """
+    """For .dl command, download files to the userbot's server."""
     await target_file.edit("Processing using userbot server ( ◜‿◝ )♡")
     input_str = target_file.pattern_match.group(1)
     if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
@@ -161,7 +160,7 @@ async def download(target_file):
 @bot.on(admin_cmd(pattern=r"uploadir (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"uploadir (.*)", allow_sudo=True))
 async def uploadir(udir_event):
-    """ For .uploadir command, allows you to upload everything from a folder in the server"""
+    """For .uploadir command, allows you to upload everything from a folder in the server"""
     input_str = udir_event.pattern_match.group(1)
     if os.path.exists(input_str):
         await udir_event.edit("Downloading Using Userbot Server....")
@@ -248,7 +247,7 @@ async def uploadir(udir_event):
 @bot.on(admin_cmd(pattern=r"upload (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"upload (.*)", allow_sudo=True))
 async def upload(u_event):
-    """ For .upload command, allows you to upload a file from the userbot's server """
+    """For .upload command, allows you to upload a file from the userbot's server"""
     await u_event.edit("Processing ...")
     input_str = u_event.pattern_match.group(1)
     if input_str in ("userbot.session", "config.env"):
@@ -272,7 +271,7 @@ async def upload(u_event):
 
 
 def get_video_thumb(file, output=None, width=90):
-    """ Get video thumbnail """
+    """Get video thumbnail"""
     metadata = extractMetadata(createParser(file))
     popen = subprocess.Popen(
         [
@@ -298,7 +297,7 @@ def get_video_thumb(file, output=None, width=90):
 
 
 def extract_w_h(file):
-    """ Get width and height of media """
+    """Get width and height of media"""
     command_to_run = [
         "ffprobe",
         "-v",
@@ -325,7 +324,7 @@ def extract_w_h(file):
 @bot.on(admin_cmd(pattern=r"uploadas(stream|vn|all) (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"uploadas (stream|vn|all) (.*)", allow_sudo=True))
 async def uploadas(uas_event):
-    """ For .uploadas command, allows you to specify some arguments for upload. """
+    """For .uploadas command, allows you to specify some arguments for upload."""
     await uas_event.edit("Processing ...")
     type_of_upload = uas_event.pattern_match.group(1)
     supports_streaming = False
@@ -417,13 +416,13 @@ async def uploadas(uas_event):
 
 
 CmdHelp("upld_dwl").add_command(
-  "download", "<reply to a file>", "Downloads the file to LEGENDBOT's server"
+    "download", "<reply to a file>", "Downloads the file to LEGENDBOT's server"
 ).add_command(
-  "upload", "<path>", "Uploads a locally stored file to the chat"
+    "upload", "<path>", "Uploads a locally stored file to the chat"
 ).add_command(
-  "uploadas stream", "<path>", "Uploads the locally stored file in streamable format"
+    "uploadas stream", "<path>", "Uploads the locally stored file in streamable format"
 ).add_command(
-  "uploadas vn", "<path>", "Uploads the locally stored file in vs format"
+    "uploadas vn", "<path>", "Uploads the locally stored file in vs format"
 ).add_command(
-  "uploadir", "<path>", "Uploads all the files in directory"
+    "uploadir", "<path>", "Uploads all the files in directory"
 ).add()

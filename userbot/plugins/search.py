@@ -1,6 +1,6 @@
 import requests
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -17,17 +17,19 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Click Below To Open Search Query\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Click Below To Open Search Query\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
 
 
-#@bot.on(admin_cmd(pattern="ddg (.*)", outgoing=True))
-#@bot.on(sudo_cmd(pattern="ddg (.*)", allow_sudo=True))
-#async def _(event):
+# @bot.on(admin_cmd(pattern="ddg (.*)", outgoing=True))
+# @bot.on(sudo_cmd(pattern="ddg (.*)", allow_sudo=True))
+# async def _(event):
 #    if event.fwd_from:
 #        return
 #    input_str = event.pattern_match.group(1)
@@ -57,9 +59,11 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Let me **altnews** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Let me **altnews** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
@@ -78,9 +82,11 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Let me **var** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Let me **var** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
@@ -97,9 +103,11 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Let me **log** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Let me **log** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
@@ -116,9 +124,11 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Let me **Heroku Account** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Let me **Heroku Account** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
@@ -135,9 +145,11 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Let me **Indiankanoon.com : Place** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Let me **Indiankanoon.com : Place** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
@@ -154,9 +166,11 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Let me **gem.gov.in** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Let me **gem.gov.in** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
@@ -173,30 +187,34 @@ async def _(event):
     )
     response_api = requests.get(sample_url).text
     if response_api:
-        await edit_or_reply(event, "Let me run your link on wayback machine that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
+        await edit_or_reply(
+            event,
+            "Let me run your link on wayback machine that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(
                 input_str, response_api.rstrip()
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Something went wrong. Please try again later.")
 
 
 CmdHelp("search").add_command(
-  "rchiv", "<query>", "Gives you the archive link of given query from WayBack Machine"
+    "rchiv", "<query>", "Gives you the archive link of given query from WayBack Machine"
 ).add_command(
-  "gem", "<query>", "Gives you the link of given query from Government e-Marketplace (gem.gov.in)"
+    "gem",
+    "<query>",
+    "Gives you the link of given query from Government e-Marketplace (gem.gov.in)",
 ).add_command(
-  "lmkp", "<query>", "Gives you the link of given query from Indiankanoon.org"
+    "lmkp", "<query>", "Gives you the link of given query from Indiankanoon.org"
 ).add_command(
-  "hacc", None, "Redirects you to your heroku account"
+    "hacc", None, "Redirects you to your heroku account"
 ).add_command(
-  "lmlog", None, "Redirects you to your app's log page"
+    "lmlog", None, "Redirects you to your app's log page"
 ).add_command(
-  "var", "<app name>", "Redirects you to your app's var section"
+    "var", "<app name>", "Redirects you to your app's var section"
 ).add_command(
-  "ytube", "<query>", "Gives you the link of given query from youthube"
+    "ytube", "<query>", "Gives you the link of given query from youthube"
 ).add_command(
-  "altn", "<query>", "Gives you the link for given query from Alt News"
+    "altn", "<query>", "Gives you the link for given query from Alt News"
 ).add_command(
-  "ddg", "<query>", "Gives you the link for given query from Duckduckgo"
+    "ddg", "<query>", "Gives you the link for given query from Duckduckgo"
 ).add()

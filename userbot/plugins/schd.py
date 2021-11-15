@@ -2,7 +2,8 @@
 Syntax: .schd <time_in_seconds> ;=; <message to send>"""
 import asyncio
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
+
 from userbot.cmdhelp import CmdHelp
 
 
@@ -27,6 +28,10 @@ async def _(event):
     else:
         await event.edit(message)
 
+
 CmdHelp("schedule").add_command(
-  "schd", "<time in secs> - <msg to send>", "Sends the message in given time(seconds)", ".schd 60 - hello"
+    "schd",
+    "<time in secs> - <msg to send>",
+    "Sends the message in given time(seconds)",
+    ".schd 60 - hello",
 ).add()

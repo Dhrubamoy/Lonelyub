@@ -2,12 +2,15 @@ import asyncio
 import os
 import shutil
 from datetime import datetime
-from . import *
+
+from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
+
 from userbot.cmdhelp import CmdHelp
-from LEGENDBOT.utils import admin_cmd
+
+from . import *
 
 FONT_FILE_TO_USE = "userbot/resources/fonts/impact.ttf"
 
@@ -46,5 +49,7 @@ async def seconddp(event):
 
 
 CmdHelp("timedp").add_command(
-  "seconddp", None, "This need DOWNLOAD_PFP_URL_CLOCK Var to work. May result in account ban. Updates profile pic every minute"
+    "seconddp",
+    None,
+    "This need DOWNLOAD_PFP_URL_CLOCK Var to work. May result in account ban. Updates profile pic every minute",
 ).add()

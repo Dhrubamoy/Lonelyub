@@ -1,9 +1,9 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -37,8 +37,7 @@ async def _(event):
         await event.reply(mentions)
     await event.delete()
 
+
 CmdHelp("tags").add_command(
-  "tagall", "<text>", "Tags all the members in the group. (Max 100)"
-).add_command(
-  "admins", None, "Tags all the admins in the group"
-).add()
+    "tagall", "<text>", "Tags all the members in the group. (Max 100)"
+).add_command("admins", None, "Tags all the admins in the group").add()

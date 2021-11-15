@@ -1,9 +1,10 @@
 import requests
+from LEGENDBOT.utils import admin_cmd, edit_or_reply
 from validators.url import url
 
-from . import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+
+from . import *
 
 
 @bot.on(admin_cmd(pattern=f"dns$", outgoing=True))
@@ -34,6 +35,8 @@ async def _(event):
 
 
 bot.on(admin_cmd(pattern=f"short$", outgoing=True))
+
+
 async def _(event):
     "shortens the given link"
     input_str = "".join(event.text.split(maxsplit=1)[1:])
@@ -63,6 +66,8 @@ async def _(event):
 
 
 bot.on(admin_cmd(pattern=f"unshort$", outgoing=True))
+
+
 async def _(event):
     "To unshort the given dagb shorten url."
     input_str = "".join(event.text.split(maxsplit=1)[1:])
@@ -95,8 +100,9 @@ async def _(event):
         )
 
 
-
 bot.on(admin_cmd(pattern=f"trs$", outgoing=True))
+
+
 async def _(event):
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply = await event.get_reply_message()
@@ -114,9 +120,5 @@ async def _(event):
         return await edit_or_reply(event, "`the given link is not supported`", 5)
     await edit_or_reply(event, "[ㅤㅤㅤㅤㅤㅤㅤ](" + input_str + ")")
 
-   
-   
-   
-CmdHelp("รɦσɾƭℓเɳҡ").add_command(
-   "short", "Reply to A link", "Short To link"
-).add()
+
+CmdHelp("รɦσɾƭℓเɳҡ").add_command("short", "Reply to A link", "Short To link").add()

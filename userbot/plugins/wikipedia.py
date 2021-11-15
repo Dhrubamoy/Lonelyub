@@ -5,8 +5,9 @@
 Syntax: .wikipedia Query"""
 import wikipedia
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
+
 
 @borg.on(admin_cmd(pattern="wikipedia (.*)"))
 async def _(event):
@@ -23,6 +24,6 @@ async def _(event):
     await event.edit(
         "WikiPedia **Search**: {} \n\n **Result**: \n\n{}".format(input_str, result)
     )
-CmdHelp("ωκιρє∂ια").add_command(
-    'wikipedia', None, 'Search anything on Wikipedia'
-)
+
+
+CmdHelp("ωκιρє∂ια").add_command("wikipedia", None, "Search anything on Wikipedia")

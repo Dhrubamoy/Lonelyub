@@ -1,9 +1,7 @@
-
-
-
 import asyncio
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from userbot.cmdhelp import CmdHelp
 
 
@@ -32,10 +30,12 @@ async def _(event):
         await asyncio.sleep(2)
         await edit_or_reply(event, "**SAVING OUTPUT TO LEGENDBOT LOCAL DATABASE**")
         await asyncio.sleep(3.5)
-        await edit_or_reply(event, 
-            "Your [LEGENDBOT](https:/t.me/Legend_Userbot) is working Fine...\n       Join @Legend_Userbot For Any Help......"
+        await edit_or_reply(
+            event,
+            "Your [LEGENDBOT](https:/t.me/Legend_Userbot) is working Fine...\n       Join @Legend_Userbot For Any Help......",
         )
 
+
 CmdHelp("test").add_command(
-  "test", None, "Test wether your bot is running or not."
+    "test", None, "Test wether your bot is running or not."
 ).add()

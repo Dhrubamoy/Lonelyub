@@ -1,5 +1,6 @@
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
+
 
 @borg.on(admin_cmd(pattern="ftype ?(.*)"))
 async def payf(event):
@@ -19,6 +20,6 @@ async def payf(event):
         paytext * 2,
     )
     await event.edit(pay)
-CmdHelp("whatsupp").add_command(
-    'ftype', 'Use and See','Eg:-.ftype legend'
-).add()
+
+
+CmdHelp("whatsupp").add_command("ftype", "Use and See", "Eg:-.ftype legend").add()

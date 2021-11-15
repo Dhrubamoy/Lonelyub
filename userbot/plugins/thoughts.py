@@ -1,10 +1,9 @@
-
-from userbot.cmdhelp import *
-
 import asyncio
 import random
 
 from telethon import events
+
+from userbot.cmdhelp import *
 
 
 @borg.on(events.NewMessage(pattern=r"\.belo", outgoing=True))
@@ -1142,12 +1141,7 @@ async def _(event):
             '`"If we put solar panels above parking lots, then our cars wouldn\'t get hot and we would have a lot of clean energy."`'
         )
 
-CmdHelp("thoughts").add_command(
-     "belo", None, "Use and See"
-).add_command(
-     "bels", None, "Use and See"
-).add_info(
-      "Random Thoughts"
-).add_type(
-     "Addons"
-).add()
+
+CmdHelp("thoughts").add_command("belo", None, "Use and See").add_command(
+    "bels", None, "Use and See"
+).add_info("Random Thoughts").add_type("Addons").add()

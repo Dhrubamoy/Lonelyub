@@ -26,12 +26,6 @@ async def gtruth(ult):
     await m.edit(f"**#DareTask**\n\n`{cm}`")
 
 
-CmdHelp("truthdare").add_command(
-  'truth', None, 'Use and See'
-).add_command(
-  'dare', None, 'Use and See'
-).add_info(
-  "Game"
-).add_type(
-  "Addons"
-).add()
+CmdHelp("truthdare").add_command("truth", None, "Use and See").add_command(
+    "dare", None, "Use and See"
+).add_info("Game").add_type("Addons").add()

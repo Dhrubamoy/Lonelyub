@@ -1,13 +1,13 @@
-#ℓєgєи∂
+# ℓєgєи∂
 import time
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
-from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+
 
 @bot.on(admin_cmd(pattern="stats$"))
 @bot.on(sudo_cmd(pattern="stats$", allow_sudo=True))
@@ -74,15 +74,11 @@ async def stats(
     response += f"     `Admin яιgнτѕ : {admin_in_groups - creator_in_groups}` \n"
     response += f"♥️**Admin iи cнαииєℓѕ** : {admin_in_broadcast_channels} \n"
     response += f"                 `Creator : {creator_in_channels}` \n"
-    response += (
-        f"        `Admin яιgнτѕ : {admin_in_broadcast_channels - creator_in_channels}` \n"
-    )
+    response += f"        `Admin яιgнτѕ : {admin_in_broadcast_channels - creator_in_channels}` \n"
     response += f"⚜                 **Unread** : {unread} \n"
     response += f" **Unread мємτιοиѕ** : {unread_mentions} \n\n"
     response += f"       __ιτ τοοκ :__ {stop_time:.02f}s \n"
-    response += (
-        f"ƒɾσɱ ƭɦε ∂αƭαɓαรε σƒ:-[♥️𝖑𝖊ɠêɳ̃dẞø✞︎♥️](https://t.me/Legend_Userbot)"
-    )
+    response += f"ƒɾσɱ ƭɦε ∂αƭαɓαรε σƒ:-[♥️𝖑𝖊ɠêɳ̃dẞø✞︎♥️](https://t.me/Legend_Userbot)"
     await LEGEND.edit(response)
 
 
@@ -104,6 +100,5 @@ def user_full_name(user):
 
 
 CmdHelp("stats").add_command(
-  'stats', None, 'Shows you the count of your groups, channels, private chats, etc.'
+    "stats", None, "Shows you the count of your groups, channels, private chats, etc."
 ).add()
-

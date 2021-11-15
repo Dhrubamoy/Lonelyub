@@ -8,10 +8,9 @@ from telethon.errors import ChatAdminRequiredError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
-from ..utils import admin_cmd , sudo_cmd
+from ..utils import admin_cmd, sudo_cmd
 from . import ALIVE_NAME
 
 naam = str(ALIVE_NAME)
@@ -297,6 +296,7 @@ if FBAN_GROUP_ID:
     FBAN_GROUP_ID = int(FBAN_GROUP_ID)
 EXCLUDE_FED = os.environ.get("EXCLUDE_FED", None)
 
+
 @bot.on(admin_cmd("superfban ?(.*)"))
 @bot.on(sudo_cmd("superfban ?(.*)", allow_sudo=True))
 async def _(event):
@@ -507,27 +507,33 @@ async def _(event):
 
 
 CmdHelp("superfban").add_command(
-  'superfban', '<user-id> or reply to a user' , 'Ban the selected user in all the federations'
+    "superfban",
+    "<user-id> or reply to a user",
+    "Ban the selected user in all the federations",
 ).add_command(
-  'superunfban', '<User-id> or reply to a user', 'Unban the selected user from all the federations'
+    "superunfban",
+    "<User-id> or reply to a user",
+    "Unban the selected user from all the federations",
 ).add_command(
-  'legendinfo', '<User-id> or reply to a user', 'Gives info about the user'
+    "legendinfo", "<User-id> or reply to a user", "Gives info about the user"
 ).add_command(
-  'supermyfeds', None, 'gives the list of your admin feds'
+    "supermyfeds", None, "gives the list of your admin feds"
 ).add_command(
-  'superfstat', '<User-id> or reply to a user', 'gives federation stats of the selected user'
+    "superfstat",
+    "<User-id> or reply to a user",
+    "gives federation stats of the selected user",
 ).add_command(
-  'superfedinfo', '<Fed-ID>', 'gives federation info'
+    "superfedinfo", "<Fed-ID>", "gives federation info"
 ).add_command(
-    'superplist', None, 'Use And See' 
+    "superplist", None, "Use And See"
 ).add_command(
-    'superblist', None, 'Use And See'
+    "superblist", None, "Use And See"
 ).add_command(
-    'superbgban', None, 'Use And See'
+    "superbgban", None, "Use And See"
 ).add_command(
-    'superungban', None, 'Use And See'
+    "superungban", None, "Use And See"
 ).add_command(
-    'superfban', None, 'Use And See'
+    "superfban", None, "Use And See"
 ).add_type(
-    'Official✅'
+    "Official✅"
 ).add()

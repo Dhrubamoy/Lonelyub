@@ -1,11 +1,11 @@
-
 from datetime import datetime
+
+import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 import requests
 from bs4 import BeautifulSoup as bs
-import cfscrape  # https://github.com/Anorov/cloudflare-scrape
+from LEGENDBOT.utils import admin_cmd, humanbytes
 
 from userbot.cmdhelp import CmdHelp
-from LEGENDBOT.utils import humanbytes, admin_cmd
 
 
 def dogbin(magnets):
@@ -208,9 +208,11 @@ def search_torrentz_eu(search_query):
 
 
 CmdHelp("torntsearch").add_command(
-  "tsearch", "<query>", "Fetches torrent links of given query"
+    "tsearch", "<query>", "Fetches torrent links of given query"
 ).add_command(
-  "movie idop.se", "<query>", "Fetches torrent links of given query alternative way"
+    "movie idop.se", "<query>", "Fetches torrent links of given query alternative way"
 ).add_command(
-  "movie torrentz2.eu", "<query>", "Fetches torrent links of given query alternative way"
+    "movie torrentz2.eu",
+    "<query>",
+    "Fetches torrent links of given query alternative way",
 ).add()

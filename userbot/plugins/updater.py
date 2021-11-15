@@ -1,16 +1,16 @@
 import asyncio
 import os
 import sys
+
 import heroku3
 import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-import git
-from userbot.helpers import runner
-from . import *
+
 from userbot import *
-from userbot.Config import Config 
-from userbot.cmdhelp import CmdHelp 
+from userbot.Config import Config
+
+from . import *
 
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
@@ -39,7 +39,9 @@ NEW_BOT_UP_DATE_FOUND = (
     "changelog: \n\n{changelog}\n"
     "updating your LEGENDBOT ..."
 )
-NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your LEGENDBOT...`"
+NEW_UP_DATE_FOUND = (
+    "New update found for {branch_name}\n" "`updating your LEGENDBOT...`"
+)
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
@@ -47,16 +49,19 @@ NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 
 legendbot_info = "https://raw.githubusercontent.com/The-LegendBot/LEGENDUSERBOT/LegendBot/legendboy-info.json"
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-requirements_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "requirements.txt")
+requirements_path = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "requirements.txt"
+)
+
+
 async def legend_info(legendbot_info):
     infos = requests.get(legendbot_info).json()
-    _version = infos['LEGENDBOT-INFO']['version']
-    _release = infos['LEGENDBOT-INFO']['release-date']
-    _branch = infos['LEGENDBOT-INFO']['branch']
-    _author = infos['LEGENDBOT-INFO']['author']
-    _auturl = infos['LEGENDBOT-INFO']['author-url']
+    _version = infos["LEGENDBOT-INFO"]["version"]
+    _release = infos["LEGENDBOT-INFO"]["release-date"]
+    _branch = infos["LEGENDBOT-INFO"]["branch"]
+    _author = infos["LEGENDBOT-INFO"]["author"]
+    _auturl = infos["LEGENDBOT-INFO"]["author-url"]
     return _version, _release, _branch, _author, _auturl
-
 
 
 # -- Constants End -- #
@@ -75,6 +80,7 @@ async def gen_chlog(repo, diff):
         for c in repo.iter_commits(diff)
     )
 
+
 """def generate_change_log(git_repo, diff_marker):
     out_put_str = ""
     d_form = "%d/%m/%y"
@@ -82,6 +88,7 @@ async def gen_chlog(repo, diff):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
 """
+
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
@@ -195,7 +202,9 @@ async def upstream(event):
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond(f"🌚 Do `.update build` to update your **Legendẞø†** !!")
+        return await event.respond(
+            f"🌚 Do `.update build` to update your **Legendẞø†** !!"
+        )
 
     if force_update:
         await event.edit(
@@ -210,11 +219,13 @@ async def upstream(event):
     return
 
 
-
 @borg.on(admin_cmd("update build ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="update build$", allow_sudo=True))
 async def upstream(event):
-    event = await eor(event, "`Hard-Update In Progress... \nPlease wait until docker build is finished...`")
+    event = await eor(
+        event,
+        "`Hard-Update In Progress... \nPlease wait until docker build is finished...`",
+    )
     off_repo = "https://github.com/LEGEND-OS/LEGENDBOT"
     os.chdir("/app")
     git_legend = f"rm -rf .git"
@@ -246,8 +257,13 @@ async def upstream(event):
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
     _version, _release, _branch, _author, _auturl = await legend_info(legendbot_info)
-    await event.edit(f"<b><i>Legendẞø† Docker Build In Progress !!</b></i> \n\n<b><i><u>Update Information :</b></i></u> \n<b>• Branch :</b> {_branch} \n<b>• Release Date :</b> {_release} \n<b>• Version :</b> {_version} \n<b>• Author :</b> <a href='{_auturl}'>{_author}</a>", link_preview=False, parse_mode="HTML")
+    await event.edit(
+        f"<b><i>Legendẞø† Docker Build In Progress !!</b></i> \n\n<b><i><u>Update Information :</b></i></u> \n<b>• Branch :</b> {_branch} \n<b>• Release Date :</b> {_release} \n<b>• Version :</b> {_version} \n<b>• Author :</b> <a href='{_auturl}'>{_author}</a>",
+        link_preview=False,
+        parse_mode="HTML",
+    )
     await deploy(event, repo, ups_rem, ac_br, txt)
+
 
 """async def updater(message):
     try:
@@ -350,9 +366,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         heroku_app = None
         heroku_applications = heroku.apps()
         if HEROKU_APP_NAME is None:
-            await event.edit(
-                "**Please set up**  `HEROKU_APP_NAME`  **to update!"
-            )
+            await event.edit("**Please set up**  `HEROKU_APP_NAME`  **to update!")
             repo.__del__()
             return
         for app in heroku_applications:
@@ -360,13 +374,9 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 heroku_app = app
                 break
         if heroku_app is None:
-            await event.edit(
-                f"{txt}\n" "`Invalid Heroku vars for updating."
-            )
+            await event.edit(f"{txt}\n" "`Invalid Heroku vars for updating.")
             return repo.__del__()
-        await event.edit(
-            "`Updating Userbot In Progress...Please wait upto 5 minutes.`"
-        )
+        await event.edit("`Updating Userbot In Progress...Please wait upto 5 minutes.`")
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -384,15 +394,18 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return repo.__del__()
         build_status = app.builds(order_by="created_at", sort="desc")[0]
         if build_status.status == "failed":
-            await event.edit(
-                "`Build failed ⚠️`"
-            )
+            await event.edit("`Build failed ⚠️`")
             await asyncio.sleep(5)
             return await event.delete()
-        await event.edit(f"**Your Legendẞø† Is UpToDate**\n\n**Version :**  __{LEGENDversion}__\n**Oɯɳҽɾ :**  {legend_mention}")
+        await event.edit(
+            f"**Your Legendẞø† Is UpToDate**\n\n**Version :**  __{LEGENDversion}__\n**Oɯɳҽɾ :**  {legend_mention}"
+        )
     else:
-        await event.edit("**Please set up**  `HEROKU_API_KEY`  **from heroku to update!**")
+        await event.edit(
+            "**Please set up**  `HEROKU_API_KEY`  **from heroku to update!**"
+        )
     return
+
 
 """async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
@@ -402,5 +415,4 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
-""" 
-
+"""

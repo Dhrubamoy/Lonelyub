@@ -1,12 +1,8 @@
-
-
-
-
 import re
 
 from userbot import bot
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 IF_EMOJI = re.compile(
     "["
@@ -46,6 +42,6 @@ async def nope(doit):
         hide_via=True,
     )
     await doit.delete()
-CmdHelp("xobot").add_command(
-    'playxo', None, 'Use and See'
-)
+
+
+CmdHelp("xobot").add_command("playxo", None, "Use and See")

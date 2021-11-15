@@ -2,8 +2,9 @@
 Syntax: .wikimedia Query"""
 import requests
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
+
 
 @borg.on(admin_cmd(pattern="wikimedia (.*)"))
 async def _(event):
@@ -42,6 +43,6 @@ async def _(event):
             pageid, title, timestamp, user, descriptionurl, mime, mediatype
         )
     await event.edit("**Search**: {} \n\n **Results**: {}".format(input_str, result))
-CmdHelp("wikimedia").add_command(
-    'wikimedia', None, 'Search anything on Wikipedia'
-)
+
+
+CmdHelp("wikimedia").add_command("wikimedia", None, "Search anything on Wikipedia")

@@ -4,8 +4,9 @@ from urllib.parse import quote
 
 import requests
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
+
 
 @borg.on(admin_cmd(pattern="xkcd ?(.*)"))
 async def _(event):
@@ -50,6 +51,6 @@ Year: {}""".format(
         await event.edit(output_str, link_preview=True)
     else:
         await event.edit("xkcd n.{} not found!".format(xkcd_id))
-CmdHelp("xkbcd").add_command(
-    'xkcd', None, 'Use and See'
-).add()
+
+
+CmdHelp("xkbcd").add_command("xkcd", None, "Use and See").add()

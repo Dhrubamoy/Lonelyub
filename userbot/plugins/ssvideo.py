@@ -1,21 +1,16 @@
 import asyncio
-
 import os
-
 import time
 
 from telethon.tl.types import DocumentAttributeFilename
 
 from userbot.cmdhelp import CmdHelp
-
-from userbot import events
-
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import admin_cmd
 
 from . import *
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"^\.ssvideo(?: |$)(.*)"))
 
+@bot.on(admin_cmd(outgoing=True, pattern=r"^\.ssvideo(?: |$)(.*)"))
 async def ssvideo(event):
 
     if not event.reply_to_msg_id:
@@ -40,17 +35,17 @@ async def ssvideo(event):
 
         return await event.edit("`Please input number of frame!`")
 
-    if (reply_message.photo
-
-            or (DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
-
-                in reply_message.media.document.attributes)
-
-            or (DocumentAttributeFilename(file_name="sticker.webp")
-
-                in reply_message.media.document.attributes)
-
-            ):
+    if (
+        reply_message.photo
+        or (
+            DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
+            in reply_message.media.document.attributes
+        )
+        or (
+            DocumentAttributeFilename(file_name="sticker.webp")
+            in reply_message.media.document.attributes
+        )
+    ):
 
         return await event.edit("`Unsupported files!`")
 
@@ -59,17 +54,11 @@ async def ssvideo(event):
     await event.edit("`Downloading media...`")
 
     ss = await bot.download_media(
-
         reply_message,
-
         "anu.mp4",
-
         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-
             progress(d, t, event, c_time, "[DOWNLOAD]")
-
         ),
-
     )
 
     try:
@@ -81,13 +70,9 @@ async def ssvideo(event):
         os.system(command)
 
         await event.client.send_file(
-
             event.chat_id,
-
             "ss.png",
-
             reply_to=event.reply_to_msg_id,
-
         )
 
         await event.delete()
@@ -98,6 +83,5 @@ async def ssvideo(event):
 
     os.system("rm -rf *.png *.mp4")
 
-CmdHelp("ssvideo").add_command(
-    'ssvideo', None, 'Use and See'
-).add()
+
+CmdHelp("ssvideo").add_command("ssvideo", None, "Use and See").add()

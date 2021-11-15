@@ -1,4 +1,5 @@
 from LEGENDBOT.utils import *
+
 from userbot.cmdhelp import CmdHelp
 
 
@@ -22,6 +23,7 @@ async def shout(args):
         msg = "\n" + result
         await args.edit("`" + msg + "`")
 
+
 CmdHelp("shout").add_command(
-  "shout", "<text>", "Shouts your message in meme way.", ".shout hello"
+    "shout", "<text>", "Shouts your message in meme way.", ".shout hello"
 ).add()

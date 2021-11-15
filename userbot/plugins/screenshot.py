@@ -6,10 +6,11 @@ import io
 import traceback
 from datetime import datetime
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from selenium import webdriver
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+
 
 @bot.on(admin_cmd(pattern="screenshot (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="screenshot (.*)", allow_sudo=True))
@@ -69,6 +70,10 @@ async def _(event):
     except Exception:
         await edit_or_reply(event, traceback.format_exc())
 
+
 CmdHelp("screenshot").add_command(
-  "screenshot", "<link>", "Gives out the web screenshot of given link via Google Crome Bin in .png format", ".screenshot https://github.com/LEGEND-OS/LEGENDBOT"
+    "screenshot",
+    "<link>",
+    "Gives out the web screenshot of given link via Google Crome Bin in .png format",
+    ".screenshot https://github.com/LEGEND-OS/LEGENDBOT",
 ).add()

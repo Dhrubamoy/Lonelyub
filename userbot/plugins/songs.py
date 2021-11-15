@@ -1,16 +1,6 @@
-from userbot.helpers import *
-import base64
-import io
-import os
-from pathlib import Path
-from . import *
-from telethon import types
-from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from validators.url import url
-from youtubesearchpython import Video
-import json
 import os
 import time
+
 import requests
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeAudio
@@ -26,20 +16,24 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 
+from userbot.helpers import *
+
+from . import *
+
 try:
 
     from youtubesearchpython import *
 
 except:
     os.system("pip install pip install youtube-search-python")
-    from youtubesearchpython import SearchVideos
+
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
 
 from userbot import bot
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.funct import deEmojify
+from userbot.utils import edit_or_reply
 
-from userbot.utils import delete_LEGEND, edit_or_reply
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lyrics(?: |$)(.*)", allow_sudo=True))
@@ -65,7 +59,9 @@ async def nope(aura):
 
     await aura.delete()
 
-#>>>>>>>>>>>>>>>>>>✓✓✓✓✓<<<<<<<<<<<<<<<<<<<
+
+# >>>>>>>>>>>>>>>>>>✓✓✓✓✓<<<<<<<<<<<<<<<<<<<
+
 
 @bot.on(admin_cmd(pattern="gaana ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="gaana ?(.*)", allow_sudo=True))
@@ -133,9 +129,9 @@ async def _(event):
     hell = await eor(event, f"__Searching for__ `{query}`")
     hel_ = await song_search(event, query, max_results, details=True)
     x, title, views, duration, thumb = hel_[0], hel_[1], hel_[2], hel_[3], hel_[4]
-    thumb_name = f'thumb{The_LegendBoy}.jpg'
+    thumb_name = f"thumb{The_LegendBoy}.jpg"
     thumbnail = requests.get(thumb, allow_redirects=True)
-    open(thumb_name, 'wb').write(thumbnail.content)
+    open(thumb_name, "wb").write(thumbnail.content)
     url = x.replace("\n", "")
     try:
         await event.edit("**Fetching Song**")
@@ -146,7 +142,10 @@ async def _(event):
     except ContentTooShortError:
         return await eor(hell, "`The download content was too short.`")
     except GeoRestrictedError:
-        return await eor(hell, "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`")
+        return await eor(
+            hell,
+            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`",
+        )
     except MaxDownloadsReached:
         return await eor(hell, "`Max-downloads limit has been reached.`")
     except PostProcessingError:
@@ -160,7 +159,9 @@ async def _(event):
     except Exception as e:
         return await eor(hell, f"{str(type(e)): {str(e)}}")
     c_time = time.time()
-    await event.edit(f"**🎶 Preparing to upload song 🎶 :** \n\n{hell_data['title']} \n**By :** {hell_data['uploader']}")
+    await event.edit(
+        f"**🎶 Preparing to upload song 🎶 :** \n\n{hell_data['title']} \n**By :** {hell_data['uploader']}"
+    )
     await event.client.send_file(
         event.chat_id,
         f"{hell_data['id']}.mp3",
@@ -182,7 +183,6 @@ async def _(event):
     os.remove(f"{hell_data['id']}.mp3")
 
 
-
 @bot.on(admin_cmd(pattern="vsong ?(.*)"))
 @bot.on(sudo_cmd(pattern="vsong ?(.*)", allow_sudo=True))
 async def _(event):
@@ -193,9 +193,9 @@ async def _(event):
     hell = await eor(event, f"__Searching for__ `{query}`")
     hel_ = await song_search(event, query, max_results, details=True)
     x, title, views, duration, thumb = hel_[0], hel_[1], hel_[2], hel_[3], hel_[4]
-    thumb_name = f'thumb{The_LegendBoy}.jpg'
+    thumb_name = f"thumb{The_LegendBoy}.jpg"
     thumbnail = requests.get(thumb, allow_redirects=True)
-    open(thumb_name, 'wb').write(thumbnail.content)
+    open(thumb_name, "wb").write(thumbnail.content)
     url = x.replace("\n", "")
     try:
         await event.edit("**Fetching Video**")
@@ -206,7 +206,10 @@ async def _(event):
     except ContentTooShortError:
         return await eor(hell, "`The download content was too short.`")
     except GeoRestrictedError:
-        return await eor(hell, "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`")
+        return await eor(
+            hell,
+            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`",
+        )
     except MaxDownloadsReached:
         return await eor(hell, "`Max-downloads limit has been reached.`")
     except PostProcessingError:
@@ -220,7 +223,9 @@ async def _(event):
     except Exception as e:
         return await eor(hell, f"{str(type(e)): {str(e)}}")
     c_time = time.time()
-    await event.edit(f"**📺 Preparing to upload video 📺 :** \n\n{hell_data['title']}\n**By :** {hell_data['uploader']}")
+    await event.edit(
+        f"**📺 Preparing to upload video 📺 :** \n\n{hell_data['title']}\n**By :** {hell_data['uploader']}"
+    )
     await event.client.send_file(
         event.chat_id,
         f"{hell_data['id']}.mp4",
@@ -235,9 +240,9 @@ async def _(event):
     os.remove(f"{hell_data['id']}.mp4")
 
 
-
 # -------------------------------------------------------------------------------
 import os
+
 from telethon.tl.functions.channels import JoinChannelRequest
 
 try:
@@ -252,7 +257,6 @@ os.system("rm -rf *.mp3")
 def bruh(name):
 
     os.system("instantmusic -q -s " + name)
-
 
 
 @bot.on(admin_cmd(pattern="getsong(?: |$)(.*)", outgoing=True))
@@ -275,7 +279,9 @@ async def getmusic(so):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await edit_or_reply(so, "Please unblock @SongsForYouBot and try searching again🤐")
+            await edit_or_reply(
+                so, "Please unblock @SongsForYouBot and try searching again🤐"
+            )
             return
         await edit_or_reply(so, "Ohh.. I got something!! Wait sending😋🤙")
         await asyncio.sleep(3)
@@ -312,7 +318,9 @@ async def DeezLoader(Deezlod):
         return
     d_link = Deezlod.pattern_match.group(1)
     if ".com" not in d_link:
-        await edit_or_reply(Deezlod, "` I need a link to download something pro.`**(._.)**")
+        await edit_or_reply(
+            Deezlod, "` I need a link to download something pro.`**(._.)**"
+        )
     else:
         await edit_or_reply(Deezlod, "**Initiating Download!**")
     chat = "@DeezLoadBot"
@@ -327,7 +335,9 @@ async def DeezLoader(Deezlod):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await edit_or_reply(Deezlod, "**Error:** `unblock` @DeezLoadBot `and retry!`")
+            await edit_or_reply(
+                Deezlod, "**Error:** `unblock` @DeezLoadBot `and retry!`"
+            )
             return
         await bot.send_file(Deezlod.chat_id, song, caption=details.text)
         await Deezlod.client.delete_messages(
@@ -379,19 +389,28 @@ async def _(event):
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
 
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 CmdHelp("songs").add_command(
-  "song", "<song name>", "Searches the song from youtube and upload in current chat in audio(.mp3) format. •Highest Quality"
+    "song",
+    "<song name>",
+    "Searches the song from youtube and upload in current chat in audio(.mp3) format. •Highest Quality",
 ).add_command(
-  "vsong", "<song name>", "Searches the song from youtube and upload in current chat in video(.mp4) format. •Highest Quality"
+    "vsong",
+    "<song name>",
+    "Searches the song from youtube and upload in current chat in video(.mp4) format. •Highest Quality",
 ).add_command(
-  "getsong", "<song name>", "Searches song from a local tg bot @Songsforyoubot and sends the music in current chat"
+    "getsong",
+    "<song name>",
+    "Searches song from a local tg bot @Songsforyoubot and sends the music in current chat",
 ).add_command(
-  "gaana", "<song name>", "Searches song from a local tg bot @FindmusicpleaseBot and sends the music in current chat"
+    "gaana",
+    "<song name>",
+    "Searches song from a local tg bot @FindmusicpleaseBot and sends the music in current chat",
 ).add_command(
-  "sdd", "<song link>", "Downloads the song from given link"
+    "sdd", "<song link>", "Downloads the song from given link"
 ).add_command(
-  "dwlsong", "<song link>", "Same as .sdd but downloads from spotify and deezer"
+    "dwlsong", "<song link>", "Same as .sdd but downloads from spotify and deezer"
 ).add_command(
-  "lyrics", "<song name>", "Sends the lyrics of given song."
+    "lyrics", "<song name>", "Sends the lyrics of given song."
 ).add()

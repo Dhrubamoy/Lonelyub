@@ -5,7 +5,8 @@
 import random
 import re
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
+from LEGENDBOT.utils import admin_cmd
+
 from userbot.cmdhelp import CmdHelp
 
 
@@ -30,6 +31,7 @@ def scramble_word(word):
 
     return first_letter + "".join(middle_letters) + last_letter
 
+
 CmdHelp("scramble").add_command(
-  "scramble", "<your message>", "Jumbles the sentence.", ".scramble hello world"
+    "scramble", "<your message>", "Jumbles the sentence.", ".scramble hello world"
 ).add()

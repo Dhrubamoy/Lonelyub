@@ -1,6 +1,7 @@
 # Made by @The_LegendBoy for @Legend_Userbot
 
 from LEGENDBOT.utils import *
+
 from userbot.cmdhelp import CmdHelp
 
 
@@ -17,6 +18,9 @@ async def wspr(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
+
 CmdHelp("whisper").add_command(
-  "wspr", "<your message> <reciver username>", "Sends a whisper message to a particular person"
+    "wspr",
+    "<your message> <reciver username>",
+    "Sends a whisper message to a particular person",
 ).add()

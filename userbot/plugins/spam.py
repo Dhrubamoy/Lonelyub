@@ -5,15 +5,10 @@
 #
 
 import asyncio
-import base64
-import os
 
-from telethon import functions, types
-from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
+from userbot.utils import admin_cmd, sudo_cmd
 
 SUDO_WALA = Config.SUDO_USERS
 lg_id = Config.LOGGER_ID
@@ -31,6 +26,8 @@ async def spammer(e):
         await e.client.send_message(
             lg_id, f"#SPAM \n\nSpammed  `{counter}`  messages!!"
         )
+
+
 @bot.on(admin_cmd(pattern="bigspam"))
 @bot.on(sudo_cmd(pattern="bigspam", allow_sudo=True))
 async def bigspam(LEGEND):
@@ -62,7 +59,7 @@ async def spammer(e):
         await asyncio.sleep(spamDelay)
 
 
-#@register(outgoing=True, pattern="^.mspam (.*)")
+# @register(outgoing=True, pattern="^.mspam (.*)")
 @bot.on(admin_cmd(pattern="mspam (.*)"))
 @bot.on(sudo_cmd(pattern="mspam (.*)", allow_sudo=True))
 async def tiny_pic_spam(e):
@@ -94,11 +91,20 @@ async def tiny_pic_spam(e):
 
 
 CmdHelp("spam").add_command(
-  "spam", "<number> <text>", "Sends the text 'X' number of times.", ".spam 99 hello"
+    "spam", "<number> <text>", "Sends the text 'X' number of times.", ".spam 99 hello"
 ).add_command(
-  "mspam", "<reply to media> <number>", "Sends the replied media (gif/ video/ sticker/ pic) 'X' number of times", ".mspam 100 <reply to media>"
+    "mspam",
+    "<reply to media> <number>",
+    "Sends the replied media (gif/ video/ sticker/ pic) 'X' number of times",
+    ".mspam 100 <reply to media>",
 ).add_command(
-  "dspam", "<delay> <spam count> <text>", "Sends the text 'X' number of times in 'Y' seconds of delay", ".dspam 5 100 hello"
+    "dspam",
+    "<delay> <spam count> <text>",
+    "Sends the text 'X' number of times in 'Y' seconds of delay",
+    ".dspam 5 100 hello",
 ).add_command(
-  "bigspam", "<count> <text>", "Sends the text 'X' number of times. This what LEGENDBOT iz known for. The Best BigSpam Ever", ".bigspam 5000 hello"
+    "bigspam",
+    "<count> <text>",
+    "Sends the text 'X' number of times. This what LEGENDBOT iz known for. The Best BigSpam Ever",
+    ".bigspam 5000 hello",
 ).add()

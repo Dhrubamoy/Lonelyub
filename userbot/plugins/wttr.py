@@ -8,8 +8,9 @@ import time
 
 import aiohttp
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
+
 
 @borg.on(admin_cmd(pattern="weather (.*)"))
 async def _(event):
@@ -98,6 +99,6 @@ async def _(event):
             await event.reply(file=out_file)
 
     await event.edit(input_str)
-CmdHelp("weather").add_command(
-    'wttr', None, 'Use and See'
-)
+
+
+CmdHelp("weather").add_command("wttr", None, "Use and See")
