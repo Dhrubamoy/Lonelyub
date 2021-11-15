@@ -434,8 +434,7 @@ async def _(event):
         await asyncio.sleep(1)
         await event.edit(animation_chars[i % 13])
 
-        
- 
+
 @bot.on(admin_cmd(pattern=r"happy?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"happy?(.*)", allow_sudo=True))
 async def _(event):
@@ -446,10 +445,8 @@ async def _(event):
     for _ in range(48):
         await asyncio.sleep(0.3)
         await event.edit("".join(deq))
-        deq.rotate(1)       
-        
-        
- 
+        deq.rotate(1)
+
 
 @bot.on(admin_cmd(pattern=r"smile$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"smile$", allow_sudo=True))
@@ -474,8 +471,7 @@ async def _(event):
         "😇",
         "You are special for me..",
         "You are so cute 😍",
-        "You are special for me.."
-        "You are so cute 😍",
+        "You are special for me.." "You are so cute 😍",
         "🙂",
         "🙃",
         "☺️",
@@ -493,8 +489,8 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 35])
-        
-        
+
+
 CmdHelp("animations6").add_command("bigoof", None, "🇮🇳🇮🇳🇮🇳").add_command(
     "g1", None, "Use and see"
 ).add_command("uff", None, "Use and see").add_command(
@@ -504,7 +500,7 @@ CmdHelp("animations6").add_command("bigoof", None, "🇮🇳🇮🇳🇮🇳").a
 ).add_command(
     "happy", None, "Use and see"
 ).add_command(
-    "smile", None, "Use and see"    
+    "smile", None, "Use and see"
 ).add_command(
     "animate", None, "Use a d See"
 ).add_command(
