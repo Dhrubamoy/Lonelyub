@@ -1,4 +1,5 @@
 import os
+
 try:
     pass
 except:
@@ -6,21 +7,23 @@ except:
 import asyncio
 import re
 import time
+
 import PIL.ImageOps
 from bs4 import BeautifulSoup
 from PIL import Image
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from validators.url import url
+
 MARGINS = [50, 150, 250, 350, 450]
+import os
+import re
+import time
+
 # For using gif , animated stickers and videos in some parts , this
 # function takes  take a screenshot and stores ported from userge
-import requests , os, re, time
+import requests
 from bs4 import BeautifulSoup
-from asyncio import sleep
-from random import choice
-from telethon import events
 from validators.url import url
-from telethon.tl.types import Channel
 
 
 def get_readable_time(seconds: int) -> str:
@@ -51,35 +54,47 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-async def darkmusic(dark , QUALITY):
-  search = dark
-  headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
-  html = requests.get('https://www.youtube.com/results?search_query='+search, headers=headers).text
-  soup = BeautifulSoup(html, 'html.parser')
-  for link in soup.find_all('a'):
-    if '/watch?v=' in link.get('href'):
-        # May change when Youtube Website may get updated in the future.
-        video_link = link.get('href') 
-        break
-  video_link =  'http://www.youtube.com/'+video_link
-  command = ('youtube-dl --extract-audio --audio-format mp3 --audio-quality ' + QUALITY + ' ' + video_link)	
-  os.system(command)
+async def darkmusic(dark, QUALITY):
+    search = dark
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    }
+    html = requests.get(
+        "https://www.youtube.com/results?search_query=" + search, headers=headers
+    ).text
+    soup = BeautifulSoup(html, "html.parser")
+    for link in soup.find_all("a"):
+        if "/watch?v=" in link.get("href"):
+            # May change when Youtube Website may get updated in the future.
+            video_link = link.get("href")
+            break
+    video_link = "http://www.youtube.com/" + video_link
+    command = (
+        "youtube-dl --extract-audio --audio-format mp3 --audio-quality "
+        + QUALITY
+        + " "
+        + video_link
+    )
+    os.system(command)
 
 
 async def darkmusicvideo(dark):
     search = dark
-    headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
-    html = requests.get('https://www.youtube.com/results?search_query='+search, headers=headers).text
-    soup = BeautifulSoup(html, 'html.parser')
-    for link in soup.find_all('a'):
-        if '/watch?v=' in link.get('href'):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    }
+    html = requests.get(
+        "https://www.youtube.com/results?search_query=" + search, headers=headers
+    ).text
+    soup = BeautifulSoup(html, "html.parser")
+    for link in soup.find_all("a"):
+        if "/watch?v=" in link.get("href"):
             # May change when Youtube Website may get updated in the future.
-            video_link = link.get('href') 
-            break    
-    video_link =  'http://www.youtube.com/'+video_link
-    command = ('youtube-dl -f "[filesize<20M]" ' +video_link)  
+            video_link = link.get("href")
+            break
+    video_link = "http://www.youtube.com/" + video_link
+    command = 'youtube-dl -f "[filesize<20M]" ' + video_link
     os.system(command)
-
 
 
 async def take_screen_shot(video_file, output_directory, ttl):
@@ -232,11 +247,13 @@ async def simpmusicvideo(simp):
     command = 'youtube-dl -f "[filesize<20M]" ' + video_link
     os.system(command)
 
+
 async def unzip(downloaded_file_name):
     with zipfile.ZipFile(downloaded_file_name, "r") as zip_ref:
         zip_ref.extractall("./temp")
     downloaded_file_name = os.path.splitext(downloaded_file_name)[0]
     return f"{downloaded_file_name}.gif"
+
 
 # convertion..
 

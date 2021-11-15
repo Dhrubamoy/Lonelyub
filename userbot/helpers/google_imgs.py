@@ -1,5 +1,5 @@
-
 import argparse
+
 # Import Libraries
 import codecs
 import datetime
@@ -486,6 +486,7 @@ class googleimagesdownload:
         image_objects = json.loads(data)[31][-1][12][2]
         image_objects = [x for x in image_objects if x[0] == 1]
         return image_objects
+
     # Downloading entire Web Document (Raw Page Content)
     def download_page(self, url):
         try:

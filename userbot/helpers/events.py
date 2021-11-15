@@ -5,7 +5,6 @@ from telethon.tl.types import MessageEntityMentionName
 
 from userbot.Config import Config
 from userbot.helpers.logger import logging
-from userbot.utils import delete_LEGEND
 
 LOGS = logging.getLogger(__name__)
 
@@ -20,7 +19,7 @@ async def reply_id(event):
 
 
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
+    """Get the user from argument or replied message."""
     args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
@@ -48,6 +47,7 @@ async def get_user_from_event(event):
             await event.edit(str(err))
             return None
     return user_obj, extra
+
 
 async def get_user_from_init(
     event, catevent=None, secondgroup=None, nogroup=False, noedits=False
@@ -106,6 +106,7 @@ async def get_user_from_init(
     if not noedits:
         await edit_delete(catevent, "__Couldn't fetch user to proceed further.__")
     return None, None
+
 
 async def checking(catub):
     cat_c = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")

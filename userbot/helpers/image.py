@@ -1,11 +1,9 @@
-import asyncio
 import os
+
 try:
     pass
 except:
     os.system("pip install colour")
-import re
-import requests
 
 import PIL.ImageOps
 from PIL import Image
@@ -39,12 +37,14 @@ async def mirror_file(imagefile, endname):
     inverted_image.save(endname)
 
 
-# sun kissed... 
+# sun kissed...
 # print("Agar Suraj ne sachme chum lia to gand fatt jaegi")
 async def solarize(imagefile, endname):
     image = Image.open(imagefile)
     inverted_image = PIL.ImageOps.solarize(image, threshold=128)
     inverted_image.save(endname)
+
+
 async def crop_and_divide(img):
     (width, height) = img.size
     rows = 5
@@ -110,7 +110,6 @@ async def dotify(image, pix, mode):
     img.save(out)
     out.seek(0)
     return out
-
 
 
 # LEGENDBOT

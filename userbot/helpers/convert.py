@@ -1,8 +1,7 @@
 import os
 import re
-import requests
 import time
-import PIL.ImageOps
+
 from PIL import Image
 
 # convertions are done here...
@@ -50,6 +49,7 @@ def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return re.sub(EMOJI_PATTERN, "", inputString)
 
+
 async def get_time(seconds: int) -> str:
     count = 0
     up_time = ""
@@ -70,6 +70,7 @@ async def get_time(seconds: int) -> str:
     time_list.reverse()
     up_time += ":".join(time_list)
     return up_time
+
 
 StartTime = time.time()
 

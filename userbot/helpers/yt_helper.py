@@ -1,7 +1,7 @@
 import json
-import os
 
 from youtube_search import YoutubeSearch
+
 
 # Gets yt link of given query.
 async def song_search(event, query, max_results, details=False):
@@ -51,9 +51,7 @@ video_opts = {
     "prefer_ffmpeg": True,
     "geo_bypass": True,
     "nocheckcertificate": True,
-    "postprocessors": [
-        {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}
-    ],
+    "postprocessors": [{"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}],
     "outtmpl": "%(id)s.mp4",
     "logtostderr": False,
     "quiet": True,
