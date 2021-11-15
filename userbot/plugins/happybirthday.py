@@ -40,4 +40,4 @@ async def _(event):
     )
 
 
-CmdHelp("нαρϐιяτн").add_command("happybirhtday", None, "Use and See").add()
+CmdHelp("happybirth").add_command("happybirhtday", None, "Use and See").add()
