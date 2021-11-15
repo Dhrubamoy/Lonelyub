@@ -124,6 +124,4 @@ ISAFK = False
 AFKREASON = None
 SUDO_LIST = {}
 
-
 from userbot.cmdhelp import CmdHelp
-from userbot.helpers import *
