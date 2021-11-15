@@ -398,7 +398,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
             await legend.edit(
                 f"✅ **Request Registered** \n\n{legend_mention} will now decide to look for your request or not.\n😐 Till then wait patiently and don't spam!!"
             )
-            target = await legend.client(GetFullUserRequest(event.query.user_id))
+            target = await legend.client(GetFullUserRequest(legend.query.user_id))
             first_name = html.escape(target.user.first_name)
             ok = legend.query.user_id
             if first_name is not None:
