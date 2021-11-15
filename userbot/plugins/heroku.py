@@ -1,14 +1,17 @@
 import asyncio
 import math
 import os
+
 import heroku3
 import requests
+import urllib3
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
-import urllib3
+
 from . import *
+
 USERID = bot.uid
 DEFAULTUSER = ALIVE_NAME or "ℓєgєи∂ϐοτ"
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
@@ -23,6 +26,7 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 LEGEND_STRING = "Protected By LEGENDBOT"
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
+
 
 @borg.on(
     admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True)
@@ -39,16 +43,16 @@ async def variable(var):
     else:
         return await var.edit("`[HEROKU]:" "\nPlease setup your` **HEROKU_APP_NAME**")
     exe = var.pattern_match.group(1)
-    heroku_var = app.config() 
+    heroku_var = app.config()
     if exe == "get":
         await var.edit("`Getting information...`")
         await asyncio.sleep(1.5)
         try:
-            variable = var.pattern_match.group(2).split()[0] 
+            variable = var.pattern_match.group(2).split()[0]
             if variable in heroku_var:
                 return await var.edit(
                     "**ConfigVars**:" f"\n\n {variable} = `{heroku_var[variable]}`\n"
-                    )
+                )
             else:
                 return await var.edit(
                     "**ConfigVars**:" f"\n\n`Error:\n-> {variable} don't exists`"
@@ -180,30 +184,36 @@ async def dyno_usage(dyno):
 @bot.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(event):
     if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
-        return await eor(dyno, f"Make Sure Your HEROKU_APP_NAME & HEROKU_API_KEY are filled correct. Visit {my_group} for help.", link_preview=False)
+        return await eor(
+            dyno,
+            f"Make Sure Your HEROKU_APP_NAME & HEROKU_API_KEY are filled correct. Visit {my_group} for help.",
+            link_preview=False,
+        )
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
         app = Heroku.app(HEROKU_APP_NAME)
     except BaseException:
-        return await event.reply(f"Make Sure Your Heroku AppName & API Key are filled correct. Visit {my_group} for help.", link_preview=False)
-   # event = await eor(dyno, "Downloading Logs...")
+        return await event.reply(
+            f"Make Sure Your Heroku AppName & API Key are filled correct. Visit {my_group} for help.",
+            link_preview=False,
+        )
+    # event = await eor(dyno, "Downloading Logs...")
     LEGEND_data = app.get_log()
     await eor(event, LEGEND_data)
-    
-
-
-
-
 
 
 CmdHelp("heroku").add_command(
-  "usage", None, "Check your heroku dyno hours status."
+    "usage", None, "Check your heroku dyno hours status."
 ).add_command(
-  "set var", "<NEW VAR> <value>", "Add new variable or update existing value/variable\nAfter setting a variable the bot will restart. So be calm for a minute😃"
+    "set var",
+    "<NEW VAR> <value>",
+    "Add new variable or update existing value/variable\nAfter setting a variable the bot will restart. So be calm for a minute😃",
 ).add_command(
-  "get var", "<VAR NAME", "Gets the variable and its value (if any) from heroku."
+    "get var", "<VAR NAME", "Gets the variable and its value (if any) from heroku."
 ).add_command(
-  "del var", "<VAR NAME", "Deletes the variable from heroku. Bot will restart after deleting the variable. so be calm for a minute 😃"
+    "del var",
+    "<VAR NAME",
+    "Deletes the variable from heroku. Bot will restart after deleting the variable. so be calm for a minute 😃",
 ).add_command(
-  "logs", None, "Gets the app log of 100 lines of your bot directly from heroku."
+    "logs", None, "Gets the app log of 100 lines of your bot directly from heroku."
 ).add()

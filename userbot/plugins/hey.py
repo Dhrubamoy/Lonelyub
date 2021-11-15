@@ -1,5 +1,8 @@
 from userbot.cmdhelp import CmdHelp
+
 from . import *
+
+
 @bot.on(admin_cmd(pattern="hey ?(.*)"))
 async def hi(event):
     giveVar = event.text
@@ -9,7 +12,7 @@ async def hi(event):
     await edit_or_reply(
         event,
         f"{ult}✨✨{ult}✨{ult}{ult}{ult}\n{ult}✨✨{ult}✨✨{ult}✨\n{ult}{ult}{ult}{ult}✨✨{ult}✨\n{ult}✨✨{ult}✨✨{ult}✨\n{ult}✨✨{ult}✨{ult}{ult}{ult}\n☁☁☁☁☁☁☁☁",
-   )
-CmdHelp("hey").add_command(
-'hey', None, 'Use and See'
-).add()
+    )
+
+
+CmdHelp("hey").add_command("hey", None, "Use and See").add()

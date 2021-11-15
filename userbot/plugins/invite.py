@@ -1,19 +1,17 @@
-
 # --------------------------------------------------------------------------------------------------------------------------------
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, eor, sudo_cmd
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
     ChannelPublicGroupNaError,
 )
 from telethon.tl import functions
-from telethon.tl.functions.channels import GetFullChannelRequest
+from telethon.tl.functions.channels import GetFullChannelRequest, InviteToChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
-from telethon.tl.functions.channels import InviteToChannelRequest
 
-from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd, eor
 from userbot.cmdhelp import CmdHelp
+
 
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
@@ -63,7 +61,7 @@ def user_full_name(user):
 @bot.on(sudo_cmd(pattern="inviteall ?(.*)", allow_sudo=True))
 async def get_users(event):
     legen_ = event.text[11:]
-    legend_chat =legen_.lower
+    legend_chat = legen_.lower
     restricted = ["@Legend_Userbot", "@Official_LegendBot"]
     legend = await eor(event, f"**Inviting members from** {legen_}")
     if legend_chat in restricted:
@@ -84,12 +82,12 @@ async def get_users(event):
     f = 0
     error = "None"
 
-    await LEGEND.edit("**⚜️[Ͳєямιиαℓ Տτατυѕ](https://t.me/Legend_Userbot)**\n\n`🔸Inviting Users.......`")
+    await LEGEND.edit(
+        "**⚜️[Ͳєямιиαℓ Տτατυѕ](https://t.me/Legend_Userbot)**\n\n`🔸Inviting Users.......`"
+    )
     async for user in event.client.iter_participants(legend.full_chat.id):
         try:
-            await bot(
-                InviteToChannelRequest(channel=chat, users=[user.id])
-            )
+            await bot(InviteToChannelRequest(channel=chat, users=[user.id]))
             s = s + 1
             await LEGEND.edit(
                 f"🤟**Inviting Users👇 **\n\n**⚜Invited :**  `{s}` users \n**🔰Failed to Invite :**  `{f}` users.\n\n**×Error :**  `{error}`"
@@ -100,8 +98,6 @@ async def get_users(event):
     return await LEGEND.edit(
         f"[τєямנиαℓ ƒιиιѕнє∂](https://t.me/Legend_Userbot) \n\n🔸 Sυϲϲєѕѕƒυℓℓγ ιиνιτє∂ `{s}` ρєορℓє \n⚠️ ƒαιℓє∂ το ιиνιτє `{f}` ρєορℓє"
     )
-
-
 
 
 @bot.on(admin_cmd(pattern="invitesall ?(.*)"))
@@ -148,10 +144,7 @@ async def get_users(event):
 async def _(event):
     if event.fwd_from:
         return
-    if (
-        "addsudo" in event.raw_text.lower()
-        or "addblacklist" in event.raw_text.lower()
-    ):
+    if "addsudo" in event.raw_text.lower() or "addblacklist" in event.raw_text.lower():
         return
     to_add_users = event.pattern_match.group(1)
     if event.is_private:
@@ -185,9 +178,11 @@ async def _(event):
 
 
 CmdHelp("invite").add_command(
-  "add", "<username/id>", "Adds the given user to the group"
+    "add", "<username/id>", "Adds the given user to the group"
 ).add_command(
-  "inviteall", "<group username>", "Scraps user from the targeted group to your group. Basically Kidnapps user from one chat to another"
+    "inviteall",
+    "<group username>",
+    "Scraps user from the targeted group to your group. Basically Kidnapps user from one chat to another",
 ).add_command(
-  "invitesall", "<group username>", "Kidnap Members. From Group"
+    "invitesall", "<group username>", "Kidnap Members. From Group"
 ).add()

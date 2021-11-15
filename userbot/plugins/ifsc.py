@@ -1,13 +1,11 @@
-
-from telethon import events
-import requests
 import json
-from userbot.utils import admin_cmd
+
+import requests
 
 from userbot.cmdhelp import CmdHelp
-CmdHelp("ifsc").add_command(
-       'ifsc', None, 'search ifsc code of bank'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("ifsc").add_command("ifsc", None, "search ifsc code of bank").add()
 
 
 @bot.on(admin_cmd(pattern="ifsc(.*)"))

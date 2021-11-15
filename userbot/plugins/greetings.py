@@ -1,7 +1,6 @@
 from userbot.cmdhelp import CmdHelp
 from userbot.utils import admin_cmd
 
-
 # ===========================================================================================
 S = (
     "..... (¯`v´¯)♥️\n"
@@ -12,7 +11,6 @@ S = (
     "/▌✿🌷✿\n"
     "/ \     \|/\n"
 )
-
 
 
 W = (
@@ -47,10 +45,10 @@ X = (
 )
 # =========================================================================================
 
+
 @borg.on(admin_cmd(pattern=r"baby"))
 async def legend(legend):
     await legend.edit(S)
-
 
 
 @borg.on(admin_cmd(pattern=r"gm1"))
@@ -85,7 +83,6 @@ async def gm(event):
     )
 
 
-
 @borg.on(admin_cmd(pattern=r"gooddnt ?(.*)"))
 async def gn(event):
     "Good night art."
@@ -102,9 +99,6 @@ async def gn(event):
         event,
         "♛┈⛧┈┈•༶🦋⋇⋆✦⋆⋇🦋༶•┈┈⛧┈♛\n╱╱✨╱╱✨╱╱✨╱╱✨╱╱✨╱╱✨\n╔══╗────╔╗╔═╦╦╗─╔╗╔╗\n║╔═╬═╦═╦╝║║║║╠╬═╣╚╣╚╗\n║╚╗║╬║╬║╬║║║║║║╬║║║╔╣\n╚══╩═╩═╩═╝╚╩═╩╬╗╠╩╩═╝\n──────────────╚═╝\n╱╱✨╱╱✨╱╱✨╱╱✨╱╱✨╱╱✨╱╱✨\n♛┈⛧┈┈•༶🦋⋇⋆✦⋆⋇🦋༶•┈┈⛧┈♛･",
     )
-
-
-
 
 
 @borg.on(admin_cmd(pattern=r"chill ?(.*)"))
@@ -132,29 +126,20 @@ async def luck(event):
     )
 
 
-CmdHelp("greetings").add_command(
-   'luck', None, 'Try it yourself' 
+CmdHelp("greetings").add_command("luck", None, "Try it yourself").add_command(
+    "gtwl", None, "Try it yourself"
+).add_command("chill", None, "Try it yourself").add_command(
+    "gdnt2", None, "Try it yourself"
 ).add_command(
-   'gtwl', None, 'Try it yourself'
+    "gm2", None, "Try it yourself"
 ).add_command(
-   'chill', None, 'Try it yourself'
+    "goodnt", None, "Try it yourself"
 ).add_command(
-   'gdnt2', None, 'Try it yourself'
+    "gm1", None, "Try it yourself"
 ).add_command(
-   'gm2', None, 'Try it yourself'
+    "baby", None, "Try it yourself"
 ).add_command(
-   'goodnt', None, 'Try it yourself' 
+    "thanks", None, "Try it yourself"
 ).add_command(
-   'gm1', None, 'Try it yourself'
-).add_command(
-   'baby', None, 'Try it yourself'
-).add_command(
-   'thanks', None, 'Try it yourself'
-).add_command(
-   'gdnight', None, 'Try it yourself'
+    "gdnight", None, "Try it yourself"
 ).add()
-
-
-
-
-

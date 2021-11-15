@@ -1,16 +1,16 @@
 import asyncio
 import os
-import random
 import shlex
-from typing import Optional, Tuple
-from PIL import Image, ImageDraw, ImageFont
-import PIL.ImageOps
+from typing import Tuple
 
+import PIL.ImageOps
 from LEGENDBOT.utils import admin_cmd, sudo_cmd
-from userbot import CmdHelp, CMD_HELP, LOGS, bot as LEGENDBOT
+from PIL import Image
+
+from userbot import LOGS, CmdHelp
+from userbot import bot as LEGENDBOT
 from userbot.helpers.funct import (
     convert_toimage,
-    convert_tosticker,
     flip_image,
     grayscale,
     invert_colors,
@@ -18,6 +18,7 @@ from userbot.helpers.funct import (
     solarize,
     take_screen_shot,
 )
+
 
 async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
     args = shlex.split(cmd)
@@ -31,7 +32,8 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
         process.returncode,
         process.pid,
     )
-    
+
+
 async def add_frame(imagefile, endname, x, color):
     image = Image.open(imagefile)
     inverted_image = PIL.ImageOps.expand(image, border=x, fill=color)
@@ -73,9 +75,7 @@ async def memes(LEGEND):
             "Analyzing this media 🧐  inverting colors of this animated sticker!"
         )
         LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
-        )
+        LEGENDcmd = f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
         stdout, stderr = (await runcmd(LEGENDcmd))[:2]
         if not os.path.lexists(LEGENDfile):
             await LEGEND.edit("`Template not found...`")
@@ -83,9 +83,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
-            "`Analyzing this media 🧐 inverting colors...`"
-        )
+        await LEGEND.edit("`Analyzing this media 🧐 inverting colors...`")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         os.rename(LEGENDsticker, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -94,9 +92,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 inverting colors of this video!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 inverting colors of this video!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -105,9 +101,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     else:
-        await LEGEND.edit(
-            "Analyzing this media 🧐 inverting colors of this image!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 inverting colors of this image!")
         meme_file = LEGENDsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -153,13 +147,9 @@ async def memes(LEGEND):
 
     legend = None
     if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 solarizeing this animated sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 solarizeing this animated sticker!")
         LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
-        )
+        LEGENDcmd = f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
         stdout, stderr = (await runcmd(LEGENDcmd))[:2]
         if not os.path.lexists(LEGENDfile):
             await LEGEND.edit("`Template not found...`")
@@ -167,9 +157,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 solarizeing this sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 solarizeing this sticker!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         os.rename(LEGENDsticker, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -178,9 +166,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 solarizeing this video!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 solarizeing this video!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -189,9 +175,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     else:
-        await LEGEND.edit(
-            "Analyzing this media 🧐 solarizeing this image!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 solarizeing this image!")
         meme_file = LEGENDsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -241,9 +225,7 @@ async def memes(LEGEND):
             "Analyzing this media 🧐 converting to mirror image of this animated sticker!"
         )
         LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
-        )
+        LEGENDcmd = f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
         stdout, stderr = (await runcmd(LEGENDcmd))[:2]
         if not os.path.lexists(LEGENDfile):
             await LEGEND.edit("`Template not found...`")
@@ -321,13 +303,9 @@ async def memes(LEGEND):
 
     legend = None
     if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 fliping this animated sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 fliping this animated sticker!")
         LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
-        )
+        LEGENDcmd = f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
         stdout, stderr = (await runcmd(LEGENDcmd))[:2]
         if not os.path.lexists(LEGENDfile):
             await LEGEND.edit("`Template not found...`")
@@ -335,9 +313,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 fliping this sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 fliping this sticker!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         os.rename(LEGENDsticker, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -346,9 +322,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 fliping this video!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 fliping this video!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -357,9 +331,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     else:
-        await LEGEND.edit(
-            "Analyzing this media 🧐 fliping this image!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 fliping this image!")
         meme_file = LEGENDsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -409,9 +381,7 @@ async def memes(LEGEND):
             "Analyzing this media 🧐 changing to black-and-white this animated sticker!"
         )
         LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
-        )
+        LEGENDcmd = f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
         stdout, stderr = (await runcmd(LEGENDcmd))[:2]
         if not os.path.lexists(LEGENDfile):
             await LEGEND.edit("`Template not found...`")
@@ -491,13 +461,9 @@ async def memes(LEGEND):
 
     legend = None
     if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 zooming this animated sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 zooming this animated sticker!")
         LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
-        )
+        LEGENDcmd = f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
         stdout, stderr = (await runcmd(LEGENDcmd))[:2]
         if not os.path.lexists(LEGENDfile):
             await LEGEND.edit("`Template not found...`")
@@ -505,9 +471,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 zooming this sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 zooming this sticker!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         os.rename(LEGENDsticker, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -516,9 +480,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 zooming this video!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 zooming this video!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -526,9 +488,7 @@ async def memes(LEGEND):
             return
         meme_file = LEGENDfile
     else:
-        await LEGEND.edit(
-            "Analyzing this media 🧐 zooming this image!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 zooming this image!")
         meme_file = LEGENDsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -589,13 +549,9 @@ async def memes(LEGEND):
 
     legend = None
     if LEGENDsticker.endswith(".tgs"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 framing this animated sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 framing this animated sticker!")
         LEGENDfile = os.path.join("./temp/", "meme.png")
-        LEGENDcmd = (
-            f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
-        )
+        LEGENDcmd = f"lottie_convert.py --frame 0 -if lottie -of png {LEGENDsticker} {LEGENDfile}"
         stdout, stderr = (await runcmd(LEGENDcmd))[:2]
         if not os.path.lexists(LEGENDfile):
             await LEGEND.edit("`Template not found...`")
@@ -603,9 +559,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith(".webp"):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 framing this sticker!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 framing this sticker!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         os.rename(LEGENDsticker, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -614,9 +568,7 @@ async def memes(LEGEND):
         meme_file = LEGENDfile
         legend = True
     elif LEGENDsticker.endswith((".mp4", ".mov")):
-        await LEGEND.edit(
-            "Analyzing this media 🧐 framing this video!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 framing this video!")
         LEGENDfile = os.path.join("./temp/", "memes.jpg")
         await take_screen_shot(LEGENDsticker, 0, LEGENDfile)
         if not os.path.lexists(LEGENDfile):
@@ -624,9 +576,7 @@ async def memes(LEGEND):
             return
         meme_file = LEGENDfile
     else:
-        await LEGEND.edit(
-            "Analyzing this media 🧐 framing this image!"
-        )
+        await LEGEND.edit("Analyzing this media 🧐 framing this image!")
         meme_file = LEGENDsticker
     try:
         san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -654,19 +604,21 @@ async def memes(LEGEND):
 
 
 CmdHelp("img_fun").add_command(
-  "frame", "<reply to img>", "Makes a frame for your media file."
+    "frame", "<reply to img>", "Makes a frame for your media file."
 ).add_command(
-  "zoom", "<reply to img> <range>", "Zooms in the replied media file"
+    "zoom", "<reply to img> <range>", "Zooms in the replied media file"
 ).add_command(
-  "gray", "<reply to img>", "Makes your media file to black and white"
+    "gray", "<reply to img>", "Makes your media file to black and white"
 ).add_command(
-  "flip", "<reply to img>", "Shows you the upside down image of the given media file"
+    "flip", "<reply to img>", "Shows you the upside down image of the given media file"
 ).add_command(
-  "mirror", "<reply to img>", "Shows you the reflection of the replied image or sticker"
+    "mirror",
+    "<reply to img>",
+    "Shows you the reflection of the replied image or sticker",
 ).add_command(
-  "solarize", "<reply to img>", "Let the sun Burn your replied image/sticker"
+    "solarize", "<reply to img>", "Let the sun Burn your replied image/sticker"
 ).add_command(
-  "invert", "<reply to img>", "Inverts the color of replied media file"
+    "invert", "<reply to img>", "Inverts the color of replied media file"
 ).add_type(
-  "Addons"
+    "Addons"
 ).add()

@@ -1,9 +1,13 @@
 import asyncio
+
 from . import *
+
+
 @bot.on(admin_cmd(pattern="happybirthday"))
 async def _(event):
-	await asyncio.sleep(1)
-	await event.edit("""
+    await asyncio.sleep(1)
+    await event.edit(
+        """
 ▃▃▃▃▃▃▃▃▃▃▃
 ┊ ┊ ┊ ┊ ┊ ┊
 ┊ ┊ ┊ ┊ ˚✩ ⋆｡˚ ✩
@@ -32,7 +36,8 @@ async def _(event):
 ☻/ THEM A LOT
 /▌✿🌷✿
 / \     \|/\n▃▃▃▃▃▃▃▃▃▃▃
-""")
-CmdHelp("нαρϐιяτн").add_command(
-	'happybirhtday', None, 'Use and See'
-).add()
+"""
+    )
+
+
+CmdHelp("нαρϐιяτн").add_command("happybirhtday", None, "Use and See").add()

@@ -15,7 +15,9 @@ from telethon.tl.types import (
 
 from userbot.cmdhelp import CmdHelp
 from userbot.utils import *
+
 from . import *
+
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
     "Plagiarising hehe...",
@@ -35,7 +37,7 @@ legend = Config.CUSTOM_STICKER_PACK_NAME
 @bot.on(admin_cmd(outgoing=True, pattern="kang"))
 @bot.on(sudo_cmd(pattern="kang", allow_sudo=True))
 async def kang(args):
-    """ For .kang command, kangs stickers or creates new ones. """
+    """For .kang command, kangs stickers or creates new ones."""
     user = await bot.get_me()
     if not user.username:
         user.username = user.first_name
@@ -263,7 +265,7 @@ async def kang(args):
 
 
 async def resize_photo(photo):
-    """ Resize the given photo to 512x512 """
+    """Resize the given photo to 512x512"""
     image = Image.open(photo)
     maxsize = (512, 512)
     if (image.width and image.height) < 512:
@@ -334,13 +336,15 @@ async def get_pack_info(event):
 
     await eor(event, OUTPUT)
 
+
 CmdHelp("kang").add_command(
-    'kang', None, 'reply .kang to a sticker or an image to kang it to your userbot pack'
+    "kang", None, "reply .kang to a sticker or an image to kang it to your userbot pack"
 ).add_command(
-    'kang emojis', None, 'Works just like .kang but uses the emojis you picked.'
+    "kang emojis", None, "Works just like .kang but uses the emojis you picked."
 ).add_command(
-    'kang number', None, 'Kangs the sticker/image to the specified pack and uses the emojis you picked'
+    "kang number",
+    None,
+    "Kangs the sticker/image to the specified pack and uses the emojis you picked",
 ).add_command(
-      'stkrinfo', None, 'Gets info about sticker pack'
+    "stkrinfo", None, "Gets info about sticker pack"
 ).add()
-  

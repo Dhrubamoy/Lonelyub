@@ -1,7 +1,8 @@
 import asyncio
+import datetime
 import os
 import subprocess
-import datetime
+
 import emoji
 from googletrans import Translator
 from gtts import gTTS
@@ -44,12 +45,16 @@ async def _(event):
     except Exception as exc:
         await edit_or_reply(event, str(exc))
 
+
 @bot.on(admin_cmd(pattern=r"trs", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"trs", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    await edit_or_reply( "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/file/d2d666595b61c676169c1.jpg) ⚡", link_preview=False)
+    await edit_or_reply(
+        "**All The Language Codes Can Be Found** \n ⚡ [Here](https://telegra.ph/file/d2d666595b61c676169c1.jpg) ⚡",
+        link_preview=False,
+    )
 
 
 @bot.on(admin_cmd(pattern="voices (.*)"))
@@ -116,14 +121,20 @@ async def _(event):
     except Exception as e:
         await eod(event, str(e), 10)
 
+
 CmdHelp("ggℓ αѕѕτ").add_command(
-  "voices", "<reply to a msg> <lang code>", "Sends the replied msg content in audio format."
+    "voices",
+    "<reply to a msg> <lang code>",
+    "Sends the replied msg content in audio format.",
 ).add_command(
-    "trs", "<lang code> <reply to msg>", "Translates the replied message to desired language code. Type '.trc' to get all the language codes", f"trt en - hello | .trt en <reply to msg>"
+    "trs",
+    "<lang code> <reply to msg>",
+    "Translates the replied message to desired language code. Type '.trc' to get all the language codes",
+    f"trt en - hello | .trt en <reply to msg>",
 ).add_command(
-  "trp", None, "Gets all the possible language codes for google translate module"
+    "trp", None, "Gets all the possible language codes for google translate module"
 ).add_info(
-  "Google Assistant"
+    "Google Assistant"
 ).add_warning(
-  "✅ Harmless Module."
+    "✅ Harmless Module."
 ).add()
