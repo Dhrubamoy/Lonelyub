@@ -28,7 +28,7 @@ async def send(event):
     the_2plugin_file = "./userbot/plugins/Spam/{}.py".format(input_str)
     the_3plugin_file = "./userbot/plugins/Xtra_Plugin/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
-        lauda = await event.client.send_file(
+        lauda1 = await event.client.send_file(
             event.chat_id,
             the_plugin_file,
             thumb=thumb,
@@ -38,9 +38,9 @@ async def send(event):
             reply_to=message_id,
         )
     elif os.path.exists(the_1plugin_file):
-        lauda = await event.client.send_file(
+        lauda2 = await event.client.send_file(
             event.chat_id,
-            the_plugin_file,
+            the_1plugin_file,
             thumb=thumb,
             caption=omk,
             force_document=True,
@@ -49,9 +49,9 @@ async def send(event):
         )
         await event.delete()
     elif os.path.exists(the_2plugin_file):
-        lauda = await event.client.send_file(
+        lauda3 = await event.client.send_file(
             event.chat_id,
-            the_plugin_file,
+            the_2plugin_file,
             thumb=thumb,
             caption=omk,
             force_document=True,
@@ -60,9 +60,9 @@ async def send(event):
         )
         await event.delete()
     elif os.path.exists(the_3plugin_file):
-        lauda = await event.client.send_file(
+        lauda4 = await event.client.send_file(
             event.chat_id,
-            the_plugin_file,
+            the_3plugin_file,
             thumb=thumb,
             caption=omk,
             force_document=True,
