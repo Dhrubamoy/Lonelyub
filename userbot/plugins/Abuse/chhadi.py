@@ -1,9 +1,8 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot.utils import admin_cmd
-
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd("dm ?(.*)"))
@@ -41,8 +40,6 @@ async def _(event):
             await event.edit(f"{response.message}")
 
 
-CmdHelp("chhadi").add_command(
-   'dm', None, 'Reply To Anymessage, meddia'
-).add_type(
-   'Abuse'
+CmdHelp("chhadi").add_command("dm", None, "Reply To Anymessage, meddia").add_type(
+    "Abuse"
 ).add()

@@ -1,19 +1,21 @@
-#Made By @Its_LegendBoy Keep Credits If You Are Goanna Kang This Lol
+# Made By @Its_LegendBoy Keep Credits If You Are Goanna Kang This Lol
 
-#And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
+# And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 
-#Usage .actressdp Im Not Responsible For Any Ban caused By This
+# Usage .actressdp Im Not Responsible For Any Ban caused By This
 import asyncio
 import os
 import random
 import shutil
 from datetime import datetime
 
+from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
-from LEGENDBOT.utils import admin_cmd
+
 from userbot.cmdhelp import CmdHelp
+
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 # Add telegraph media links of profile pics that are to be used
@@ -93,6 +95,8 @@ async def autopic(event):
             await asyncio.sleep(60)
         except:
             return
+
+
 CmdHelp("sexydp").add_command(
-       'sexydp', None, 'Starts autodp of sexy pic & wait for 5 min'
+    "sexydp", None, "Starts autodp of sexy pic & wait for 5 min"
 ).add()

@@ -2,10 +2,12 @@ from userbot import bot as LEGEND
 from userbot.utils import admin_cmd as choot
 
 x = True
+
+
 @bot.on(choot(pattern="abuse"))
 async def yashraid(event):
     while x != False:
-       
+
         await event.delete()
         kek = event.chat_id
         await LEGEND.send_message(kek, "TERI MA KI CHOOXT MAARUU BSDKEE")
@@ -32,7 +34,9 @@ async def yashraid(event):
         await LEGEND.send_message(kek, "MADERRRRCHODDO")
         await LEGEND.send_message(kek, "TUM SABB KAA")
         await LEGEND.send_message(kek, " BAAAP HAII")
-        await LEGEND.send_message(kek, "LEGEND HAI HM HMKO KAHTE H OP AUR BETE TUM LEGEND KE LAND KI TOPI")
+        await LEGEND.send_message(
+            kek, "LEGEND HAI HM HMKO KAHTE H OP AUR BETE TUM LEGEND KE LAND KI TOPI"
+        )
         await LEGEND.send_message(kek, "😂")
         await LEGEND.send_message(kek, "TERI GAMD TOD DI JAYEGI MADDRCHOD")
         await LEGEND.send_message(kek, "KII MAA")
@@ -66,7 +70,10 @@ async def yashraid(event):
         await LEGEND.send_message(kek, "TERA BAAP")
         await LEGEND.send_message(kek, "BETHA HAI")
         await LEGEND.send_message(kek, "GHODEE PEE")
-        await LEGEND.send_message(kek, "TERI GANND TOD DI JAYEGI MADDRCHOD TUMHARA BAAP HU ME LEGEND WALE GANND FAAD KE RAKH DENGE TERI MADARCHOOD")
+        await LEGEND.send_message(
+            kek,
+            "TERI GANND TOD DI JAYEGI MADDRCHOD TUMHARA BAAP HU ME LEGEND WALE GANND FAAD KE RAKH DENGE TERI MADARCHOOD",
+        )
         await LEGEND.send_message(kek, "TUMHARII")
         await LEGEND.send_message(kek, "MAA")
         await LEGEND.send_message(kek, "MEREEE")
@@ -95,7 +102,9 @@ async def yashraid(event):
         await LEGEND.send_message(kek, "KAA SARIYAA")
         await LEGEND.send_message(kek, "DAAL DIYAA")
         await LEGEND.send_message(kek, "KALAP GYII")
-        await LEGEND.send_message(kek, "TERI BHN KE GORE BOOBS AAHAAH AAH AAHA AAAHA AAHA AAAHH")
+        await LEGEND.send_message(
+            kek, "TERI BHN KE GORE BOOBS AAHAAH AAH AAHA AAAHA AAHA AAAHH"
+        )
         await LEGEND.send_message(kek, "TERI MA KI CHOOXT FAD DI MENE BHOOSSDIKE ")
         await LEGEND.send_message(kek, "TERE BAAP")
         await LEGEND.send_message(kek, "RHEGE HUM")
@@ -113,8 +122,12 @@ async def yashraid(event):
         await LEGEND.send_message(kek, "MAIN HI HUINN YASH")
         await LEGEND.send_message(kek, "MERAA NAJAYAZ🤣")
         await LEGEND.send_message(kek, "BETA HAI TUU")
-        await LEGEND.send_message(kek, "TERI MAA KI CHUUTTT AHHHH GZB BHSODDA BNA DIYAA")
-        await LEGEND.send_message(kek, "HUMSE BAKCHODI NA KRRR TELE PR RHNE LAYAK NHI BACHEGA")
+        await LEGEND.send_message(
+            kek, "TERI MAA KI CHUUTTT AHHHH GZB BHSODDA BNA DIYAA"
+        )
+        await LEGEND.send_message(
+            kek, "HUMSE BAKCHODI NA KRRR TELE PR RHNE LAYAK NHI BACHEGA"
+        )
         await LEGEND.send_message(kek, "MAAADDRRCHHHOOODD")
         await LEGEND.send_message(kek, "LOOWDEE KEE BAAL")
         await LEGEND.send_message(kek, "LAAWDDDEEE KEE BAAL")
@@ -125,15 +138,24 @@ async def yashraid(event):
         await LEGEND.send_message(kek, "BSSDDKKEE BAAP SE PANGE LENGE")
         await LEGEND.send_message(kek, "YEEE LODDUUU KE BAAL")
         await LEGEND.send_message(kek, "JHHAAATTT BHAR KI AAUUKAAT NHI H")
-        await LEGEND.send_message(kek, "AAYYYY HHHHH BAAAAPPP SSSEEE BHIIIDDHNEE MADARCHHHHOODDD")
-        await LEGEND.send_message(kek, "BBHHOOSSDDDIIKEEEE APNIII MAA KO DWAI LAA KRRRR DEE")
-        await LEGEND.send_message(kek, "MAADDRRRCCCHHHOOODDDD TERIIII MAA KIII CCCHHHUUUTTT SSSEEE KHUUNNN NIKALLLL DIYAA HH BBEETTIICCHHOODD")
+        await LEGEND.send_message(
+            kek, "AAYYYY HHHHH BAAAAPPP SSSEEE BHIIIDDHNEE MADARCHHHHOODDD"
+        )
+        await LEGEND.send_message(
+            kek, "BBHHOOSSDDDIIKEEEE APNIII MAA KO DWAI LAA KRRRR DEE"
+        )
+        await LEGEND.send_message(
+            kek,
+            "MAADDRRRCCCHHHOOODDDD TERIIII MAA KIII CCCHHHUUUTTT SSSEEE KHUUNNN NIKALLLL DIYAA HH BBEETTIICCHHOODD",
+        )
         await LEGEND.send_message(kek, "CHAKKKAAA HHH TUUUU MAAADDRRCHHHOODDDD")
         await LEGEND.send_message(kek, "JJHHHAAATEEE JITNI")
         await LEGEND.send_message(kek, "BHIIIII BAAADDIII HOO")
         await LEGEND.send_message(kek, "RHHHTTAAAA LUNNNNNDD KEEE NICHEE HI HHHH")
         await LEGEND.send_message(kek, "BETICCCHHOOODD")
-        await LEGEND.send_message(kek, "BHHHHOOOSSSDDIIIIKKEEEE TEEERRIIII AAUUKKAAAT MERA MUUUTT")
+        await LEGEND.send_message(
+            kek, "BHHHHOOOSSSDDIIIIKKEEEE TEEERRIIII AAUUKKAAAT MERA MUUUTT"
+        )
         await LEGEND.send_message(kek, "PIINEEE KI HHHH USSEEE PIII OR KKKHUUSSHHH")
         await LEGEND.send_message(kek, "RAHHHH BETIIICHHOOODDD CHIINARRR")
         await LEGEND.send_message(kek, "AAJJJ KEEE BAAD LEGEND SE PANGA")
@@ -147,6 +169,7 @@ async def yashraid(event):
         await LEGEND.send_message(kek, "CHHHOOOODDDD DENGE")
         await LEGEND.send_message(kek, "TUMMM JESEE KITNOOO")
         await LEGEND.send_message(kek, "KOOO CHOOOOOOODDDDD KRRR CHOD DIYAA GANDUUU")
-        await LEGEND.send_message(kek, "TELEGRAM ME RAHNA HAI TO LEGEND KO PAPA BOLNA PAREGA WARNA TUMHARII BHN XUDEGI AISE HI ROJ")
-        
-        
+        await LEGEND.send_message(
+            kek,
+            "TELEGRAM ME RAHNA HAI TO LEGEND KO PAPA BOLNA PAREGA WARNA TUMHARII BHN XUDEGI AISE HI ROJ",
+        )

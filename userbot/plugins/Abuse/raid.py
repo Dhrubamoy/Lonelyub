@@ -1,11 +1,10 @@
 import asyncio
 import random
+
 from userbot import *
 from userbot.plugins import *
-NUMBER = ["0", "1"] 
 
-
-
+NUMBER = ["0", "1"]
 
 
 RAID = [
@@ -328,14 +327,15 @@ async def _(event):
             reply_to=event.message.id,
         )
 
+
 @bot.on(admin_cmd(pattern="raid(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="raid(?: |$)(.*)", allow_sudo=True))
-async def spam(e):  
+async def spam(e):
     if e.fwd_from:
         return
     legend = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-    smex = await e.get_reply_message()
-    if e.reply_to_msg_id:             
+    await e.get_reply_message()
+    if e.reply_to_msg_id:
         a = await e.get_reply_message()
         b = await e.client.get_entity(a.sender_id)
         g = b.id
@@ -349,7 +349,7 @@ async def spam(e):
                 await e.client.send_message(e.chat_id, caption)
                 await asyncio.sleep(0.3)
     else:
-         await e.reply(usage, parse_mode=None, link_preview=None )
+        await e.reply(usage, parse_mode=None, link_preview=None)
 
 
 @bot.on(admin_cmd(pattern="replyraid(?: |$)(.*)"))
@@ -410,14 +410,12 @@ async def _(event):
         queue = que.get(e)
         queue.pop(0)
         await event.edit(f"STOPPING RAID BY {ALIVE_NAME}")
-        
-        
-from userbot.cmdhelp import CmdHelp     
-        
+
+
+from userbot.cmdhelp import CmdHelp
+
 CmdHelp("raid").add_command(
     "replyraid", None, "Reply to him or her to start raid"
-).add_command(
-    "dreplyraid", None, "Reply To her Ya him To stop raid"
-).add_type(
+).add_command("dreplyraid", None, "Reply To her Ya him To stop raid").add_type(
     "Addons"
 ).add()

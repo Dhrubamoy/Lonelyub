@@ -1,10 +1,10 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl import functions, types
 
-from userbot.plugins import *
-from userbot.cmdhelp import CmdHelp
 from userbot import *
+from userbot.cmdhelp import CmdHelp
+from userbot.plugins import *
+
 
 @borg.on(admin_cmd(pattern="hpic?(.*)"))
 async def _(event):
@@ -54,7 +54,7 @@ async def _(event):
         else:
             await event.delete()
             xxxx = await event.client.send_file(event.chat_id, response.message)
-            await unsave_gif(xxxx) 
+            await unsave_gif(xxxx)
 
 
 @borg.on(admin_cmd(pattern="hshota?(.*)"))
@@ -81,11 +81,12 @@ async def _(event):
             xxxx = await event.client.send_file(event.chat_id, response.message)
             await unsave_gif(xxxx)
 
+
 @borg.on(admin_cmd(pattern="hvideo?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     await event.get_reply_message()
     chat = "@LoliHeavenBot"
     await event.edit("```Checking...```")
@@ -110,7 +111,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     await event.get_reply_message()
     chat = "@LoliHeavenBot"
     await event.edit("```Checking...```")
@@ -128,13 +129,14 @@ async def _(event):
         else:
             await event.delete()
             xxxx = await event.client.send_file(event.chat_id, response.message)
-            await unsave_gif(xxxx)            
+            await unsave_gif(xxxx)
+
 
 @borg.on(admin_cmd(pattern="htrap?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     await event.get_reply_message()
     chat = "@LoliHeavenBot"
     await event.edit("```Checking...```")
@@ -152,14 +154,14 @@ async def _(event):
         else:
             await event.delete()
             xxxx = await event.client.send_file(event.chat_id, response.message)
-            await unsave_gif(xxxx)          
+            await unsave_gif(xxxx)
 
 
 @borg.on(admin_cmd(pattern="hbdsm?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     await event.get_reply_message()
     chat = "@LoliHeavenBot"
     await event.edit("```Checking...```")
@@ -177,13 +179,14 @@ async def _(event):
         else:
             await event.delete()
             xxxx = await event.client.send_file(event.chat_id, response.message)
-            await unsave_gif(xxxx)            
+            await unsave_gif(xxxx)
+
 
 @borg.on(admin_cmd(pattern="hfurry?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     await event.get_reply_message()
     chat = "@LoliHeavenBot"
     await event.edit("```Checking...```")
@@ -201,13 +204,14 @@ async def _(event):
         else:
             await event.delete()
             xxxx = await event.client.send_file(event.chat_id, response.message)
-            await unsave_gif(xxxx)           
+            await unsave_gif(xxxx)
+
 
 @borg.on(admin_cmd(pattern="hgif?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     await event.get_reply_message()
     chat = "@LoliHeavenBot"
     await event.edit("```Checking...```")
@@ -225,13 +229,14 @@ async def _(event):
         else:
             await event.delete()
             xxxx = await event.client.send_file(event.chat_id, response.message)
-            await unsave_gif(xxxx)            
+            await unsave_gif(xxxx)
+
 
 @borg.on(admin_cmd(pattern="hcosplay?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    input_str = event.pattern_match.group(1)
+    event.pattern_match.group(1)
     await event.get_reply_message()
     chat = "@LoliHeavenBot"
     await event.edit("```Checking...```")
@@ -249,14 +254,12 @@ async def _(event):
         else:
             await event.delete()
             xxxx = await event.client.send_file(event.chat_id, response.message)
-            await unsave_gif(xxxx)            
+            await unsave_gif(xxxx)
 
 
 CmdHelp("hentai").add_command(
-    "hpic",None, "Uses of this cmnd you get anime porn image"
-).add_command(
-    "hfutanari", None, "Use And see"
-).add_command(
+    "hpic", None, "Uses of this cmnd you get anime porn image"
+).add_command("hfutanari", None, "Use And see").add_command(
     "hshota", None, "Use And see"
 ).add_command(
     "hoppai", None, "Use And see"
