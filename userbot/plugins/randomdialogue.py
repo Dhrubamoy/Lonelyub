@@ -102,4 +102,4 @@ async def _(event):
         await event.edit("Written and Created By: @The_LegendBoy ! thank you🙏🏻❤")
 
 
-CmdHelp("яи∂м ∂ιαℓg").add_command("rfilmy", None, "Use and See").add()
+CmdHelp("randomdialogue").add_command("rfilmy", None, "Use and See").add()
