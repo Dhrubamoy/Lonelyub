@@ -5,7 +5,7 @@ from pathlib import Path
 import telethon.utils
 from telethon import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest
-
+from userbot.Config import Config
 from userbot import LOGS, LEGENDversion, bot
 from userbot.Config import Config
 from userbot.utils import (
@@ -151,15 +151,15 @@ bot.loop.run_until_complete(spams())
 print(
     f"""♥️🇮🇳♥️⚜♥️
 ╔════❰LEGENDBOT❱═❍⊱❁۪۪
-║┣⪼ OWNER - LEGEND
+║┣⪼ OWNER - {Config.ALIVE_NAME}
 ║┣⪼ Group - @Legend_Userbot
 ║┣⪼ CREATOR - @The_LegendBoy
-║┣⪼ TELETHON - 1.2.0
+║┣⪼ LEGENDBOT - {LEGENDversion}
 ║┣⪼ ✨ 『🔱🇱 🇪 🇬 🇪 🇳 🇩 🔱』𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨
 ║╰━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱"""
 )
-
+print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
 
 async def legend_op():
     try:
