@@ -4,9 +4,8 @@
 
 
 from userbot.cmdhelp import CmdHelp
-CmdHelp("fpost").add_command(
-    "fpost <word>", None, "Use and See"
-).add()
+
+CmdHelp("fpost").add_command("fpost <word>", None, "Use and See").add()
 import string
 
 from userbot.utils import admin_cmd

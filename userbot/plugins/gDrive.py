@@ -1,4 +1,3 @@
-   
 """
 G-Drive File Downloader Plugin For Userbot. 
 usage: .gdl File-Link
@@ -6,7 +5,9 @@ By: @Zero_cool7870
 """
 import requests
 from telethon import events
+
 from userbot.cmdhelp import CmdHelp
+
 
 async def download_file_from_google_drive(id):
     URL = "https://docs.google.com/uc?export=download"
@@ -92,14 +93,15 @@ async def g_download(event):
     file_name = await download_file_from_google_drive(file_id)
     await event.edit("File Downloaded.\nName: `" + str(file_name) + "`")
 
+
 CmdHelp("gDrive").add_command(
-  'gfolder', '<reply>', 'Makes a gdive folder for you'
+    "gfolder", "<reply>", "Makes a gdive folder for you"
 ).add_command(
-  'gdrivedir', '<reply>', 'Uplaods the folder to gdive directory'
+    "gdrivedir", "<reply>", "Uplaods the folder to gdive directory"
 ).add_command(
-  'drivesch', 'Keyword', 'Searchs for the file in gdrive'
+    "drivesch", "Keyword", "Searchs for the file in gdrive"
 ).add_command(
-  'ugdrive', 'link/reply', 'Uploads the file to gdrive'
+    "ugdrive", "link/reply", "Uploads the file to gdrive"
 ).add_command(
-  'gdl', '<link>', 'Downloads the file/media from the provided gdrive link'
+    "gdl", "<link>", "Downloads the file/media from the provided gdrive link"
 ).add()

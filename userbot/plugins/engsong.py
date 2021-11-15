@@ -1,10 +1,9 @@
-
-from userbot.cmdhelp import CmdHelp
-
 import asyncio
 import random
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from LEGENDBOT.utils import admin_cmd
+
+from userbot.cmdhelp import CmdHelp
 
 
 @bot.on(admin_cmd(pattern=r"engsongs", outgoing=True))
@@ -215,6 +214,6 @@ async def _(event):
     if x == 33:
 
         await event.edit("Not in a mood to sing. Sorry!")
-CmdHelp("engsongs").add_command(
-  'engsongs', None, 'Sing a song'
-).add()
+
+
+CmdHelp("engsongs").add_command("engsongs", None, "Sing a song").add()

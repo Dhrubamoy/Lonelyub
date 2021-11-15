@@ -1,9 +1,6 @@
-
-
 from userbot.cmdhelp import CmdHelp
-CmdHelp("fleave").add_command(
-    "fleave", None, "Its animation use and See"
-).add()
+
+CmdHelp("fleave").add_command("fleave", None, "Its animation use and See").add()
 
 import asyncio
 

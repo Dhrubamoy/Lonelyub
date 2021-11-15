@@ -1,14 +1,16 @@
 import asyncio
 import io
-import time
 import os
 import sys
+import time
 import traceback
-from . import *
-from userbot.Config import Config
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd, eor
+
 from userbot import *
 from userbot.cmdhelp import CmdHelp
+from userbot.Config import Config
+from userbot.utils import admin_cmd, eor, sudo_cmd
+
+from . import *
 
 
 @bot.on(admin_cmd(pattern="exec(?: |$|\n)(.*)", command="exec"))
@@ -19,13 +21,13 @@ async def _(event):
     cmd = "".join(event.text.split(maxsplit=1)[1:])
     if not cmd:
         return await eor(event, "`What should i execute?..`")
-    LEGENDevent = await eor(event, "`Executing.....`")
+    await eor(event, "`Executing.....`")
     process = await asyncio.create_subprocess_sLEGENF(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
     result = str(stdout.decode().strip()) + str(stderr.decode().strip())
-    d3viluser = await event.client.get_me()
+    await event.client.get_me()
     if LEGENDuser.username:
         curruser = LEGENDuser.username
     else:
@@ -35,7 +37,10 @@ async def _(event):
         cresult = f"`{curruser}:~#` `{cmd}`\n`{result}`"
     else:
         cresult = f"`{curruser}:~$` `{cmd}`\n`{result}`"
-    await eor(event, "**Terminal Command Was Executed Successfully. Check LOGGER for Output.**")
+    await eor(
+        event,
+        "**Terminal Command Was Executed Successfully. Check LOGGER for Output.**",
+    )
     await borg.send_message(
         Config.LOGGER_ID,
         f"#EXEC \n\nTerminal command was executed sucessfully.\n\n**Command :**  `{cmd}`\n**Result :** \n{cresult}",
@@ -74,11 +79,15 @@ async def _(event):
     else:
         evaluation = "Success"
     final_output = f"•  Eval : \n`{cmd}` \n\n•  Result : \n`{evaluation}` \n"
-    await eor(LEGENDevent, "**Eval Command Executed. Check out LOGGER_ID Group[Private Group Where All Message Forward]for result.**")
+    await eor(
+        LEGENDevent,
+        "**Eval Command Executed. Check out LOGGER_ID Group[Private Group Where All Message Forward]for result.**",
+    )
     await borg.send_message(
         Config.LOGGER_ID,
         f"#EVAL \n\nEval command was executed sucessfully. \n\n{final_output}",
     )
+
 
 async def aexec(code, smessatatus):
     message = event = smessatatus
@@ -131,18 +140,17 @@ async def _(event):
             )
             await event.delete()
     await eor(event, "**Check out logger for result..**")
-    await borg.send_message(
-        Config.LOGGER_ID, 
-        f"#BASH \n\n{output}"
-    )
-    
+    await borg.send_message(Config.LOGGER_ID, f"#BASH \n\n{output}")
+
 
 CmdHelp("evaluators").add_command(
-  'eval', '<expr>', 'Execute python script'
+    "eval", "<expr>", "Execute python script"
 ).add_command(
-  'exec', '<command>', 'Execute a Terminal command on LEGENDBOT server and shows details'
+    "exec",
+    "<command>",
+    "Execute a Terminal command on LEGENDBOT server and shows details",
 ).add_command(
-  'bash', '<query>', 'Bash your codes on linux and gives the output in current chat'
+    "bash", "<query>", "Bash your codes on linux and gives the output in current chat"
 ).add_type(
-  "Official"
+    "Official"
 ).add()

@@ -1,20 +1,15 @@
-
-
-
-
 import asyncio
 
 from telethon.errors import BadRequestError
-from telethon.errors.rpcerrorlist import ChatNotModifiedError, UserIdInvalidError
-from telethon.tl.functions.channels import DeleteUserHistoryRequest, EditAdminRequest
-from telethon.tl.functions.channels import ExportMessageLinkRequest as ExpLink
-
-from telethon.tl.types import Chat, ChatAdminRights, InputMessagesFilterPinned
+from telethon.tl.functions.channels import EditAdminRequest
+from telethon.tl.types import ChatAdminRights
 
 from . import *
+
 CmdHelp("fullpromo").add_command(
     "fullpromote", None, "to give full promote to anyone with all rights"
 ).add()
+
 
 @borg.on(admin_cmd(pattern="fullpromote ?(.*)"))
 async def prmte(event):

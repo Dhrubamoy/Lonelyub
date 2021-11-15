@@ -5,9 +5,10 @@ import random
 from telethon import events
 
 from userbot.cmdhelp import CmdHelp
-CmdHelp("snow").add_command(
-    "snow", None, "Use And See"
-).add()
+
+CmdHelp("snow").add_command("snow", None, "Use And See").add()
+
+
 @borg.on(events.NewMessage(pattern=r"\.snow", outgoing=True))
 async def _(event):
     if event.fwd_from:

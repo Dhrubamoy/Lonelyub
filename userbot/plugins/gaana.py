@@ -9,7 +9,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CmdHelp, bot
-from . import *
+
 # from userbot.utils import admin_cmd
 from userbot.events import register
 
@@ -110,10 +110,9 @@ async def DeezLoader(Deezlod):
 
 
 from userbot.cmdhelp import CmdHelp
+
 CmdHelp("gaana").add_command(
     "spd", None, "for searching songs from spotify"
-).add_command(
-    "dzd", None, "download music from deezer"
-).add_command(
+).add_command("dzd", None, "download music from deezer").add_command(
     "filext", None, "<.deezload spotify/deezerlink>"
 ).add()

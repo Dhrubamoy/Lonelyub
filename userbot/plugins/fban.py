@@ -4,10 +4,10 @@ from telethon.errors import ChatAdminRequiredError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.users import GetFullUserRequest
 
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
-from ..utils import admin_cmd , sudo_cmd
+
+from ..utils import admin_cmd, sudo_cmd
 from . import ALIVE_NAME
 
 naam = str(ALIVE_NAME)
@@ -199,7 +199,6 @@ async def get_users(show):
         )
 
 
-
 @bot.on(admin_cmd(pattern=r"blist ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"blist ?(.*)", allow_sudo=True))
 async def get_users(show):
@@ -281,8 +280,6 @@ async def _(event):
     await event.delete()
 
 
-
-
 import asyncio
 
 #  (c)2020 Telebot
@@ -344,9 +341,7 @@ async def _(event):
             await event.edit("Something went wrong.")
             return
     except:
-        if (
-            FBAN == "@Krishna_045"
-        ):
+        if FBAN == "@Krishna_045":
             await event.edit("Something went wrong.")
             return
     if FBAN_GROUP_ID:
@@ -430,8 +425,6 @@ async def _(event):
     await event.edit(f"SuperFBan Completed. Affected {len(fedList) - exCount} feds.")
 
 
-
-
 @bot.on(admin_cmd("unfban ?(.*)"))
 @bot.on(sudo_cmd("unfban ?(.*)", allow_sudo=True))
 async def _(event):
@@ -507,22 +500,25 @@ async def _(event):
 
 
 CmdHelp("fban").add_command(
-  'fban', '<user-id> or reply to a user' , 'Ban the selected user in all the federations'
+    "fban",
+    "<user-id> or reply to a user",
+    "Ban the selected user in all the federations",
 ).add_command(
-  'unfban', '<User-id> or reply to a user', 'Unban the selected user from all the federations'
+    "unfban",
+    "<User-id> or reply to a user",
+    "Unban the selected user from all the federations",
 ).add_command(
-  'roseinfo', '<User-id> or reply to a user', 'Gives info about the user'
+    "roseinfo", "<User-id> or reply to a user", "Gives info about the user"
 ).add_command(
-  'myfeds', None, 'gives the list of your admin feds'
+    "myfeds", None, "gives the list of your admin feds"
 ).add_command(
-  'fstat', '<User-id> or reply to a user', 'gives federation stats of the selected user'
+    "fstat",
+    "<User-id> or reply to a user",
+    "gives federation stats of the selected user",
 ).add_command(
-  'plist', None, 'Use and See'  
+    "plist", None, "Use and See"
 ).add_command(
-  'fedinfo', None, 'Get info about Fed'
+    "fedinfo", None, "Get info about Fed"
 ).add_type(
-  "Official"
+    "Official"
 ).add()
-    
-
-

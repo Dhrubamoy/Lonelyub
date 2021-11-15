@@ -1,4 +1,3 @@
-
 import asyncio
 import os
 from datetime import datetime
@@ -6,8 +5,8 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 from google_images_download import google_images_download
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -24,10 +23,14 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    sample_url = "https://da.gd/s?url=https://lmgtfy.com/?q={}%26iie=1".format(input_str.replace(" ","+"))
+    sample_url = "https://da.gd/s?url=https://lmgtfy.com/?q={}%26iie=1".format(
+        input_str.replace(" ", "+")
+    )
     response_api = requests.get(sample_url).text
     if response_api:
-        await event.edit("[{}]({})\n`Thank me Later 🙃` ".format(input_str,response_api.rstrip()))
+        await event.edit(
+            "[{}]({})\n`Thank me Later 🙃` ".format(input_str, response_api.rstrip())
+        )
     else:
         await event.edit("something is wrong. please try again later.")
 
@@ -69,7 +72,8 @@ async def _(event):
         os.remove(each_file)
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_or_reply(event, 
+    await edit_or_reply(
+        event,
         "Searched Google for {} in {} seconds.".format(input_str, ms),
         link_preview=False,
     )
@@ -136,12 +140,15 @@ More Info: Open this <a href="{the_location}">Link</a> in {ms} seconds""".format
         )
     await edit_or_reply(event, OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
+
 CmdHelp("google").add_command(
-  "google", "<query>", "Does a google search for the query provided"
+    "google", "<query>", "Does a google search for the query provided"
 ).add_command(
-  "img", "<query>", "Does a image search for the query provided"
+    "img", "<query>", "Does a image search for the query provided"
 ).add_command(
-  "reverse", "<reply to a sticker/pic>", "Does a reverse image search on google and provides the similar images"
+    "reverse",
+    "<reply to a sticker/pic>",
+    "Does a reverse image search on google and provides the similar images",
 ).add_command(
-  "gps", "<place>", "Gives the location of the given place/city/state."
+    "gps", "<place>", "Gives the location of the given place/city/state."
 ).add()

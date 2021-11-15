@@ -5,11 +5,11 @@
 import glob
 import subprocess
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("getsongs").add_command(
-    "getsong <songname>", None, "Geting ur music"
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("getsongs").add_command("getsong <songname>", None, "Geting ur music").add()
+
 
 @borg.on(admin_cmd(pattern="getsong ?(.*)"))
 async def _(event):

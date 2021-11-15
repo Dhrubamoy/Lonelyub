@@ -1,21 +1,13 @@
-
-
 import asyncio
 
 from telethon import events
 
+from userbot.cmdhelp import CmdHelp
 from userbot.utils import admin_cmd
 
-
-from userbot.cmdhelp import CmdHelp
-CmdHelp("fdance").add_command(
-   'fdance', None, 'animation'
-).add_command(
-   'tor', None, 'onion'
-).add_command(
-   'yt', None, 'animation'
-).add()
-
+CmdHelp("fdance").add_command("fdance", None, "animation").add_command(
+    "tor", None, "onion"
+).add_command("yt", None, "animation").add()
 
 
 @borg.on(admin_cmd(pattern=r"fdance"))

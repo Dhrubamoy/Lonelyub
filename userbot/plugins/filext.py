@@ -1,14 +1,11 @@
-
 import requests
 from bs4 import BeautifulSoup
 
+from userbot.cmdhelp import CmdHelp
 from userbot.utils import admin_cmd
 
+CmdHelp("filext").add_command("filext", None, "Get info about a File Extension").add()
 
-from userbot.cmdhelp import CmdHelp
-CmdHelp("filext").add_command(
-    "filext", None, "Get info about a File Extension"
-).add()
 
 @borg.on(admin_cmd(pattern="filext (.*)"))
 async def _(event):

@@ -2,11 +2,13 @@ import asyncio
 import time
 from collections import deque
 
+from LEGENDBOT.utils import admin_cmd
 from telethon.tl.functions.channels import LeaveChannelRequest
 
 from userbot.cmdhelp import CmdHelp
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from . import *
+
 
 @bot.on(admin_cmd("leave$"))
 async def leave(e):
@@ -127,26 +129,25 @@ async def _(event):
             "**😈YOU KNOW THAT I'M A GOOD PERSON. BUT DON'T GIVE ME REASON TO SHOW MY EVIL SIDE😈**"
         )
 
-CmdHelp("extra").add_command(
- 'leave', None, 'Leave a Group'
+
+CmdHelp("extra").add_command("leave", None, "Leave a Group").add_command(
+    "__", None, "You Try It"
+).add_command("cry", None, "Cry").add_command(
+    "fp", None, "Sends palm face page"
 ).add_command(
-  '__', None , 'You Try It'
+    "evil", None, "Show Evil Side"
 ).add_command(
-  'cry', None, 'Cry'
+    "fap", None, "Faking Orgasm"
 ).add_command(
-  'fp', None, 'Sends palm face page'
+    "heart", None, "Try it u will grt emotion back"
 ).add_command(
-  'evil', None, 'Show Evil Side'
+    "readme", None, "Readme."
 ).add_command(
-  'fap', None, 'Faking Orgasm'
+    "oof",
+    None,
+    "Use and See",
 ).add_command(
-  'heart', None, 'Try it u will grt emotion back'
+    "moon", None, "Face of Moon"
 ).add_command(
-  'readme', None, 'Readme.'
-).add_command(
-  'oof', None, 'Use and See',
-).add_command(
-  'moon', None, 'Face of Moon'
-).add_command(
-  'clock',None, 'Use amd See'
+    "clock", None, "Use amd See"
 ).add()
