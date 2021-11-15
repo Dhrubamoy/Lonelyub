@@ -439,7 +439,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-CmdHelp("ցяρ є∂ιτ").add_command(
+CmdHelp("group edit").add_command(
     "setgpic", "<reply to image>", "Changes the groups display picture"
 ).add_command(
     "promote",
