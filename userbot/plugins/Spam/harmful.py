@@ -13,7 +13,6 @@ from telethon.tl.types import ChannelParticipantsAdmins
 
 api_hash = os.environ.get("API_HASH")
 token = os.environ.get("BOT_TOKEN")
-import telethon
 from telethon import TelegramClient as tg
 from telethon import functions
 from telethon.sessions import StringSession as ses
