@@ -1,5 +1,5 @@
-from userbot.utils import admin_cmd
 from userbot import CmdHelp
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="copy"))
@@ -17,12 +17,6 @@ async def _(event):
         await event.edit(".copy Reply to a  message to copy and paste")
 
 
-CmdHelp("copy").add_command(
-   "copy", "<Reply To User>", " To Copy Message"
-).add_info(
-   "Its Help U to Copy Message and auto send"
-).add_warning(
-   "Harmless Module✅"
-).add_type(
-   "Official"
-).add()
+CmdHelp("copy").add_command("copy", "<Reply To User>", " To Copy Message").add_info(
+    "Its Help U to Copy Message and auto send"
+).add_warning("Harmless Module✅").add_type("Official").add()

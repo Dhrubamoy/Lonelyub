@@ -1,10 +1,9 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 
@@ -30,11 +29,11 @@ async def _(event):
 
 
 CmdHelp("chain").add_command(
-  'chain', 'Reply to a message', 'Reply this command to any msg so that it finds chain length of that msg'
-).add_info(
-  "Its Help U To Find The Connected Message"
-).add_warning(
-  "Harmless Module✅"
+    "chain",
+    "Reply to a message",
+    "Reply this command to any msg so that it finds chain length of that msg",
+).add_info("Its Help U To Find The Connected Message").add_warning(
+    "Harmless Module✅"
 ).add_type(
-  "Official"
+    "Official"
 ).add()

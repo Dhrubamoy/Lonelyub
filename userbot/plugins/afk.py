@@ -4,11 +4,11 @@ import asyncio
 import datetime
 from datetime import datetime
 
+from LEGENDBOT.utils import admin_cmd
 from telethon import events
 from telethon.tl import functions, types
-from userbot import CMD_HELP
-from userbot import ALIVE_NAME, LEGENDversion
-from LEGENDBOT.utils import admin_cmd, edit_or_reply
+
+from userbot import ALIVE_NAME
 from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ℓєgєи∂"
@@ -44,23 +44,24 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         LEGENDBOT = await borg.send_message(
             event.chat_id,
-            "⚜My Pro Master bαϲκ αℓινe !\n⏱️`wαs αƒk fοя:``"
-            + total_afk_time
-            + "`", file=LEGENDpic
+            "⚜My Pro Master bαϲκ αℓινe !\n⏱️`wαs αƒk fοя:``" + total_afk_time + "`",
+            file=LEGENDpic,
         )
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.LOGGER_ID,  # pylint:disable=E0602
                 "#AFKFALSE \nSet AFK mode to False"
                 + "⚜My Pro Master bαϲκ αℓινe !\n⏱️`wαs αƒk fοя:``"
-                + total_afk_time
+                + total_afk_time,
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
                 event.chat_id,
                 "Please set `LOGGER_ID` "
                 + "for the proper functioning of afk functionality "
-                + "Ask in @Legend_Userbot to get help setting this value\n\n `{}`".format(str(e)),
+                + "Ask in @Legend_Userbot to get help setting this value\n\n `{}`".format(
+                    str(e)
+                ),
                 reply_to=event.message.id,
                 silent=True,
             )
@@ -94,12 +95,12 @@ async def on_afk(event):
         return False
     if USER_AFK and not (await event.get_sender()).bot:
         msg = None
-        
+
         message_to_reply = (
             f"[{DEFAULTUSER}](tg://user?id={LEGEND}) iѕ Currently Unavailable\n\n•♦️•Ꮮ𝚊𝚜𝚝 𝚂𝚎𝚎𝚗 : `{total_afk_time}`\n"
             + f"•🗒•Ꭱ𝚎𝚊𝚜𝚘𝚗 : `{reason}`"
-           if reason
-           else f"ᎻᎬᎽ Տιя / Ꮇιѕѕ🤔!\nᏆ αм ϲυяяєиτℓγ υиαναιℓαϐℓє😛. ι яєρℓγ υ αƒτєя ϲοмє ϐαϲκοиℓιиє.\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶😛"
+            if reason
+            else f"ᎻᎬᎽ Տιя / Ꮇιѕѕ🤔!\nᏆ αм ϲυяяєиτℓγ υиαναιℓαϐℓє😛. ι яєρℓγ υ αƒτєя ϲοмє ϐαϲκοиℓιиє.\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶😛"
         )
         msg = await event.reply(message_to_reply, file=LEGENDpic)
         await asyncio.sleep(2)
@@ -137,7 +138,9 @@ async def _(event):
         USER_AFK = f"yes: {reason} {LEGENDpic}"  # pylint:disable=E0602
         if reason:
             await borg.send_message(
-                event.chat_id, f"𝙸'𝙼 𝙶𝚘𝚒𝚗𝚐 Offline🚶 \n•🗒•𝚁𝚎𝚊𝚜𝚘𝚗:- `{reason}`", file=LEGENDpic
+                event.chat_id,
+                f"𝙸'𝙼 𝙶𝚘𝚒𝚗𝚐 Offline🚶 \n•🗒•𝚁𝚎𝚊𝚜𝚘𝚗:- `{reason}`",
+                file=LEGENDpic,
             )
         else:
             await borg.send_message(event.chat_id, f"ι'м gοιиg αƒκ !🚶", file=LEGENDpic)
@@ -146,18 +149,19 @@ async def _(event):
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.LOGGER_ID,  # pylint:disable=E0602
-                f"#AFKTRUE \nSet AFK mode to True, and Reason is {reason}",file=LEGENDpic
+                f"#AFKTRUE \nSet AFK mode to True, and Reason is {reason}",
+                file=LEGENDpic,
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
 
 
 CmdHelp("afk").add_command(
-  'afk', '<reply to media>/<or type a reson>', 'Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported.'
-).add_info(
-  "When U Go Offline Use this Command"
-).add_warning(
-  "Harmless Module✅"
+    "afk",
+    "<reply to media>/<or type a reson>",
+    "Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported.",
+).add_info("When U Go Offline Use this Command").add_warning(
+    "Harmless Module✅"
 ).add_type(
-  "Official"
+    "Official"
 ).add()

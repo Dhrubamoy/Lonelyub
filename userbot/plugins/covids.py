@@ -32,6 +32,5 @@ async def _(event):
 
 
 from userbot.cmdhelp import CmdHelp
-CmdHelp("covids").add_command(
-   'covid', None, '.covid <country name>'
-).add()
+
+CmdHelp("covids").add_command("covid", None, ".covid <country name>").add()

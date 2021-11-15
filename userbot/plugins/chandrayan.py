@@ -1,9 +1,6 @@
-
-
 from . import *
-CmdHelp("chandryan").add_command(
-   'isro', None, 'Use And See'
-).add() 
+
+CmdHelp("chandryan").add_command("isro", None, "Use And See").add()
 import asyncio
 
 from userbot.utils import admin_cmd

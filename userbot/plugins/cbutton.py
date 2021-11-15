@@ -1,10 +1,12 @@
-import re
-from telethon import custom
-from userbot.Config import Config
 import os
+import re
+
+from telethon import custom
+
 from userbot.cmdhelp import CmdHelp
-from telethon import Button, events
-from userbot.utils import admin_cmd, eor
+from userbot.Config import Config
+from userbot.utils import admin_cmd
+
 BOT_USERNAME = Config.BOT_USERNAME
 # regex obtained from: https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
 BTN_URL_REGEX = re.compile(r"(\{([^\[]+?)\}\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
@@ -64,6 +66,7 @@ async def _(event):
     if tgbot_reply_message:
         os.remove(tgbot_reply_message)
 
+
 def build_keyboard(buttons):
     keyb = []
     for btn in buttons:
@@ -71,14 +74,14 @@ def build_keyboard(buttons):
             keyb[-1].append(custom.Button.url(btn[0], btn[1]))
         else:
             keyb.append([custom.Button.url(btn[0], btn[1])])
-    return keyb        
-       
+    return keyb
+
+
 CmdHelp("cbutton").add_command(
-   'cbutton', None, 'Use And See', 'cbutton Test [Google]<buttonurl:https://www.google.com> [Support]<buttonurl:https://t.me/Legend_Userbot:same> [Channel]<buttonurl:https://t.me/Its_LegendBot>'
-).add_info(
-   "Use to Create Button"
-).add_warning(
-   "Harmless Module✅"
-).add_type(
-   "Official"
+    "cbutton",
+    None,
+    "Use And See",
+    "cbutton Test [Google]<buttonurl:https://www.google.com> [Support]<buttonurl:https://t.me/Legend_Userbot:same> [Channel]<buttonurl:https://t.me/Its_LegendBot>",
+).add_info("Use to Create Button").add_warning("Harmless Module✅").add_type(
+    "Official"
 ).add()

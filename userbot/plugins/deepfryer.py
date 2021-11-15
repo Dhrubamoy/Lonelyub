@@ -1,15 +1,14 @@
-
 import io
 from random import randint, uniform
 
 from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("deepfryer").add_command(
-   'deepfry', None, 'Reply to image'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("deepfryer").add_command("deepfry", None, "Reply to image").add()
+
 
 @borg.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
 async def deepfryer(event):

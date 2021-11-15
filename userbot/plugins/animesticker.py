@@ -1,10 +1,10 @@
-
 import random
 import re
 
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
+
 from userbot.cmdhelp import CmdHelp
 from userbot.events import register
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -52,7 +52,6 @@ async def waifu(animu):
         hide_via=True,
     )
     await animu.delete()
-    
-CmdHelp("animesticker").add_command(
-    'waifus', None, 'Use and See'
-).add()
+
+
+CmdHelp("animesticker").add_command("waifus", None, "Use and See").add()

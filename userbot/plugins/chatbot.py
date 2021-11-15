@@ -1,9 +1,11 @@
 import asyncio
 import random
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from . import *
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 NUMBER = ["0", "1"]
 
 tired_response = [
@@ -34,6 +36,7 @@ async def _(event):
             message="""{}""".format(random.choice(tired_response)),
             reply_to=event.message.id,
         )
+
 
 @bot.on(admin_cmd(pattern="adai(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="adai(?: |$)(.*)", allow_sudo=True))
@@ -94,16 +97,13 @@ async def _(event):
         queue.pop(0)
         await event.edit(f"Removed Ai From User")
 
-CmdHelp("chatbot").add_command(
-   'adai', '<reply to a user message>', 'add ai bot'
-).add_command(
-   'rmvai', '<reply to same user>', 'remove ai'
-).add_info(
-   "auto reply chatbot"
-).add_warning(
-   "Harmless Module✅"
-).add_type(
-   "Addons"
-).add()
 
-        
+CmdHelp("chatbot").add_command(
+    "adai", "<reply to a user message>", "add ai bot"
+).add_command("rmvai", "<reply to same user>", "remove ai").add_info(
+    "auto reply chatbot"
+).add_warning(
+    "Harmless Module✅"
+).add_type(
+    "Addons"
+).add()

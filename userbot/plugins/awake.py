@@ -1,10 +1,14 @@
 import time
 
-from telethon import version
-from userbot import ALIVE_NAME, StartTime, LEGENDversion
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from telethon import version
+
+from userbot import LEGENDversion, StartTime
 from userbot.cmdhelp import CmdHelp
+
 from . import *
+
+
 async def reply_id(event):
     reply_to_id = None
     if event.sender_id in Config.SUDO_USERS:
@@ -14,10 +18,10 @@ async def reply_id(event):
     return reply_to_id
 
 
-
 LEGEND_IMG = Config.AWAKE_PIC
 CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "ℓєgєи∂ Choice ℓєgєи∂ϐοτ"
-CUSTOM_YOUR_GROUP =Config.YOUR_GROUP or "@Legend_Userbot"
+CUSTOM_YOUR_GROUP = Config.YOUR_GROUP or "@Legend_Userbot"
+
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -57,16 +61,16 @@ async def amireallyalive(event):
         return
     reply_to_id = await reply_id(event)
 
-    if  LEGEND_IMG:
+    if LEGEND_IMG:
         LEGEND_caption = f"**{legend_mention}**\n"
-        
+
         LEGEND_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
         LEGEND_caption += f"     ⚜ 𝓛𝓮𝓰𝓮𝓷𝓭𝓑𝓸𝓽 𝓘𝓼 𝓐𝔀𝓪𝓴𝓮 ⚜\n"
         LEGEND_caption += f"•🔥• Lêɠêɳ̃dẞø†     : ν3.0\n"
         LEGEND_caption += f"•🔥• 𝚃𝙴𝙻𝙴𝚃𝙷𝙾𝙽      : `{version.__version__}`\n"
         LEGEND_caption += f"•🔥• 𝚄𝙿𝚃𝙸𝙼𝙴         : `{uptime}`\n"
         LEGEND_caption += f"•🔥• 𝙲𝙷𝙰𝙽𝙽𝙴𝙻        : [𝕮нαииєℓ](t.me/Official_LegendBot)\n"
-        LEGEND_caption += f"•🔥• ᴹʸ 𝙶𝚁𝙾𝚄𝙿 : {CUSTOM_YOUR_GROUP}\n"   
+        LEGEND_caption += f"•🔥• ᴹʸ 𝙶𝚁𝙾𝚄𝙿 : {CUSTOM_YOUR_GROUP}\n"
 
         await event.client.send_file(
             event.chat_id, LEGEND_IMG, caption=LEGEND_caption, reply_to=reply_to_id
@@ -82,13 +86,10 @@ async def amireallyalive(event):
             f"🇮🇳 ℓєgєи∂ϐοτ  : `{LEGENDversion}`\n"
             f"🇮🇳 υρτιмє        : `{uptime}`\n"
             f"🔱 ɱαรƭεɾ        : {mention}\n"
-            f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/The_LegendBoy)\n"
+            f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/The_LegendBoy)\n",
         )
 
-CmdHelp("awake").add_command(
-    'awake', None, 'υѕє αи∂ ѕєє'
-).add_info(
+
+CmdHelp("awake").add_command("awake", None, "υѕє αи∂ ѕєє").add_info(
     "Same Like Alive"
-).add_type(
-    "Official"
-).add()
+).add_type("Official").add()

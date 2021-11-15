@@ -17,6 +17,7 @@ M = (
 async def kek(kek):
     await kek.edit(M)
 
+
 D = (
     "╭━┳━╭━╭━╮╮\n"
     "┃┈┈┈┣▅╋▅┫┃\n"
@@ -26,13 +27,14 @@ D = (
     "╲┃┈┈┈┈┈┈┈┈┈┈◥▉◤\n"
     "╲┃┈┈┈┈╭━┳━━━━╯\n"
     "╲┣━━━━━━┫\n"
-    )
+)
 
 
 @borg.on(admin_cmd(pattern=r"dogs"))
 async def dog(dog):
     await dog.edit(D)
-   
+
+
 P = (
     "┈┏━╮╭━┓┈╭━━━━╮\n"
     "┈┃┏┗┛┓┃╭┫ⓞⓘⓝⓚ┃\n"
@@ -42,7 +44,7 @@ P = (
     "╰━┳┻▅╯╲╲╲╲┃┈┈┈\n"
     "┈┈╰━┳┓┏┳┓┏╯┈┈┈\n"
     "┈┈┈┈┗┻┛┗┻┛┈┈┈┈ν2.ο\n"
-    )
+)
 
 
 F = (
@@ -97,23 +99,20 @@ async def homer(homer):
 @borg.on(admin_cmd(pattern=r"pig"))
 async def pig(pig):
     await pig.edit(P)
-    
-CmdHelp("animal").add_command(
-'pig', None, 'pig face'
+
+
+CmdHelp("animal").add_command("pig", None, "pig face").add_command(
+    "homer", None, "Homer Face"
+).add_command("elephant", None, "Elephant Face").add_command(
+    "fox", None, "Fox Face•"
 ).add_command(
-'homer', None, 'Homer Face'
+    "dogs", None, "Dog Face"
 ).add_command(
-'elephant', None, 'Elephant Face'
-).add_command(
-'fox', None, 'Fox Face•'
-).add_command(
-'dogs', None, 'Dog Face'
-).add_command(
-'spong', None, 'Spong Face'
+    "spong", None, "Spong Face"
 ).add_info(
-       "Its Very Useful Module Its used for showing some animal characters"
+    "Its Very Useful Module Its used for showing some animal characters"
 ).add_warning(
-       "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-       "Addons"
+    "Addons"
 ).add()

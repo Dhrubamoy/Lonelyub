@@ -1,20 +1,12 @@
-
-
-import asyncio
 import os
-import random
-import re
-import urllib
 
-import requests
+from LEGENDBOT.utils import admin_cmd
 from telethon.tl import functions
 
-from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
-  
-@borg.on(admin_cmd(pattern="pbio"))   # pylint:disable=E0602
+
+@borg.on(admin_cmd(pattern="pbio"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -28,8 +20,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-  
-@borg.on(admin_cmd(pattern="pname"))    # pylint:disable=E0602,W0703
+@borg.on(admin_cmd(pattern="pname"))  # pylint:disable=E0602,W0703
 async def _(event):
     if event.fwd_from:
         return
@@ -83,10 +74,7 @@ async def _(event):
     except Exception as e:  # pylint:disable=C0103,W0703
         logger.warn(str(e))  # pylint:disable=E0602
 
-CmdHelp("editprofile").add_command(
-  'pbio', None, '.pbio <Bio>'
-).add_command(
-  'pname', None, '.pname <Name>'
-).add_command(
-  'upic', None, '.upic <Reply to image to upload in ur profile pic>'
-).add()
+
+CmdHelp("editprofile").add_command("pbio", None, ".pbio <Bio>").add_command(
+    "pname", None, ".pname <Name>"
+).add_command("upic", None, ".upic <Reply to image to upload in ur profile pic>").add()

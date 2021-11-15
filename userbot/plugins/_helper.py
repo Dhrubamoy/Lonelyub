@@ -1,13 +1,13 @@
-import asyncio
-import requests
-from telethon import functions
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from telethon.errors import ChatSendInlineForbiddenError as noin
-from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot, BotInlineDisabledError as noinline, YouBlockedUserError
+from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
+from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+
+from userbot import CMD_LIST, bot
 from userbot.Config import Config
+
 from . import *
-from userbot import bot
-from userbot import ALIVE_NAME, CMD_LIST, SUDO_LIST
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 perf = "[ †hê Lêɠêɳ̃dẞø† ]"
 
@@ -16,7 +16,9 @@ onbot = "start - Check if I am Alive \nhack - Hack Anyone Through String Session
 name = f"{legend_mention}'s Assistant"
 
 file = "https://te.legra.ph/file/0a1fa23cbb1e6520f6550.jpg"
-description = f"I am Assistant Of {legend_mention}.This Bot Can Help U To Chat With My Master"
+description = (
+    f"I am Assistant Of {legend_mention}.This Bot Can Help U To Chat With My Master"
+)
 bot_father = "@BotFather"
 mybot = Config.BOT_USERNAME
 if mybot.startswith("@"):
@@ -33,6 +35,8 @@ msg = f"""
 
   •  ©️ {Legend_channel} ™
 """
+
+
 @bot.on(admin_cmd(pattern="repo$"))
 @bot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
 async def repo(event):
@@ -60,7 +64,10 @@ async def _(event):
             )
             await event.delete()
         except noinline:
-            legend = await eor(event, "**Inline Mode is disabled.** \n__Turning it on, please wait for a minute...__")
+            legend = await eor(
+                event,
+                "**Inline Mode is disabled.** \n__Turning it on, please wait for a minute...__",
+            )
             async with bot.conversation(chat) as conv:
                 try:
                     first = await conv.send_message("/setinline")
@@ -72,12 +79,19 @@ async def _(event):
                     await bot.send_read_acknowledge(conv.chat_id)
                 except YouBlockedUserError:
                     return await legend.edit("Unblock @Botfather first.")
-                await legend.edit(f"**Turned On Inline Mode Successfully.** \n\nDo `{l1}op` again to get the help menu.")
+                await legend.edit(
+                    f"**Turned On Inline Mode Successfully.** \n\nDo `{l1}op` again to get the help menu."
+                )
             await bot.delete_messages(
-                conv.chat_id, [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id]
+                conv.chat_id,
+                [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id],
             )
     else:
-        await eor(event, "**⚠️ 𝙴𝚁𝚁𝙾𝚁 !!** \n𝙿𝚕𝚎𝚊𝚜𝚎 𝚁𝚎-𝙲𝚑𝚎𝚌𝚔 BOT_TOKEN & BOT_USERNAME on Heroku.")
+        await eor(
+            event,
+            "**⚠️ 𝙴𝚁𝚁𝙾𝚁 !!** \n𝙿𝚕𝚎𝚊𝚜𝚎 𝚁𝚎-𝙲𝚑𝚎𝚌𝚔 BOT_TOKEN & BOT_USERNAME on Heroku.",
+        )
+
 
 @bot.on(admin_cmd(pattern="op ?(.*)", outgoing=True))
 async def yardim(event):
@@ -93,15 +107,15 @@ async def yardim(event):
         await event.delete()
     else:
         await eor(event, "**Check Bot Token And Bot Username In Reveal Var*")
-    
+
         if input_str in CMD_LIST:
-          string = "Commands found in {}:\n".format(input_str)
-          for i in CMD_LIST[input_str]:
-              string += "  " + i
-              string += "\n"
-          await event.edit(string)
+            string = "Commands found in {}:\n".format(input_str)
+            for i in CMD_LIST[input_str]:
+                string += "  " + i
+                string += "\n"
+            await event.edit(string)
         else:
-          await event.edit(input_str + " is not a valid plugin!")
+            await event.edit(input_str + " is not a valid plugin!")
 
 
 @bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
@@ -131,10 +145,14 @@ async def legendbott(event):
                 else:
                     string += "`, "
             string += "\n"
-        await eor(event, "Please Specify A Module Name Of Which You Want Info" + "\n\n" + string)
+        await eor(
+            event,
+            "Please Specify A Module Name Of Which You Want Info" + "\n\n" + string,
+        )
 
 
 assist = os.environ.get("ASSISTANT", None)
+
 
 @bot.on(admin_cmd("on ?(.*)"))
 @bot.on(sudo_cmd("on ?(.*)", allow_sudo=True))
@@ -165,10 +183,33 @@ async def _(event):
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
                 return await legend.edit("Unblock @Botfather first.")
-            await event.edit(f"**Turned On Assistance Successfully.\nClick Here 👉{botname} & Add To Any Group**")
+            await event.edit(
+                f"**Turned On Assistance Successfully.\nClick Here 👉{botname} & Add To Any Group**"
+            )
             await bot.delete_messages(
-                conv.chat_id, [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id, seventh.id, eighth.id, nineth.id, tenth.id, eleventh.id, twelveth.id, thirdteen.id, fourthteen.id, fiveteen.id, sixteen.id, seventeen.id, eightteen.id]
-                )
+                conv.chat_id,
+                [
+                    first.id,
+                    second.id,
+                    third.id,
+                    fourth.id,
+                    fifth.id,
+                    sixth.id,
+                    seventh.id,
+                    eighth.id,
+                    nineth.id,
+                    tenth.id,
+                    eleventh.id,
+                    twelveth.id,
+                    thirdteen.id,
+                    fourthteen.id,
+                    fiveteen.id,
+                    sixteen.id,
+                    seventeen.id,
+                    eightteen.id,
+                ],
+            )
     else:
-        return await event.edit("**Plz First Turn On Assistant.** Click Here👉 `.set var ASSISTANT ON` Anf send")
-    
+        return await event.edit(
+            "**Plz First Turn On Assistant.** Click Here👉 `.set var ASSISTANT ON` Anf send"
+        )

@@ -9,11 +9,11 @@ import json
 import re
 
 from bs4 import BeautifulSoup
+from LEGENDBOT.utils import *
 from requests import get
-from userbot.cmdhelp import CmdHelp
 
 from userbot import *
-from LEGENDBOT.utils import *
+from userbot.cmdhelp import CmdHelp
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (
@@ -232,20 +232,18 @@ async def twrp(request):
     await edit_or_reply(request, reply)
 
 
-CmdHelp("android").add_command(
-  'magisk', None, 'Get latest magisk release'
+CmdHelp("android").add_command("magisk", None, "Get latest magisk release").add_command(
+    "device", "<codename>", "Get info about android device codename or model"
 ).add_command(
-  'device', '<codename>', 'Get info about android device codename or model'
+    "codename", "<brand> <device>", "Search for android device codename"
 ).add_command(
-  'codename', '<brand> <device>', 'Search for android device codename'
+    "specs", "<brand> <device>", "Get device specifications info."
 ).add_command(
-  'specs', '<brand> <device>', 'Get device specifications info.'
-).add_command(
-  'twrp', '<codename>', 'Get latest twrp download for android device.'
+    "twrp", "<codename>", "Get latest twrp download for android device."
 ).add_info(
-       "this command description are (magisk(Get latest magisk release))and (device( Get info about android device codename or model)) and (codename(Search for android device codename))and(specs(Get device specifications info))and at last there is(twrp(Get latest twrp download for android device))--all of these commands starts with .(dot)(.)"
+    "this command description are (magisk(Get latest magisk release))and (device( Get info about android device codename or model)) and (codename(Search for android device codename))and(specs(Get device specifications info))and at last there is(twrp(Get latest twrp download for android device))--all of these commands starts with .(dot)(.)"
 ).add_warning(
-       "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-       "Addons"
+    "Addons"
 ).add()

@@ -1,4 +1,3 @@
-from userbot.cmdhelp import CmdHelp
 import gc
 from asyncio import wait
 
@@ -6,6 +5,8 @@ import requests
 from bs4 import BeautifulSoup as bs
 from telegraph import Telegraph
 from telethon import events
+
+from userbot.cmdhelp import CmdHelp
 
 telegraph = Telegraph()
 telegraph.create_account(short_name="zeroc")
@@ -460,10 +461,9 @@ async def checker(e):
         print("ALL DONE! Kthxbye now")
         await e.delete()
 
-CmdHelp("checker").add_command(
-   'chek', None, 'Use And See'
-).add_command(
-   'otaup', None, 'Use And See'
-).add() 
+
+CmdHelp("checker").add_command("chek", None, "Use And See").add_command(
+    "otaup", None, "Use And See"
+).add()
 """check androidVersion modelNumber
 By :- Jaskaran ^_^ """

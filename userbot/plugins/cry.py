@@ -2,11 +2,11 @@
 
 import asyncio
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("lcry").add_command(
-   'lcry', None, 'Check Fake Limitiation'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("lcry").add_command("lcry", None, "Check Fake Limitiation").add()
+
 
 @borg.on(admin_cmd(pattern="lcry"))
 async def _(event):

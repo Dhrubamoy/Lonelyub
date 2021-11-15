@@ -1,13 +1,12 @@
 """Quickly make a decision
 Syntax: .decide"""
-from telethon import events
 import requests
-from userbot.utils import admin_cmd
 
 from userbot.cmdhelp import CmdHelp
-CmdHelp("decide").add_command(
-   'decide', None, 'Quickly makes a decision'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("decide").add_command("decide", None, "Quickly makes a decision").add()
+
 
 @borg.on(admin_cmd("decide"))
 async def _(event):
@@ -18,9 +17,6 @@ async def _(event):
         message_id = event.reply_to_msg_id
     r = requests.get("https://yesno.wtf/api").json()
     await borg.send_message(
-        event.chat_id,
-        r["answer"],
-        reply_to=message_id,
-        file=r["image"]
+        event.chat_id, r["answer"], reply_to=message_id, file=r["image"]
     )
     await event.delete()

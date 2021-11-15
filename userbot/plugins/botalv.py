@@ -1,12 +1,10 @@
-from userbot import *
 from LEGENDBOT.utils import *
-from userbot.cmdhelp import CmdHelp
-from telethon import events, version
-from telethon.events import NewMessage
-from telethon.tl.custom import Dialog
-from telethon.tl.types import Channel, Chat, User
+from telethon import version
 
-#-------------------------------------------------------------------------------
+from userbot import *
+from userbot.cmdhelp import CmdHelp
+
+# -------------------------------------------------------------------------------
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
 
@@ -23,7 +21,7 @@ mention = f"[{DEFAULTUSER}](tg://user?id={legend})"
 
 
 PM_IMG = "https://telegra.ph/file/4f03f6d4e9521902eb57f.jpg"
-pm_caption ="**𝖑𝖊ɠêɳ̃dẞø✞︎ 𝙸𝚜 𝙾𝚗𝚕𝚒𝚗𝚎**\n\n"
+pm_caption = "**𝖑𝖊ɠêɳ̃dẞø✞︎ 𝙸𝚜 𝙾𝚗𝚕𝚒𝚗𝚎**\n\n"
 
 pm_caption += f"**┏🔥✞t͛ẞ̸ 𝖑𝖊ɠêɳ̃dẞø✞︎t🔥┓**\n"
 pm_caption += f"**┣🚀 𝙼𝚢 𝙼𝚊𝚜𝚝𝚎𝚛    : {mention}**\n"
@@ -49,13 +47,15 @@ async def amireallyalive(alive):
 
 
 CmdHelp("alv").add_command(
-  'alive', None, 'Check weather the bot is alive or not'
+    "alive", None, "Check weather the bot is alive or not"
 ).add_command(
-  'bot', None, 'Check weather the bot is alive or not. In your custom Alive Pic and Alive Msg'
+    "bot",
+    None,
+    "Check weather the bot is alive or not. In your custom Alive Pic and Alive Msg",
 ).add_warning(
-  "Harmless Module"
+    "Harmless Module"
 ).add_info(
-  'Are u alive?'
+    "Are u alive?"
 ).add_type(
-  "Official"
+    "Official"
 ).add()

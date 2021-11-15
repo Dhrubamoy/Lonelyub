@@ -1,7 +1,7 @@
+from LEGENDBOT.utils import admin_cmd
 from telethon.tl.types import InputMediaDice
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
 
+from userbot.cmdhelp import CmdHelp
 
 # EMOJI CONSTANTS
 DART_E_MOJI = "🎯"
@@ -29,6 +29,6 @@ async def _(event):
                 r = await reply_message.reply(file=InputMediaDice(emoticon=emoticon))
         except:
             pass
-CmdHelp("diceandart").add_command(
-  'DART_E_EMOJI', None, 'Use and See'
-).add()
+
+
+CmdHelp("diceandart").add_command("DART_E_EMOJI", None, "Use and See").add()

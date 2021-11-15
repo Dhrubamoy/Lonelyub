@@ -1,13 +1,10 @@
-import time
-import random
-import time
+from LEGENDBOT.utils import admin_cmd
 from telethon.errors import ChatSendInlineForbiddenError as noin
 from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot
-from userbot.Config import Config
-from telethon import version
-from userbot import ALIVE_NAME, StartTime, LEGENDversion
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from userbot.cmdhelp import CmdHelp
+from userbot.Config import Config
+
 from . import *
 
 msg = f"""
@@ -53,7 +50,6 @@ else:
     botname = f"@{mybot}"
 
 
-
 @bot.on(admin_cmd(pattern="allvar$"))
 @bot.on(admin_cmd(pattern="allvar$", allow_sudo=True))
 async def legend_a(event):
@@ -65,12 +61,7 @@ async def legend_a(event):
     except (noin, dedbot):
         await eor(event, msg)
 
-CmdHelp("allvar").add_command(
-    'allvar', None, 'υѕє αи∂ ѕєє'
-).add_info(
-     "U can See All Var Except LEGEND_STRING"
-).add_warning(
-     "Harm Module"
-).add_type(
-     "Official"
-).add()
+
+CmdHelp("allvar").add_command("allvar", None, "υѕє αи∂ ѕєє").add_info(
+    "U can See All Var Except LEGEND_STRING"
+).add_warning("Harm Module").add_type("Official").add()

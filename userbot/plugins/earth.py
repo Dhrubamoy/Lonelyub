@@ -4,11 +4,11 @@
 import asyncio
 from collections import deque
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("earth").add_command(
-   'earth', None, 'animation'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("earth").add_command("earth", None, "animation").add()
+
 
 @borg.on(admin_cmd(pattern="earth"))
 async def _(event):

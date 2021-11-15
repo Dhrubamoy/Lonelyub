@@ -1,13 +1,11 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
+CmdHelp("chotaweak").add_command("ctg", None, "Reply TO A Link").add()
 
-CmdHelp("chotaweak").add_command(
-   'ctg', None, 'Reply TO A Link'
-).add()
 
 @borg.on(admin_cmd(pattern="ctg ?(.*)"))
 async def _(event):

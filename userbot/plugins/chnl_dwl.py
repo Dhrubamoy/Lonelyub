@@ -3,6 +3,7 @@ import subprocess
 
 from . import *
 
+
 @bot.on(admin_cmd(pattern=r"getc"))
 @bot.on(sudo_cmd(pattern=r"getc", allow_sudo=True))
 async def get_media(event):
@@ -65,13 +66,18 @@ async def get_media(event):
 
 
 CmdHelp("chnl downld").add_command(
-  "geta", "channel username", "will download all media from channel into your bot server but there is limit of 3000 to prevent API limits."
+    "geta",
+    "channel username",
+    "will download all media from channel into your bot server but there is limit of 3000 to prevent API limits.",
 ).add_command(
-  "getc", "<number of messg> <channel username>", "will download latest given number of media from channel into your bot server", "getc 10 @Official_LegendBot"
+    "getc",
+    "<number of messg> <channel username>",
+    "will download latest given number of media from channel into your bot server",
+    "getc 10 @Official_LegendBot",
 ).add_info(
-  "Channel Media Download"
+    "Channel Media Download"
 ).add_warning(
-  "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-  "Official"
+    "Official"
 ).add()

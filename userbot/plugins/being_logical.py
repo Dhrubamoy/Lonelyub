@@ -1,5 +1,3 @@
-
-
 import asyncio
 import random
 
@@ -575,12 +573,7 @@ async def _(event):
 
 
 from userbot.cmdhelp import CmdHelp
-CmdHelp("belo").add_command(
-     "belo", None, "Use and See"
-).add_warning(
-     "Harmless Module"
-).add_info(
-     "Its Random String Plugin"
-).add_type(
-     "Addons"
-).add()
+
+CmdHelp("belo").add_command("belo", None, "Use and See").add_warning(
+    "Harmless Module"
+).add_info("Its Random String Plugin").add_type("Addons").add()

@@ -1,28 +1,11 @@
-
-from asyncio import sleep
-from os import remove
-from telethon import events
-import asyncio
 from datetime import datetime
+
 from telethon.tl.functions.channels import EditBannedRequest
-from telethon.tl.types import ChatBannedRights
+from telethon.tl.types import ChatBannedRights, MessageEntityMentionName
 
-from telethon.errors import (BadRequestError, ChatAdminRequiredError,
-                             ImageProcessFailedError, PhotoCropSizeSmallError,
-                             UserAdminInvalidError)
-from telethon.errors.rpcerrorlist import (UserIdInvalidError,
-                                          MessageTooLongError)
-from telethon.tl.functions.channels import (EditAdminRequest,
-                                            EditBannedRequest,
-                                            EditPhotoRequest)
-from telethon.tl.functions.messages import UpdatePinnedMessageRequest
-from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
-                               ChatBannedRights, MessageEntityMentionName,
-                               MessageMediaPhoto)
-
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot 
-from userbot.utils import register, errors_handler, admin_cmd, sudo_cmd
+from userbot import bot
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -32,9 +15,11 @@ NO_PERM = "`I don't have sufficient permissions! This is so sed. Alexa play desp
 NO_SQL = "`Running on Non-SQL mode!`"
 
 CHAT_PP_CHANGED = "`Chat Picture Changed`"
-CHAT_PP_ERROR = "`Some issue with updating the pic,`" \
-                "`maybe coz I'm not an admin,`" \
-                "`or don't have enough rights.`"
+CHAT_PP_ERROR = (
+    "`Some issue with updating the pic,`"
+    "`maybe coz I'm not an admin,`"
+    "`or don't have enough rights.`"
+)
 INVALID_MEDIA = "`Invalid Extension`"
 
 BANNED_RIGHTS = ChatBannedRights(
@@ -72,7 +57,7 @@ async def _(event):
     # commands start with ".unban"
     if event.fwd_from:
         return
-    start = datetime.now()
+    datetime.now()
     to_ban_id = None
     rights = None
     input_cmd = event.pattern_match.group(1)
@@ -103,7 +88,7 @@ async def _(event):
     # commands start with ".unban"
     if event.fwd_from:
         return
-    start = datetime.now()
+    datetime.now()
     to_ban_id = None
     rights = None
     input_cmd = event.pattern_match.group(1)
@@ -129,8 +114,8 @@ async def _(event):
 
 
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
-    args = event.pattern_match.group(1).split(' ', 1)
+    """Get the user from argument or replied message."""
+    args = event.pattern_match.group(1).split(" ", 1)
     extra = None
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -151,8 +136,7 @@ async def get_user_from_event(event):
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
 
-            if isinstance(probable_user_mention_entity,
-                          MessageEntityMentionName):
+            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
@@ -177,14 +161,9 @@ async def get_user_from_id(user, event):
 
     return user_obj
 
-CmdHelp("ban").add_command(
-  'ban', None, 'Ban A Person From Group'
-).add_command(
-  'unban', None, 'Unban A Person From Group'
-).add_info(
-  "Plugin Related To Use In Group"
-).add_warning(
-  "⚠️Warning"
-).add_type(
-  "Official"
+
+CmdHelp("ban").add_command("ban", None, "Ban A Person From Group").add_command(
+    "unban", None, "Unban A Person From Group"
+).add_info("Plugin Related To Use In Group").add_warning("⚠️Warning").add_type(
+    "Official"
 ).add()

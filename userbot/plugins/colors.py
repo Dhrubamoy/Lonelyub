@@ -2,12 +2,10 @@ import os
 
 import requests
 
+from userbot.cmdhelp import CmdHelp
 from userbot.utils import admin_cmd
 
-from userbot.cmdhelp import CmdHelp
-CmdHelp("colors").add_command(
-   'colp', None, 'Check Fake Limitiation'
-).add()
+CmdHelp("colors").add_command("colp", None, "Check Fake Limitiation").add()
 
 
 @borg.on(admin_cmd(pattern="colp$", outgoing=True))

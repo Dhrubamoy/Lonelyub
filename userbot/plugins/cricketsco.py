@@ -15,9 +15,9 @@
 import urllib.request
 
 from bs4 import BeautifulSoup
+from LEGENDBOT.utils import admin_cmd
 
 from userbot.cmdhelp import CmdHelp
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="cs"))
@@ -34,6 +34,5 @@ async def _(event):
         parse_mode="HTML",
     )
 
-CmdHelp("cricketsco").add_command(
-    'cs', None, 'Cricket Score'
-).add()
+
+CmdHelp("cricketsco").add_command("cs", None, "Cricket Score").add()

@@ -1,10 +1,5 @@
-import os
-
-from telethon import events
-from telethon.tl.functions.channels import EditAdminRequest
-from telethon.tl.types import ChatAdminRights
-
 from . import *
+
 
 @bot.on(admin_cmd(pattern="gcast ?(.*)"))
 async def gcast(event):
@@ -38,7 +33,7 @@ async def gucast(event):
         return edit_or_reply(event, "`Give some text to Globally Broadcast`")
     tt = event.text
     msg = tt[7:]
-    kk = await edit_or_reply(event, "`Globally Broadcasting Msg...`")
+    await edit_or_reply(event, "`Globally Broadcasting Msg...`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
@@ -50,15 +45,16 @@ async def gucast(event):
             except BaseException:
                 er += 1
     await event.edit(f"Done in {done} chats, error in {er} chat(s)")
-    
+
+
 CmdHelp("broadcast").add_command(
-   'gcast', None, 'Publish message to all channel and group'
+    "gcast", None, "Publish message to all channel and group"
 ).add_command(
-   'gucast', None, 'Same as Gcast But Its Send All The Member With In All Group'
+    "gucast", None, "Same as Gcast But Its Send All The Member With In All Group"
 ).add_info(
-   "Its Used To Send Messages To all Group"
+    "Its Used To Send Messages To all Group"
 ).add_warning(
-   "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-   "Official"
+    "Official"
 ).add()

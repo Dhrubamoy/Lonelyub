@@ -9,9 +9,7 @@ USING THIS PLUGIN CAN RESULT IN ACCOUNT BAN. WE DONT CARE ABOUT BAN, SO WE ARR U
 
 from userbot.cmdhelp import CmdHelp
 
-CmdHelp("bloom").add_command(
-   'bloom', None, 'Use And See'
-).add() 
+CmdHelp("bloom").add_command("bloom", None, "Use And See").add()
 import asyncio
 import os
 import random

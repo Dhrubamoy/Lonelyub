@@ -1,12 +1,12 @@
+import base64
 from subprocess import PIPE
 from subprocess import run as runapp
 
-import base64
-
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+
 
 @bot.on(admin_cmd(pattern="hash (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="hash (.*)", allow_sudo=True))
@@ -80,15 +80,17 @@ async def endecrypt(query):
 
 
 CmdHelp("base64").add_command(
-  "hash", "<query>", "Finds the md5, sha1, sha256, sha512 of the string when written into a txt file"
+    "hash",
+    "<query>",
+    "Finds the md5, sha1, sha256, sha512 of the string when written into a txt file",
 ).add_command(
-  "b64 en", "<query>", "Finds the base64 encoding of the given string"
+    "b64 en", "<query>", "Finds the base64 encoding of the given string"
 ).add_command(
-  "b64 de", "<query>", "Finds the base64 decoding of the given string"
+    "b64 de", "<query>", "Finds the base64 decoding of the given string"
 ).add_info(
-  "Its Base 64 Encoding Use to Encode Word Into Hidden Message"
+    "Its Base 64 Encoding Use to Encode Word Into Hidden Message"
 ).add_warning(
-  "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-  "Official"
+    "Official"
 ).add()

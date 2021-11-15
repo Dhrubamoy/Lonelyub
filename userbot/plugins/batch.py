@@ -6,8 +6,10 @@ By:-@Zero_cool7870
 
 """
 import os
-from . import *
+
 from userbot.utils import admin_cmd
+
+from . import *
 
 
 @borg.on(admin_cmd(pattern=r"upb"))
@@ -28,11 +30,9 @@ async def batch_upload(event):
         return
     await event.edit("Successfully.")
 
+
 from userbot.cmdhelp import CmdHelp
 
-
 CmdHelp("batch").add_command(
-    'upb', None, 'set TEMP_DIR in Your ENV Vars First'
-).add_type(
-    'Addons'
-).add()
+    "upb", None, "set TEMP_DIR in Your ENV Vars First"
+).add_type("Addons").add()

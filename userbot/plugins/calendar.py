@@ -1,12 +1,13 @@
-
-from telethon import events
-import asyncio
-from datetime import datetime
-import requests
 import json
-from userbot.utils import admin_cmd
+from datetime import datetime
+
+import requests
+
 from userbot import CmdHelp
+from userbot.utils import admin_cmd
+
 from . import *
+
 
 @borg.on(admin_cmd(pattern="calendar (.*)"))
 async def _(event):
@@ -19,7 +20,9 @@ async def _(event):
         yyyy = input_sgra[0]
         mm = input_sgra[1]
         dd = input_sgra[2]
-        required_url = "https://calendar.kollavarsham.org/api/years/{}/months/{}/days/{}?lang={}".format(yyyy, mm, dd, "en")
+        required_url = "https://calendar.kollavarsham.org/api/years/{}/months/{}/days/{}?lang={}".format(
+            yyyy, mm, dd, "en"
+        )
         headers = {"Accept": "application/json"}
         response_content = requests.get(required_url, headers=headers).json()
         a = ""
@@ -32,14 +35,13 @@ async def _(event):
     else:
         await event.edit("SYNTAX: .calendar YYYY.MM.DD")
     end = datetime.now()
-    ms = (end - start).seconds
+    (end - start).seconds
+
 
 CmdHelp("calendar").add_command(
-   'calender', None, '.calender YYYY.MM.DD To Show Calender'
-).add_info(
-   "use .command with format of date YYYY.MM.DD"
-).add_warning(
-   "Harmless Module✅"
+    "calender", None, ".calender YYYY.MM.DD To Show Calender"
+).add_info("use .command with format of date YYYY.MM.DD").add_warning(
+    "Harmless Module✅"
 ).add_type(
-   "Official"
-).add() 
+    "Official"
+).add()

@@ -1,5 +1,3 @@
-
-
 import asyncio
 import random
 
@@ -572,8 +570,8 @@ async def _(event):
         await event.edit(
             '`"If we put solar panels above parking lots, then our cars wouldn\'t get hot and we would have a lot of clean energy."`'
         )
+
+
 from userbot.cmdhelp import CmdHelp
 
-CmdHelp("facts").add_command(
-   'bels', None, 'Randopm Facts Generator'
-).add() 
+CmdHelp("facts").add_command("bels", None, "Randopm Facts Generator").add()

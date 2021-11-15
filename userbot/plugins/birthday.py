@@ -1,8 +1,10 @@
 import asyncio
+
+from LEGENDBOT.utils import admin_cmd
+
 from userbot import *
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot.cmdhelp import CmdHelp
 from userbot import ALIVE_NAME
+from userbot.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
 
@@ -36,9 +38,7 @@ async def _(event):
     for i in animation_ttl:  # By @NOOB_GUY_OP for Dark CObra
 
         await asyncio.sleep(animation_interval)
-        await event.edit(
-            animation_chars[i % 17], link_preview=True
-        ) 
-CmdHelp("birthday").add_command(
-    'hbd', None, 'For Wishing Happy Birthday'
-).add()
+        await event.edit(animation_chars[i % 17], link_preview=True)
+
+
+CmdHelp("birthday").add_command("hbd", None, "For Wishing Happy Birthday").add()

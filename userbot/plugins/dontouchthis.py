@@ -6,11 +6,10 @@ By:-@Zero_cool7870
 """
 import os
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("upbs").add_command(
-   'upbs', None, 'upload file to telegram'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("upbs").add_command("upbs", None, "upload file to telegram").add()
 
 
 @borg.on(admin_cmd(pattern=r"upbs"))

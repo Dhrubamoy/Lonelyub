@@ -1,6 +1,8 @@
 import requests
 from telethon import events
+
 from . import *
+
 
 @borg.on(events.NewMessage(pattern=r"\.code (.*)", outgoing=True))
 async def _(event):
@@ -50,6 +52,5 @@ async def _(event):
 
         await event.edit(str(e))
 
-CmdHelp("code").add_command(
-   'code', None, 'lang'
-).add()
+
+CmdHelp("code").add_command("code", None, "lang").add()

@@ -1,9 +1,6 @@
 from userbot.cmdhelp import CmdHelp
 
-
-CmdHelp("check").add_command(
-   'cr', None, 'Use and See'
-).add() 
+CmdHelp("check").add_command("cr", None, "Use and See").add()
 from telethon.tl.types import Channel, Chat, User
 
 from userbot.utils import admin_cmd
@@ -49,6 +46,5 @@ def get_restriction_string(a) -> str:
 
 
 from userbot.cmdhelp import CmdHelp
-CmdHelp("check").add_command(
-   'cr', None, 'Use and See'
-).add() 
+
+CmdHelp("check").add_command("cr", None, "Use and See").add()

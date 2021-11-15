@@ -1,11 +1,10 @@
 import re
 
 from userbot import bot
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("deezer").add_command(
-   'deezer', None, 'Give me query to search'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("deezer").add_command("deezer", None, "Give me query to search").add()
 IF_EMOJI = re.compile(
     "["
     "\U0001F1E0-\U0001F1FF"  # flags (iOS)

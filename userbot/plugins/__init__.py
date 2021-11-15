@@ -1,10 +1,12 @@
-from userbot import *
-from userbot.utils import *
-from userbot.Config import Config
-from userbot.cmdhelp import CmdHelp
-
 import datetime
+
 from telethon import version
+
+from userbot import *
+from userbot.cmdhelp import CmdHelp
+from userbot.Config import Config
+from userbot.utils import *
+
 LEGEND_USER = bot.me.first_name
 The_LegendBoy = bot.uid
 legend_mention = f"[{LEGEND_USER}](tg://user?id={The_LegendBoy})"
@@ -18,15 +20,16 @@ LEGEND_logo3 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
 perf = "[ †hê Lêɠêɳ̃dẞø† ]"
 
 
-DEVLIST = [
-    "2082798662"
-]
+DEVLIST = ["2082798662"]
+
+
 async def get_user_id(ids):
     if str(ids).isdigit():
         userid = int(ids)
     else:
         userid = (await bot.get_entity(ids)).id
     return userid
+
 
 l1 = Config.COMMAND_HAND_LER
 l2 = Config.SUDO_COMMAND_HAND_LER
@@ -40,7 +43,7 @@ abus = Config.ABUSE
 if abus == "ON":
     abuse_m = "Enabled"
 else:
-    abuse_m ="Disabled"
+    abuse_m = "Disabled"
 
 START_TIME = datetime.datetime.now()
 uptime = f"{str(datetime.datetime.now() - START_TIME).split('.')[0]}"

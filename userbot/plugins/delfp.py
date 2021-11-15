@@ -1,16 +1,16 @@
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import InputPhoto
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("delfp").add_command(
-   'delpfp', None, 'delete ur currnt profile picture'
-).add()
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
+CmdHelp("delfp").add_command("delpfp", None, "delete ur currnt profile picture").add()
+
 
 @borg.on(admin_cmd(pattern="delpfp ?(.*)"))
 @borg.on(sudo_cmd(pattern="delpfp ?(.*)", allow_sudo=True))
 async def remove_profilepic(delpfp):
-    """ For .delpfp command, delete your current profile picture in Telegram. """
+    """For .delpfp command, delete your current profile picture in Telegram."""
     group = delpfp.text[8:]
     if group == "all":
         lim = 0

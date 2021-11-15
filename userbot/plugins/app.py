@@ -1,10 +1,12 @@
 import bs4
 import requests
-
-from userbot import ALIVE_NAME, CMD_HELP
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+
+from userbot import ALIVE_NAME
 from userbot.cmdhelp import CmdHelp
+
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "L𝖊ɠêɳ̃d"
+
 
 @bot.on(admin_cmd(pattern="app (.*)"))
 @bot.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
@@ -163,16 +165,19 @@ async def mod(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
+
 CmdHelp("app").add_command(
-  'app', '<app name>', 'Searches the app in the playstore and provides the link to the app in playstore and fetchs app details'
-).add_command(
-  'mods', '<app name>', 'Searches the modded/premium app'
-).add_command(
-  'appr', '<app name>', 'Searches the app in the playstore and provides the link to the app in playstore and fetchs app details with Xpl0iter request link.'
+    "app",
+    "<app name>",
+    "Searches the app in the playstore and provides the link to the app in playstore and fetchs app details",
+).add_command("mods", "<app name>", "Searches the modded/premium app").add_command(
+    "appr",
+    "<app name>",
+    "Searches the app in the playstore and provides the link to the app in playstore and fetchs app details with Xpl0iter request link.",
 ).add_info(
-  "Related To App/Applications Only For Android"
+    "Related To App/Applications Only For Android"
 ).add_warning(
-  "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-  "Official"
+    "Official"
 ).add()

@@ -1,24 +1,25 @@
 import time
-import random
-import time
+
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from telethon import version
 from telethon.errors import ChatSendInlineForbiddenError as noin
 from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot
-from userbot.Config import Config
-from telethon import version
-import time
+
 from userbot import ALIVE_NAME, LEGENDversion
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd, time_formatter
 from userbot.cmdhelp import CmdHelp
+from userbot.Config import Config
+
 from . import *
 
 uptime = get_readable_time((time.time() - StartTime))
 DEFAULTUSER = ALIVE_NAME or "𝖑𝖊ɠêɳ̃dẞø✞︎ 🇮🇳"
 LEGEND_IMG = "https://telegra.ph/file/153977a71b928874151a5.jpg"
 CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "ℓєgєи∂ Choice 𝖑𝖊ɠêɳ̃dẞø✞︎"
-CUSTOM_YOUR_GROUP =Config.YOUR_GROUP or "@Legend_Userbot"
+CUSTOM_YOUR_GROUP = Config.YOUR_GROUP or "@Legend_Userbot"
 
 Legend = bot.uid
 mention = f"[{DEFAULTUSER}](tg://user?id={Legend})"
+
 
 @bot.on(admin_cmd(outgoing=True, pattern="legend$"))
 @bot.on(sudo_cmd(pattern="legend$", allow_sudo=True))
@@ -27,9 +28,9 @@ async def amireallyalive(alive):
         return
     reply_to_id = await reply_id(alive)
 
-    if  LEGEND_IMG:
+    if LEGEND_IMG:
         LEGEND_caption = f"**{CUSTOM_ALIVE_TEXT}**\n"
-        
+
         LEGEND_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
         LEGEND_caption += f"        **✘𝕭𝖔† 𝕾𝖙𝖆𝖙𝖚𝖘✘** \n"
         LEGEND_caption += f"•🔥• **Oաղ̃ҽ̈ɾ**          ~ {ALIVE_NAME}\n\n"
@@ -37,7 +38,7 @@ async def amireallyalive(alive):
         LEGEND_caption += f"•🌟• **†ҽ̀lҽ́thøղ̃**     ~ `{version.__version__}`\n"
         LEGEND_caption += f"•🌟• **𝚄ρtime**         ~ `{uptime}`\n"
         LEGEND_caption += f"•🌟• **𝙶𝚛𝚘𝚞𝚙**           ~ [𝙶𝚛𝚘𝚞𝚙](t.me/Legend_Userbot)\n"
-        LEGEND_caption += f"•🌟• **𝙼𝚢 𝙶𝚛𝚘𝚞𝚙**  ~ {CUSTOM_YOUR_GROUP}\n"   
+        LEGEND_caption += f"•🌟• **𝙼𝚢 𝙶𝚛𝚘𝚞𝚙**  ~ {CUSTOM_YOUR_GROUP}\n"
 
         await alive.client.send_file(
             alive.chat_id, LEGEND_IMG, caption=LEGEND_caption, reply_to=reply_to_id
@@ -53,7 +54,7 @@ async def amireallyalive(alive):
             f"🇮🇳 ℓєgєи∂ϐοτ  : `{LEGENDversion}`\n"
             f"🇮🇳 υρτιмє        : `{uptime}`\n"
             f"🔱 ɱαรƭεɾ        : {mention}\n"
-            f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/The_LegendBoy)\n"
+            f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/The_LegendBoy)\n",
         )
 
 
@@ -71,6 +72,7 @@ msg = f"""
 """
 botname = Config.BOT_USERNAME
 
+
 @bot.on(admin_cmd(pattern="alive$"))
 @bot.on(admin_cmd(pattern="alive$", allow_sudo=True))
 async def legend_a(event):
@@ -82,16 +84,13 @@ async def legend_a(event):
     except (noin, dedbot):
         await eor(event, msg)
 
-CmdHelp("alive").add_command(
-    "bot", None, "υѕє αи∂ ѕєє"
-).add_command(
+
+CmdHelp("alive").add_command("bot", None, "υѕє αи∂ ѕєє").add_command(
     "legend", None, "Its Same Like Alive"
-).add_command(
-    "alive", None, "Its Show ur Alive Template"
-).add_warning(
+).add_command("alive", None, "Its Show ur Alive Template").add_warning(
     "Harmless Module✅"
 ).add_info(
-     "Checking Alive"
+    "Checking Alive"
 ).add_type(
     "Official"
 ).add()

@@ -1,10 +1,8 @@
-
-from telethon import events
-import os
 import requests
-import json
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
+from LEGENDBOT.utils import admin_cmd
+
 from userbot.cmdhelp import CmdHelp
+
 
 @bot.on(admin_cmd("dns (.*)"))
 async def _(event):
@@ -40,14 +38,16 @@ async def _(event):
     if not input_str.startswith("http"):
         input_str = "http://" + input_str
     r = requests.get(input_str, allow_redirects=False)
-    if str(r.status_code).startswith('3'):
-        await event.edit("Input URL: {}\nReDirected URL: {}".format(input_str, r.headers["Location"]))
+    if str(r.status_code).startswith("3"):
+        await event.edit(
+            "Input URL: {}\nReDirected URL: {}".format(input_str, r.headers["Location"])
+        )
     else:
-        await event.edit("Input URL {} returned status_code {}".format(input_str, r.status_code))
-CmdHelp("dagd").add_command(
-  'url', None, 'Use and See'
-).add_command(
-  'unshort', None, 'Use and See'
-).add_command(
-  'dns', None, 'Use and See'
-).add()
+        await event.edit(
+            "Input URL {} returned status_code {}".format(input_str, r.status_code)
+        )
+
+
+CmdHelp("dagd").add_command("url", None, "Use and See").add_command(
+    "unshort", None, "Use and See"
+).add_command("dns", None, "Use and See").add()

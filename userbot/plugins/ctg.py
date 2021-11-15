@@ -1,11 +1,11 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
-CmdHelp("lctg").add_command(
-   'lctg', None, 'Check Fake Limitiation'
-).add()
+from userbot.utils import admin_cmd
+
+CmdHelp("lctg").add_command("lctg", None, "Check Fake Limitiation").add()
+
 
 @borg.on(admin_cmd(pattern="lctg ?(.*)"))
 async def _(event):

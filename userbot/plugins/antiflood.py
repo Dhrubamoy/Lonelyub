@@ -1,11 +1,11 @@
 import asyncio
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from userbot.plugins.sql_helper import antiflood_sql as sql
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.plugins.sql_helper import antiflood_sql as sql
 
 CHAT_FLOOD = sql.__load_flood_settings()
 # warn mode for anti flood
@@ -75,13 +75,13 @@ async def _(event):
 
 
 CmdHelp("antiflood").add_command(
-  'setflood', '<number>', 'Warns the user if he/she spams the chat and if you are an admin then it mutes him/her in the grp'
-).add_command(
-   'setflood', '0', 'OFF THE ANTIFLOOD'
-).add_info(
-   "Use in Group For Give Ban After Flood"
+    "setflood",
+    "<number>",
+    "Warns the user if he/she spams the chat and if you are an admin then it mutes him/her in the grp",
+).add_command("setflood", "0", "OFF THE ANTIFLOOD").add_info(
+    "Use in Group For Give Ban After Flood"
 ).add_warning(
-   "Harmless"
+    "Harmless"
 ).add_type(
     "Offcial✅"
 ).add()

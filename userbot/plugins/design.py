@@ -1,15 +1,13 @@
 """.admin Plugin for @userbot"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
-
-CmdHelp("design").add_command(
-   'join', None, 'use and see'
-).add_command(
-   'pay', None, 'use and see'
+CmdHelp("design").add_command("join", None, "use and see").add_command(
+    "pay", None, "use and see"
 ).add()
+
 
 @borg.on(admin_cmd("join"))
 async def _(event):
