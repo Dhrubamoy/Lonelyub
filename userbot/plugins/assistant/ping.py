@@ -2,8 +2,6 @@ import asyncio
 import os
 from datetime import datetime
 
-from telethon import events
-
 
 from userbot import *
 from userbot.plugins import *
@@ -15,7 +13,6 @@ LEGEND_IMG = os.environ.get(
 @tgbot.on(events.NewMessage(pattern="^/ping"))
 async def _(event):
     start = datetime.now()
-    event = await edit_or_reply(event, "**(❛ ᑭσɳց ❜!**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     if LEGEND_IMG:
