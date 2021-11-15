@@ -1,0 +1,2 @@
+
+from .vars import Config
