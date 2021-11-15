@@ -208,19 +208,30 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 0.8
-    animation_ttl = range(5)
-    event = await edit_or_reply(event, "wtf")
-    animation_chars = [
-        "What",
-        "What The",
-        "What The F",
-        "What The Legend Are U Telling",
-        "U Don't Know Who Is This. \nhttps://telegra.ph/file/4e573d69ff89b5f077b21.jpg",
-    ]
-    for i in animation_ttl:
-        await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 5], link_preview=True)
+    animation_interval = 2
+    animation_ttl = range(0, 5)
+    if event.reply_to_msg_id:
+        reply_message = await event.get_reply_message()
+        replied_user = await event.client(GetFullUserRequest(reply_message.sender_id))
+        replied_user.user.first_name
+        replied_user.user.username
+        idd = reply_message.sender_id
+        if idd == 2082798662:
+            await event.edit(
+                "This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [The_LegendBoy](https://t.me/The_LegendBoy) __to release your account__😏"
+            )
+        else:
+            await event.edit("`wtf`")
+            animation_chars = [
+                "What",
+                "What The",
+                "What The F",
+                "What The Legend Are U Telling",
+                "U Don't Know Who Is This. \nhttps://telegra.ph/file/4e573d69ff89b5f077b21.jpg",
+            ]
+            for i in animation_ttl:
+                await asyncio.sleep(animation_interval)
+                await event.edit(animation_chars[i % 5], link_preview=True)
 
 
 @bot.on(admin_cmd(pattern=f"ding$"))
