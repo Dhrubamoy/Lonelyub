@@ -7,12 +7,13 @@
 
 from asyncio import sleep
 
-from telethon.errors import rpcbaseerrors
 import telethon
-from userbot import CMD_HELP 
+from LEGENDBOT.utils import admin_cmd, errors_handler, sudo_cmd
+from telethon.errors import rpcbaseerrors
+
 from userbot import BOTLOG, BOTLOG_CHATID
-from LEGENDBOT.utils import admin_cmd, errors_handler, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+
 
 async def get_target_message(event):
     if event.is_reply and (await event.get_reply_message()).sender_id == borg.uid:
@@ -40,10 +41,10 @@ async def await_read(chat, message):
 @borg.on(admin_cmd(pattern=r"edit"))
 @errors_handler
 async def editer(edit):
-    """ For .editme command, edit your last message. """
+    """For .editme command, edit your last message."""
     message = edit.text
     chat = await edit.get_input_chat()
-    self_id = await edit.client.get_peer_id('me')
+    self_id = await edit.client.get_peer_id("me")
     string = str(message[6:])
     i = 1
     async for message in edit.client.iter_messages(chat, self_id):
@@ -53,14 +54,15 @@ async def editer(edit):
             break
         i = i + 1
     if BOTLOG:
-        await edit.client.send_message(BOTLOG_CHATID,
-                                       "Edit query was executed successfully")
+        await edit.client.send_message(
+            BOTLOG_CHATID, "Edit query was executed successfully"
+        )
 
 
 @borg.on(admin_cmd(pattern=r"del"))
 @errors_handler
 async def delete_it(delme):
-    """ For .del command, delete the replied message. """
+    """For .del command, delete the replied message."""
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
         try:
@@ -68,20 +70,20 @@ async def delete_it(delme):
             await delme.delete()
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Deletion of message was successful")
+                    BOTLOG_CHATID, "Deletion of message was successful"
+                )
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Well, I can't delete a message")
-
-
+                    BOTLOG_CHATID, "Well, I can't delete a message"
+                )
 
 
 @bot.on(admin_cmd(pattern=r"purge", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"purge", allow_sudo=True))
 @errors_handler
 async def fastpurger(purg):
-    """ For .purge command, purge all messages starting from the reply. """
+    """For .purge command, purge all messages starting from the reply."""
     chat = await purg.get_input_chat()
     msgs = []
     count = 0
@@ -114,7 +116,7 @@ async def fastpurger(purg):
 @bot.on(sudo_cmd(pattern=r"purgeme", allow_sudo=True))
 @errors_handler
 async def purgeme(delme):
-    """ For .purgeme, delete x count of your latest message."""
+    """For .purgeme, delete x count of your latest message."""
     message = delme.text
     count = int(message[9:])
     i = 1
@@ -142,7 +144,7 @@ async def purgeme(delme):
 @bot.on(sudo_cmd(pattern=r"sd", allow_sudo=True))
 @errors_handler
 async def selfdestruct(destroy):
-    """ For .sd command, make seflf-destructable messages. """
+    """For .sd command, make seflf-destructable messages."""
     message = destroy.text
     counter = int(message[4:6])
     text = str(destroy.text[6:])
@@ -152,19 +154,16 @@ async def selfdestruct(destroy):
     await smsg.delete()
     if BOTLOG:
         await destroy.client.send_message(BOTLOG_CHATID, "sd query done successfully")
-        
-        
-        
-        
-        
+
+
 CmdHelp("purge").add_command(
-  "del", "<reply to a msg>", "Deletes the replied msg."
+    "del", "<reply to a msg>", "Deletes the replied msg."
+).add_command("edit", "<reply to a msg>", "Edits the replied msg").add_command(
+    "purge", "<reply>", "Purges all messages starting from the reply."
 ).add_command(
-  "edit", "<reply to a msg>", "Edits the replied msg"
+    "purgeme", "<count>", "Deletes 'x' amount of your latest messages."
 ).add_command(
-  "purge", "<reply>", "Purges all messages starting from the reply."
-).add_command(
-  "purgeme", "<count>", "Deletes 'x' amount of your latest messages."
-).add_command(
-  "sd", "<time> <message>", "Creates a message that selfdestructs in 'x' seconds. Keep the seconds under 100 since it puts your bot to sleep"
+    "sd",
+    "<time> <message>",
+    "Creates a message that selfdestructs in 'x' seconds. Keep the seconds under 100 since it puts your bot to sleep",
 ).add()

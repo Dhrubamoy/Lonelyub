@@ -5,12 +5,11 @@
 import os
 import textwrap
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from PIL import Image, ImageDraw, ImageFont
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
-from var import Var
-from userbot.Config import Config 
+from userbot.Config import Config
 
 # how a lazy guy ports.
 client = borg
@@ -148,8 +147,13 @@ async def drawText(image_path, text):
     img.save(webp_file, "webp")
     return webp_file
 
+
 CmdHelp("memify").add_command(
-  "memify", "<reply to img/stcr> <text>", "Memifies the replied image or sticker with the text you entered. Use and see"
+    "memify",
+    "<reply to img/stcr> <text>",
+    "Memifies the replied image or sticker with the text you entered. Use and see",
 ).add_command(
-  "mmf", "<reply to img/stcr> <text>", "Memfies the replied image or sticker with the text you entered. Font changed"
+    "mmf",
+    "<reply to img/stcr> <text>",
+    "Memfies the replied image or sticker with the text you entered. Font changed",
 ).add()

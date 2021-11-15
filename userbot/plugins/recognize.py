@@ -1,10 +1,9 @@
 # credits: @Mr_Hops
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import CMD_HELP
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 
 
@@ -50,5 +49,7 @@ async def _(event):
 
 
 CmdHelp("recognize").add_command(
-  "recognize", "<reply to media>", "Get information about an image using AWS Rekognition. Find out information including detected labels, faces. text and moderation tags."
+    "recognize",
+    "<reply to media>",
+    "Get information about an image using AWS Rekognition. Find out information including detected labels, faces. text and moderation tags.",
 ).add()

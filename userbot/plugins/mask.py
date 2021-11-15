@@ -1,22 +1,14 @@
-
 import base64
 import os
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telegraph import exceptions, upload_file
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
-from userbot import CMD_HELP
-from userbot.helpers.funct import (
-    awooify,
-    baguette,
-    convert_toimage,
-    iphonex,
-    lolice,
-)
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.helpers.funct import awooify, baguette, convert_toimage, iphonex, lolice
 
 
 @bot.on(admin_cmd(pattern="mask$", outgoing=True))
@@ -39,10 +31,14 @@ async def _(LEGENDBOT):
             await LEGENDBOT.client.send_message(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await edit_or_reply(LEGENDBOT, "`Please unblock` @hazmat_suit_bot `and try again`")
+            await edit_or_reply(
+                LEGENDBOT, "`Please unblock` @hazmat_suit_bot `and try again`"
+            )
             return
         if response.text.startswith("Forward"):
-            await edit_or_reply(LEGENDBOT, "```can you kindly disable your forward privacy settings for good?```"
+            await edit_or_reply(
+                LEGENDBOT,
+                "```can you kindly disable your forward privacy settings for good?```",
             )
         else:
             await LEGENDBOT.client.send_file(event.chat_id, response.message.media)
@@ -254,19 +250,21 @@ async def LEGENDBOT(LEGENDmemes):
 
 
 CmdHelp("mask").add_command(
-  "mask", "<reply to img/stcr", "Makes an image a different style."
+    "mask", "<reply to img/stcr", "Makes an image a different style."
 ).add_command(
-  "iphx", "<reply to img/stcr", "Covers the replied image or sticker into iphonex wallpaper"
+    "iphx",
+    "<reply to img/stcr",
+    "Covers the replied image or sticker into iphonex wallpaper",
 ).add_command(
-  "bun", "<reply to img/stcr", "Gives the replied img a cool bun eating look"
+    "bun", "<reply to img/stcr", "Gives the replied img a cool bun eating look"
 ).add_command(
-  "lolice", "<reply to img/stcr", "Gives the replied img the face of Lolice Cheif"
+    "lolice", "<reply to img/stcr", "Gives the replied img the face of Lolice Cheif"
 ).add_command(
-  "awooify", "<reply to img/stcr", "Gives the replied img or stcr the face or wooify"
+    "awooify", "<reply to img/stcr", "Gives the replied img or stcr the face or wooify"
 ).add_info(
-  "This Plugin Is For image"
+    "This Plugin Is For image"
 ).add_warning(
-  "Harmless Module✅"
+    "Harmless Module✅"
 ).add_type(
-   "Addons"
+    "Addons"
 ).add()

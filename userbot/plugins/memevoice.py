@@ -1,8 +1,6 @@
-
-import re
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 from userbot import bot
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.funct import deEmojify
 
@@ -15,7 +13,9 @@ async def nope(legend):
         if legend.is_reply:
             (await legend.get_reply_message()).message
         else:
-            await edit_or_reply(legend, "`Sir please give some query to search and download it for you..!`"
+            await edit_or_reply(
+                legend,
+                "`Sir please give some query to search and download it for you..!`",
             )
             return
 
@@ -28,8 +28,8 @@ async def nope(legend):
         hide_via=True,
     )
     await legend.delete()
-    
+
 
 CmdHelp("memevoice").add_command(
-  "mev", "<meme txt>", "Searches and uploads the meme in voice format (if any)."
+    "mev", "<meme txt>", "Searches and uploads the meme in voice format (if any)."
 ).add()

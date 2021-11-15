@@ -1,24 +1,19 @@
-import cv2
-import os
-import io
-import random
-import shutil
-import re
-import textwrap
-import lottie
 import asyncio
+import os
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
+import cv2
+from PIL import Image
 
 from . import *
-
 
 path = "./legendmify/"
 if not os.path.isdir(path):
     os.makedirs(path)
 
 from userbot.Config import Config
+
 lg_id = os.environ.get("LOGGER_ID", None)
+
 
 @bot.on(admin_cmd(pattern="mms ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="mms ?(.*)", allow_sudo=True))
@@ -45,7 +40,7 @@ async def _(event):
         pic.save("pic.png", format="PNG", optimize=True)
         file = "pic.png"
     else:
-        hel_ = await eor(event, "**Memifying 🌚🌝**")
+        await eor(event, "**Memifying 🌚🌝**")
         img = cv2.VideoCapture(legend)
         tal, semx = img.read()
         cv2.imwrite("pic.png", semx)
@@ -62,7 +57,7 @@ async def _(event):
         pass
     os.remove(pic)
 
-    
+
 @bot.on(admin_cmd(pattern="doge(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="doge(?: |$)(.*)", allow_sudo=True))
 async def nope(event):
@@ -87,7 +82,7 @@ async def nope(event):
             )
         await legen_.delete()
     else:
-     await eod(event, "Error 404:  Not Found")
+        await eod(event, "Error 404:  Not Found")
 
 
 @bot.on(admin_cmd(pattern="gg(?: |$)(.*)", outgoing=True))
@@ -115,7 +110,7 @@ async def nope(kraken):
             )
         await legen_.delete()
     else:
-     await eod(kraken, "Error 404:  Not Found")
+        await eod(kraken, "Error 404:  Not Found")
 
 
 @bot.on(admin_cmd(pattern="honk(?: |$)(.*)", outgoing=True))
@@ -143,12 +138,9 @@ async def nope(kraken):
             )
         await legen_.delete()
     else:
-     await eod(kraken, "Error 404:  Not Found")
+        await eod(kraken, "Error 404:  Not Found")
 
-    
-    
-    
-    
+
 @bot.on(admin_cmd(pattern="gogl(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="gogl(?: |$)(.*)", allow_sudo=True))
 async def nope(kraken):
@@ -174,26 +166,31 @@ async def nope(kraken):
             )
         await hel_.delete()
     else:
-     await eod(kraken, "Error 404:  Not Found")
+        await eod(kraken, "Error 404:  Not Found")
 
 
-    
 CmdHelp("memify3").add_command(
-  "mmf", "<reply to a img/stcr/gif> <upper text> ; <lower text>", "Memifies the replied image/gif/sticker with your text and sends output in sticker format.", "mmf <reply to a img/stcr/gif> hii ; hello"
+    "mmf",
+    "<reply to a img/stcr/gif> <upper text> ; <lower text>",
+    "Memifies the replied image/gif/sticker with your text and sends output in sticker format.",
+    "mmf <reply to a img/stcr/gif> hii ; hello",
 ).add_command(
-  "mms", "<reply to a img/stcr/gif> <upper text> ; <lower text>", "Memifies the replied image/gif/sticker with your text and sends output in image format.", "mms <reply to a img/stcr/gif> hii ; hello"
+    "mms",
+    "<reply to a img/stcr/gif> <upper text> ; <lower text>",
+    "Memifies the replied image/gif/sticker with your text and sends output in image format.",
+    "mms <reply to a img/stcr/gif> hii ; hello",
 ).add_command(
-  "doge", "<text>", "Makes A Sticker of Doge with given text.", "doge Hello"
+    "doge", "<text>", "Makes A Sticker of Doge with given text.", "doge Hello"
 ).add_command(
-   "gogl", "<text>", "Makes Sticker"
+    "gogl", "<text>", "Makes Sticker"
 ).add_command(
-  "gg", "<text>", "Makes google search sticker.", "gg Hello"
+    "gg", "<text>", "Makes google search sticker.", "gg Hello"
 ).add_command(
-  "honk", "<text>", "Makes a sticker with honka revealing given text.", "honk Hello"
+    "honk", "<text>", "Makes a sticker with honka revealing given text.", "honk Hello"
 ).add_info(
-  "Make Memes on telegram 😉"
+    "Make Memes on telegram 😉"
 ).add_warning(
-  "✅ Harmless Module."
+    "✅ Harmless Module."
 ).add_type(
-  "Addons"
+    "Addons"
 ).add()

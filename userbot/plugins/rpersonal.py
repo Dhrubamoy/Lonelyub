@@ -1,10 +1,11 @@
- 
 import asyncio
 import random
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from . import *
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 NUMBER = ["0", "1"]
 
 OSP = [
@@ -33,6 +34,7 @@ async def _(event):
             message="""{}""".format(random.choice(OSP)),
             reply_to=event.message.id,
         )
+
 
 @bot.on(admin_cmd(pattern="Rstarts(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="Rstarts(?: |$)(.*)", allow_sudo=True))
@@ -92,10 +94,10 @@ async def _(event):
         queue = que.get(e)
         queue.pop(0)
         await event.edit(f"LEGEND ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ STOPED RAID {ALIVE_NAME}")
-        
-        
+
+
 CmdHelp("rpersonal").add_command(
-    'Rstarts', None, 'Reply to him or her to start legend ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file'
+    "Rstarts", None, "Reply to him or her to start legend ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file"
 ).add_command(
-    'Rstops', None, 'Reply To her Ya him To stop legend ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file'
+    "Rstops", None, "Reply To her Ya him To stop legend ꧁༒☬ⓇⒾⓈⒽⒶⓋ☬༒꧂ personal file"
 ).add()

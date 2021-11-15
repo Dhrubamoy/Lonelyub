@@ -3,9 +3,8 @@
 """
 import time
 
-from telethon.tl.functions.channels import LeaveChannelRequest
-
 from LEGENDBOT.utils import admin_cmd
+from telethon.tl.functions.channels import LeaveChannelRequest
 
 
 @borg.on(admin_cmd("kickme", outgoing=True))

@@ -1,17 +1,17 @@
-import asyncio
 import os
-import datetime
-import lottie
-import urllib
-import requests
 from asyncio import sleep
+
+import requests
 from bs4 import BeautifulSoup
 
-from userbot.plugins.sql_helper.waifu_sql import is_harem, add_grp, rm_grp, get_all_grp
+from userbot.plugins.sql_helper.waifu_sql import add_grp, get_all_grp, is_harem, rm_grp
+from userbot.utils import admin_cmd, eor, sudo_cmd
+
 from . import *
-from userbot.utils import admin_cmd, sudo_cmd, eor, edit_or_reply
+
 qt = "A qt waifu appeared!"
 qt_ = "A waifu appeared!"
+
 
 def progress(current, total):
     logger.info(
@@ -19,6 +19,7 @@ def progress(current, total):
             current, total, (current / total) * 100
         )
     )
+
 
 @bot.on(admin_cmd(pattern="pt ?(.*)"))
 @bot.on(sudo_cmd(pattern="pt ?(.*)", allow_sudo=True))
@@ -64,8 +65,7 @@ async def _(event):
         prs_text = prs_anchor_element.text
         img_size_div = soup.find(id="jHnbRc")
         img_size = img_size_div.find_all("div")
-        OUTPUT_STR = """/protecc {prs_text}""".format(
-            **locals())
+        OUTPUT_STR = """/protecc {prs_text}""".format(**locals())
     await hell.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
 
 
@@ -86,7 +86,9 @@ async def _(event):
                 dl = await bot.download_media(event.media, "resources/")
                 file = {"encoded_image": (dl, open(dl, "rb"))}
                 grs = requests.post(
-                    "https://www.google.com/searchbyimage/upload", files=file, allow_redirects=False
+                    "https://www.google.com/searchbyimage/upload",
+                    files=file,
+                    allow_redirects=False,
                 )
                 loc = grs.headers.get("Location")
                 response = requests.get(
@@ -133,7 +135,9 @@ async def _(event):
                 dl = await bot.download_media(event.media, "resources/")
                 file = {"encoded_image": (dl, open(dl, "rb"))}
                 grs = requests.post(
-                    "https://www.google.com/searchbyimage/upload", files=file, allow_redirects=False
+                    "https://www.google.com/searchbyimage/upload",
+                    files=file,
+                    allow_redirects=False,
                 )
                 loc = grs.headers.get("Location")
                 response = requests.get(
@@ -173,7 +177,10 @@ async def _(event):
         await eod(event, "This Chat is Has Already In AutoWaifu Database !!")
         return
     add_grp(str(event.chat_id))
-    await eod(event, f"**Added Chat** {event.chat.title} **With Id** `{event.chat_id}` **To Autowaifu Database.**")
+    await eod(
+        event,
+        f"**Added Chat** {event.chat.title} **With Id** `{event.chat_id}` **To Autowaifu Database.**",
+    )
 
 
 @bot.on(admin_cmd(pattern="rmwaifu ?(.*)"))
@@ -186,7 +193,10 @@ async def _(event):
         await eod(event, "Autowaifu was already disabled here.")
         return
     rm_grp(str(event.chat_id))
-    await eod(event, f"**Removed Chat** {event.chat.title} **With Id** `{event.chat_id}` **From AutoWaifu Database.**")
+    await eod(
+        event,
+        f"**Removed Chat** {event.chat.title} **With Id** `{event.chat_id}` **From AutoWaifu Database.**",
+    )
 
 
 @bot.on(admin_cmd(pattern="aw$"))
@@ -202,16 +212,16 @@ async def _(event):
     await hell.edit(x)
 
 
-CmdHelp("protecc").add_command(
-  "pt", "<reply>", "Auto Protecc the waifu."
+CmdHelp("protecc").add_command("pt", "<reply>", "Auto Protecc the waifu.").add_command(
+    "adwaifu",
+    None,
+    "Adds the current group to AutoWaifu Database. Need to setup WAIFU_CATCHER var with value TRUE.",
 ).add_command(
-  "adwaifu", None, "Adds the current group to AutoWaifu Database. Need to setup WAIFU_CATCHER var with value TRUE."
+    "rmwaifu", None, "Removes the group from AutoWaifu Database."
 ).add_command(
-  "rmwaifu", None, "Removes the group from AutoWaifu Database."
-).add_command(
-  "aw", None, "Gives the list of all chats with Autowaifu enabled."
+    "aw", None, "Gives the list of all chats with Autowaifu enabled."
 ).add_info(
-  "Waifu Protecc."
+    "Waifu Protecc."
 ).add_warning(
-  "✅ Harmless Module."
+    "✅ Harmless Module."
 ).add()

@@ -1,13 +1,11 @@
-
-
 import asyncio
 import datetime
 
+from LEGENDBOT.utils import admin_cmd
 from telethon import events
 from telethon.tl import functions, types
 
 from userbot import ALIVE_NAME
-from LEGENDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 global USER_night  # pylint:disable=E0602
@@ -17,9 +15,7 @@ USER_night = {}
 night_time = None
 last_night_message = {}
 
-DEFAULTUSER = (
-    str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
-)
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND"
 
 
 @borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
@@ -139,6 +135,9 @@ async def on_night(event):
             await last_night_message[event.chat_id].delete()  # pylint:disable=E0602
         last_night_message[event.chat_id] = msg  # pylint:disable=E0602
 
+
 CmdHelp("night").add_command(
-  "night", None, "Same like AFK. But fixed reason and for sleeping purpose only. Sed ;_;example:- .night <reason>"
+    "night",
+    None,
+    "Same like AFK. But fixed reason and for sleeping purpose only. Sed ;_;example:- .night <reason>",
 ).add()
