@@ -17,7 +17,6 @@ from userbot.utils import (
 )
 from var import Var
 
-LEGEND_STRING = "Protected By LegendBot"
 
 l2 = Config.SUDO_COMMAND_HAND_LER
 LEGEND_PIC = "https://telegra.ph/file/e753315316673cff51085.mp4"
@@ -82,10 +81,7 @@ async def assistants():
             with open(name) as f:
                 path1 = Path(f.name)
                 shortname = path1.stem
-                try:
-                    start_assistant(shortname.replace(".py", ""))
-                except Exception as e:
-                    print(e)
+                start_assistant(shortname.replace(".py", ""))
     else:
         print("⚠️Assistant Not Loaded⚠️")
 
@@ -124,10 +120,7 @@ async def abuses():
             with open(name) as f:
                 path1 = Path(f.name)
                 shortname = path1.stem
-                try:
-                    load_abuse(shortname.replace(".py", ""))
-                except Exception as e:
-                    print(e)
+                load_abuse(shortname.replace(".py", ""))               
     else:
         print("⚠️Abuse Not Loading⚠️")
 
@@ -145,10 +138,7 @@ async def spams():
             with open(name) as f:
                 path1 = Path(f.name)
                 shortname = path1.stem
-                try:
-                    start_spam(shortname.replace(".py", ""))
-                except Exception as e:
-                    print(e)
+                start_spam(shortname.replace(".py", ""))
     else:
         print("⚠️Spam Not Loading⚠️")
 
