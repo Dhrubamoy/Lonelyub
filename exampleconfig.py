@@ -1,6 +1,6 @@
 import os
 
-from sample_config import Config
+from sample_config import Var
 
 
 class Development(Config):
