@@ -1,14 +1,14 @@
-from userbot import bot, tbot
-from . import *
 import asyncio
-import base64
 import os
 import random
+
 from telethon import events
-from telethon import functions, types
-from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from userbot.utils import edit_or_reply, eor
-NUMBER = ["0", "1"] 
+
+from userbot import bot, tbot
+
+from . import *
+
+NUMBER = ["0", "1"]
 
 que = {}
 
@@ -329,13 +329,15 @@ RAID = [
 
 
 ABUSE = os.environ.get("ABUSE", "ON")
+
+
 @tbot.on(events.NewMessage(pattern="/raid", func=lambda e: e.sender_id == bot.uid))
-async def spam(e):  
+async def spam(e):
     if ABUSE == "ON":
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
-            return await e.reply(usage, parse_mode=None, link_preview=None )
+            return await e.reply(usage, parse_mode=None, link_preview=None)
         legend = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        smex = await e.get_reply_message()
+        await e.get_reply_message()
         if len(legend) == 2:
             message = str(legend[1])
             print(message)
@@ -350,7 +352,7 @@ async def spam(e):
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
                     await asyncio.sleep(0.3)
-        elif e.reply_to_msg_id:             
+        elif e.reply_to_msg_id:
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
             g = b.id
@@ -364,10 +366,9 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, caption)
                     await asyncio.sleep(0.3)
     else:
-        await e.reply(usage, parse_mode=None, link_preview=None )
+        await e.reply(usage, parse_mode=None, link_preview=None)
 
-        
-        
+
 @tbot.on(events.NewMessage(incoming=True))
 async def _(event):
     global que
@@ -382,8 +383,6 @@ async def _(event):
             message="""{}""".format(random.choice(RAID)),
             reply_to=event.message.id,
         )
-
-
 
 
 @tbot.on(events.NewMessage(pattern="/replyraid", func=lambda x: x.sender_id == bot.uid))
@@ -417,9 +416,10 @@ async def _(e):
         else:
             await e.reply(usage, parse_mode=None, link_preview=None)
 
-        
-        
-@tbot.on(events.NewMessage(pattern="/dreplyraid", func=lambda x: x.sender_id == bot.uid))
+
+@tbot.on(
+    events.NewMessage(pattern="/dreplyraid", func=lambda x: x.sender_id == bot.uid)
+)
 async def _(e):
     global que
     if ABUSE == "ON":

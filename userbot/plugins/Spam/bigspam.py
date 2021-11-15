@@ -1,6 +1,7 @@
+from userbot import bot
 
 from . import *
-from userbot import bot
+
 
 async def gifspam(e, smex):
     try:
@@ -17,12 +18,10 @@ async def gifspam(e, smex):
     except Exception:
         pass
 
+
 import asyncio
-import base64
-import os
-from telethon import events
-from telethon import functions, types
-from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+
+from telethon import events, functions, types
 
 
 @tgbot.on(events.NewMessage(pattern="/bigspam", func=lambda e: e.sender_id == bot.uid))
@@ -41,9 +40,9 @@ async def spam(e):
                 else:
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(0.1)
-                    
+
     elif e.reply_to_msg_id and smex.media:
-        
+
         counter = int(legend[0])
         for _ in range(counter):
             async with e.client.action(e.chat_id, "document"):
@@ -58,5 +57,5 @@ async def spam(e):
                 await e.client.send_message(e.chat_id, message)
                 await asyncio.sleep(0.1)
     else:
-        
+
         await e.reply(usage, parse_mode=None, link_preview=None)
