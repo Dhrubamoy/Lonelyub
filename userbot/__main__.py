@@ -17,7 +17,6 @@ from userbot.utils import (
 )
 from var import Var
 
-
 l2 = Config.SUDO_COMMAND_HAND_LER
 LEGEND_PIC = "https://telegra.ph/file/e753315316673cff51085.mp4"
 l1 = Config.COMMAND_HAND_LER
@@ -120,7 +119,7 @@ async def abuses():
             with open(name) as f:
                 path1 = Path(f.name)
                 shortname = path1.stem
-                load_abuse(shortname.replace(".py", ""))               
+                load_abuse(shortname.replace(".py", ""))
     else:
         print("⚠️Abuse Not Loading⚠️")
 
