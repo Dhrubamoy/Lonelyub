@@ -121,4 +121,4 @@ async def _(event):
     await edit_or_reply(event, "[ㅤㅤㅤㅤㅤㅤㅤ](" + input_str + ")")
 
 
-CmdHelp("รɦσɾƭℓเɳҡ").add_command("short", "Reply to A link", "Short To link").add()
+CmdHelp("shortlink").add_command("short", "Reply to A link", "Short To link").add()
