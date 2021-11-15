@@ -10,6 +10,8 @@ from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
 
 from . import *
+
+
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
@@ -36,6 +38,8 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_tim
+
+
 uptime = get_readable_time((time.time() - StartTime))
 DEFAULTUSER = ALIVE_NAME or "𝖑𝖊ɠêɳ̃dẞø✞︎ 🇮🇳"
 LEGEND_IMG = "https://telegra.ph/file/153977a71b928874151a5.jpg"
