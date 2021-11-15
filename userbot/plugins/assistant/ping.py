@@ -5,10 +5,8 @@ from datetime import datetime
 from telethon import events
 
 
-from .. import ALIVE_NAME
-from ..cmdhelp import CmdHelp
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
-
+from userbot import *
+from userbot.plugins import *
 LEGEND_IMG = os.environ.get(
     "BOT_PING_PIC", "https://telegra.ph/file/a9f6a3c160977352dd595.jpg"
 )
