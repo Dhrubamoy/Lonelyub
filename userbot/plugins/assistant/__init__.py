@@ -1,10 +1,10 @@
 # LEGENDBOT Assistant
-from . import *
 from telethon import Button, custom
 
-from userbot import bot
+from userbot import ALIVE_NAME, bot
 
-from userbot import ALIVE_NAME
+from . import *
+
 OWNER_NAME = ALIVE_NAME
 OWNER_ID = bot.uid
 
@@ -23,9 +23,8 @@ LEGENDversion = "𝚅2.1"
 perf = "[ †hê Lêɠêɳ̃dẞø† ]"
 
 
-DEVLIST = [
-    "2082798662"
-]
+DEVLIST = ["2082798662"]
+
 
 async def setit(event, name, value):
     try:

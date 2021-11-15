@@ -1,27 +1,19 @@
-from datetime import datetime
-from telethon import events
-from telethon.utils import get_display_name
-from math import ceil
 from re import compile
-import asyncio
-import html
-import os
-import re
-import sys
-from telethon.events import InlineQuery, callbackquery
-from telethon.sync import custom
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.functions.channels import JoinChannelRequest
+
+from LEGENDBOT.utils import *
+from telethon import events
+from telethon.events import callbackquery
 
 from userbot import *
-from userbot.cmdhelp import *
-from LEGENDBOT.utils import *
-from userbot.Config import Config
 from userbot import ALIVE_NAME
+from userbot.cmdhelp import *
+from userbot.Config import Config
+
 LEGEND_row = Config.BUTTONS_IN_HELP
 LEGEND_emoji = Config.EMOJI_IN_HELP1
 
 from . import *
+
 # main menu for api setting
 
 
@@ -67,7 +59,6 @@ async def rmbgapi(event):
     await event.delete()
     pru = event.sender_id
     var = "DEEP_API"
-    name = "DEEP AI API Key"
     async with event.client.conversation(pru) as conv:
         await conv.send_message("Get Your Deep Api from deepai.org and send here.")
         response = conv.wait_event(events.NewMessage(chats=pru))
@@ -91,7 +82,6 @@ async def rmbgapi(event):
     await event.delete()
     pru = event.sender_id
     var = "OCR_API"
-    name = "OCR API Key"
     async with event.client.conversation(pru) as conv:
         await conv.send_message("Get Your OCR api from ocr.space Send Send Here.")
         response = conv.wait_event(events.NewMessage(chats=pru))

@@ -8,7 +8,9 @@ from telethon.tl.types import (
     ChatBannedRights,
     MessageEntityMentionName,
 )
+
 from . import *
+
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
@@ -269,7 +271,7 @@ async def pin(event):
 
 
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
+    """Get the user from argument or replied message."""
     args = event.pattern_match.group(1).split(" ", 1)
     extra = None
     if event.reply_to_msg_id:

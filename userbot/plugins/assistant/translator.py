@@ -1,8 +1,8 @@
-
-from . import *
 import emoji
 from googletrans import Translator
 from telethon import events
+
+from . import *
 
 
 @tgbot.on(events.NewMessage(pattern="^/tr ?(.*)"))
@@ -25,8 +25,7 @@ async def _(event):
     translated = translator.translate(text, dest=lan)
     after_tr_text = translated.text
     output_str = (
-        f"**Translated** \n"
-        f"From {translated.src} to {lan} \n{after_tr_text}"
+        f"**Translated** \n" f"From {translated.src} to {lan} \n{after_tr_text}"
     )
     try:
         await tgbot.send_message(event.chat_id, output_str)
