@@ -1,9 +1,10 @@
 from faker import Faker
+from telethon import events
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+
 from LEGENDBOT import CmdHelp
 from LEGENDBOT import bot as LEGENDBOT
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-from telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 
 @LEGENDBOT.on(admin_cmd("gencc$"))

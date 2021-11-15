@@ -11,9 +11,9 @@ from datetime import datetime
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.tl.types import DocumentAttributeVideo
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"

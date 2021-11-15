@@ -1,7 +1,6 @@
 import asyncio
 from time import sleep
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.tl import functions
 from telethon.tl.types import (
     ChannelParticipantsKicked,
@@ -14,6 +13,7 @@ from telethon.tl.types import (
     UserStatusRecently,
 )
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

@@ -7,7 +7,6 @@ Userbot module to help you manage a group
 """
 from asyncio import sleep
 
-from LEGENDBOT.utils import *
 from telethon.errors import (
     BadRequestError,
     ImageProcessFailedError,
@@ -27,6 +26,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
+from LEGENDBOT.utils import *
 from userbot import *
 from userbot.cmdhelp import CmdHelp
 from userbot.plugins.sql_helper.mute_sql import is_muted

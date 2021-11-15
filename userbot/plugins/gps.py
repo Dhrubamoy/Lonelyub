@@ -3,9 +3,10 @@
 # don't edit credits
 
 from geopy.geocoders import Nominatim
+from telethon.tl import types
+
 from LEGENDBOT import CmdHelp
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-from telethon.tl import types
 
 
 @bot.on(admin_cmd(pattern="gps ?(.*)"))

@@ -2,7 +2,6 @@ import html
 from datetime import datetime
 from math import sqrt
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
@@ -22,6 +21,7 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_input_location, pack_bot_file_id
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 from . import *

@@ -13,10 +13,10 @@ import time
 
 import requests
 from cowpy import cow
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================

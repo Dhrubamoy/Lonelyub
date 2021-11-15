@@ -1,6 +1,7 @@
-from LEGENDBOT.utils import admin_cmd
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+
+from LEGENDBOT.utils import admin_cmd
 
 
 @bot.on(admin_cmd("grab ?(.*)"))

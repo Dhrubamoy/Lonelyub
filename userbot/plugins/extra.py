@@ -2,9 +2,9 @@ import asyncio
 import time
 from collections import deque
 
-from LEGENDBOT.utils import admin_cmd
 from telethon.tl.functions.channels import LeaveChannelRequest
 
+from LEGENDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 from . import *

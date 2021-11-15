@@ -1,7 +1,7 @@
-from LEGENDBOT.utils import admin_cmd
 from telethon.errors import ChatSendInlineForbiddenError as noin
 from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot
 
+from LEGENDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
 

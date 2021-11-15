@@ -1,9 +1,9 @@
-from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from telethon.errors import ChatSendInlineForbiddenError as noin
 from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
 from telethon.errors.rpcerrorlist import BotMethodInvalidError as dedbot
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from userbot import CMD_LIST, bot
 from userbot.Config import Config
 

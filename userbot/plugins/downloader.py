@@ -8,7 +8,6 @@ import math
 import os
 import time
 
-from LEGENDBOT.utils import admin_cmd
 from telethon.tl.types import DocumentAttributeAudio
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (
@@ -21,6 +20,8 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
+
+from LEGENDBOT.utils import admin_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):

@@ -6,7 +6,6 @@
 
 import os
 
-from LEGENDBOT.utils import admin_cmd
 from telethon.errors.rpcerrorlist import UsernameOccupiedError
 from telethon.tl import functions
 from telethon.tl.functions.account import UpdateUsernameRequest
@@ -14,6 +13,7 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import Channel, Chat, InputPhoto, User
 
+from LEGENDBOT.utils import admin_cmd
 from userbot import bot
 from userbot.cmdhelp import CmdHelp
 

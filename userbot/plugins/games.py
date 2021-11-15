@@ -4,9 +4,9 @@
 
 import asyncio
 
-from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from telethon import events
 
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

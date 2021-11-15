@@ -7,9 +7,9 @@ import os
 import sys
 from asyncio import sleep
 
-from LEGENDBOT.utils import admin_cmd
 from telethon import events
 
+from LEGENDBOT.utils import admin_cmd
 from userbot import BOTLOG, BOTLOG_CHATID, bot
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config

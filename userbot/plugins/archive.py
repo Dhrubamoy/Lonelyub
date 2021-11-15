@@ -9,9 +9,9 @@ from datetime import datetime
 import patoolib
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from LEGENDBOT.utils import admin_cmd, progress
 from telethon.tl.types import DocumentAttributeVideo
 
+from LEGENDBOT.utils import admin_cmd, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
 

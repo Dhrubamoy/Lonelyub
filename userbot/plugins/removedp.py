@@ -1,6 +1,6 @@
-from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.functions.photos import DeletePhotosRequest
 
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 from . import *

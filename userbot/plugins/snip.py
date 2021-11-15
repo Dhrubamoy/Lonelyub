@@ -1,7 +1,7 @@
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon import events, utils
 from telethon.tl import types
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot.plugins.sql_helper.snips_sql import (
     add_snip,

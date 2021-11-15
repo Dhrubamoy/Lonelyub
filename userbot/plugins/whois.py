@@ -4,12 +4,12 @@ Syntax: .whois @username/userid"""
 
 import os
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 from .. import TMP_DOWNLOAD_DIRECTORY

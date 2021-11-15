@@ -1,9 +1,9 @@
 import os
 from pathlib import Path
 
-from LEGENDBOT.utils import admin_cmd, load_module
 from telethon.tl.types import InputMessagesFilterDocument
 
+from LEGENDBOT.utils import admin_cmd, load_module
 from userbot.cmdhelp import CmdHelp
 from var import Var
 

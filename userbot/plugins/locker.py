@@ -1,7 +1,7 @@
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon.tl.functions.messages import EditChatDefaultBannedRightsRequest
 from telethon.tl.types import ChatBannedRights
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import ALIVE_NAME
 from userbot.cmdhelp import CmdHelp
 from userbot.events import errors_handler

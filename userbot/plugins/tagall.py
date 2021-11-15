@@ -1,9 +1,9 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2
-from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 
+from LEGENDBOT.utils import admin_cmd, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

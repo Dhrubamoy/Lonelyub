@@ -6,10 +6,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
 
+from LEGENDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 COLLECTION_STRING = [
@@ -75,10 +75,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
 
+from LEGENDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 COLLECTION_STRING = [
@@ -146,9 +146,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 COLLECTION_STRINGZ = ["hacker-background"]
 
@@ -209,9 +210,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 COLLECTION_STRING = [
     "avengers-logo-wallpaper",
@@ -296,9 +298,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 COLLECTION_STRING = ["Predator-Wallpapers-Backgrounds", "Alien-vs-Predator-Wallpaper"]
 
@@ -344,9 +347,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 # Space lovers
 COLLECTION_STRINGS = [
@@ -411,10 +415,11 @@ import re
 import shutil
 from datetime import datetime
 
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
@@ -478,9 +483,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 COLLECTION_STRINGZ = [
     "Vietnam-War-Wallpapers",
@@ -548,9 +554,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 COLLECTION_STRING = [
     "pokemon-serena-wallpaper",
@@ -618,9 +625,10 @@ import urllib
 from datetime import datetime
 
 import requests
-from LEGENDBOT.utils import admin_cmd
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
+
+from LEGENDBOT.utils import admin_cmd
 
 COLLECTION_STRING = [
     "star-wars-wallpaper-1080p",

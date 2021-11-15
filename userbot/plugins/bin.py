@@ -1,9 +1,9 @@
 # pata nhi sir 👀👀👀👀
-from LEGENDBOT.utils import admin_cmd
-from LEGENDBOT.utils import sudo_cmd as admin_cmd
 from telethon import events, functions
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
+from LEGENDBOT.utils import admin_cmd
+from LEGENDBOT.utils import sudo_cmd as admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 

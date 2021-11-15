@@ -1,6 +1,5 @@
 # --------------------------------------------------------------------------------------------------------------------------------
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, eor, sudo_cmd
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
@@ -10,6 +9,7 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest, InviteToChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, eor, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 
 

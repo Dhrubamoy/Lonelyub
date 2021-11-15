@@ -1,9 +1,9 @@
 import asyncio
 
-from LEGENDBOT.utils import admin_cmd
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
+from LEGENDBOT.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
 
 

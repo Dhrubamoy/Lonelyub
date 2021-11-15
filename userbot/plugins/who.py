@@ -1,8 +1,9 @@
 import html
 
-from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from telethon import utils
 from telethon.tl import types
+
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 def get_who_string(who):

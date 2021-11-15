@@ -1,7 +1,6 @@
 """Get Poll Info on non supported clients
 Syntax: .get_poll"""
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
-
 from userbot.cmdhelp import CmdHelp
 
 
