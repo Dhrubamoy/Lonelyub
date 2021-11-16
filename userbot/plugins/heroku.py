@@ -50,9 +50,11 @@ async def variable(var):
         try:
             variable = var.pattern_match.group(2).split()[0]
             if variable is "LEGEND_STRING":
-                variable = variable.replace("LEGEND_STRING", "")
-            elif variable in heroku_var:
                 return await var.edit(
+                    "**ConfigVars**:" f"\n\n {variable} = `PROTECT`\n"
+                )
+            elif variable in heroku_var:
+                await var.edit(
                     "**ConfigVars**:" f"\n\n {variable} = `{heroku_var[variable]}`\n"
                 )
             else:
