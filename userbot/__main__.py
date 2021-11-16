@@ -5,7 +5,7 @@ from pathlib import Path
 import telethon.utils
 from telethon import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest
-from userbot.Config import Config
+
 from userbot import LOGS, LEGENDversion, bot
 from userbot.Config import Config
 from userbot.utils import (
@@ -160,6 +160,7 @@ print(
 ╚══════════════════❍⊱"""
 )
 print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
+
 
 async def legend_op():
     try:

@@ -1,10 +1,9 @@
-import asyncio
 import os
 from datetime import datetime
 
-
 from userbot import *
 from userbot.plugins import *
+
 LEGEND_IMG = os.environ.get(
     "BOT_PING_PIC", "https://telegra.ph/file/a9f6a3c160977352dd595.jpg"
 )

@@ -32,10 +32,9 @@ from urllib.error import HTTPError
 
 from pySmartDL import SmartDL
 
-from userbot import CMD_HELP, LOGS
-from LEGENDBOT.utils import admin_cmd, sudo_cmd, edit_or_reply, humanbytes, time_formatter
+from LEGENDBOT.utils import admin_cmd, edit_or_reply, humanbytes, time_formatter
+from userbot import LOGS
 from userbot.cmdhelp import CmdHelp
-
 
 TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
@@ -187,5 +186,5 @@ async def decrypt_file(megadl, file_path, temp_file_path, hex_key, hex_raw_key):
 
 
 CmdHelp("mega").add_command(
-  "mega", "<mega.nz link>", "It will download the file into your userbot server"
+    "mega", "<mega.nz link>", "It will download the file into your userbot server"
 ).add()
