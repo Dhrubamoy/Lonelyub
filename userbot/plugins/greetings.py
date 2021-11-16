@@ -12,28 +12,6 @@ S = (
     "/ \     \|/\n"
 )
 
-
-W = (
-    "G🌷o🍃o🌷D\n"
-    "M🍃o🌷r🍃N🌷i🍃N🌷g\n"
-    "            \n"
-    "No matter how good or \n"
-    "bad your life is,\n"
-    "wake up each morning\n"
-    "and be thankful.\n"
-    "You still have a new day.\n"
-    "        \n"
-    "🌞   \n"
-    "         \n"
-    "╱◥████◣\n"
-    "│田│▓ ∩ │◥███◣\n"
-    "╱◥◣ ◥████◣田∩田│\n"
-    "│╱◥█◣║∩∩∩ 田∩田│\n"
-    "║◥███◣∩田∩ 田∩田│\n"
-    "│∩│ ▓ ║∩田│║▓田▓\n"
-    "🌹🌷🌹🌷🌹🍃🌷🌹🌷🌹\n"
-)
-
 X = (
     ".......🦋🦋........🦋🦋\n"
     "...🦋.........🦋🦋.......🦋\n"
@@ -49,11 +27,6 @@ X = (
 @borg.on(admin_cmd(pattern=r"baby"))
 async def legend(legend):
     await legend.edit(S)
-
-
-@borg.on(admin_cmd(pattern=r"gm1"))
-async def fox(fox):
-    await fox.edit(W)
 
 
 @borg.on(admin_cmd(pattern=r"thanks"))
@@ -74,7 +47,7 @@ async def hbd(event):
     )
 
 
-@borg.on(admin_cmd(pattern=r"gm2 ?(.*)"))
+@borg.on(admin_cmd(pattern=r"gm1 ?(.*)"))
 async def gm(event):
     "Good morning art."
     await edit_or_reply(
@@ -130,8 +103,6 @@ CmdHelp("greetings").add_command("luck", None, "Try it yourself").add_command(
     "gtwl", None, "Try it yourself"
 ).add_command("chill", None, "Try it yourself").add_command(
     "gdnt2", None, "Try it yourself"
-).add_command(
-    "gm2", None, "Try it yourself"
 ).add_command(
     "goodnt", None, "Try it yourself"
 ).add_command(
