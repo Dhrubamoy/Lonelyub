@@ -311,7 +311,7 @@ CmdHelp("memify").add_command(
     "<reply to a img/stcr/gif> <upper text> ; <lower text>",
     "Memifies the replied image/gif/sticker with your text and sends output in sticker format.",
     "mmf <reply to a img/stcr/gif> hii ; hello",
-.add_command(
+).add_command(
     "memify",
     "<reply to a img/stcr/gif> <upper text> ; <lower text>",
     "Memifies the replied image/gif/sticker with your text and sends output in sticker format.",
