@@ -414,7 +414,7 @@ async def _(event):
 
 from userbot.cmdhelp import CmdHelp
 
-CmdHelp("raid").add_command(
+CmdHelp("raid").add_command("raid", "<Reply to a User With Number>", "Use and see", ".raid 10 reply to anyone message").add_command(
     "replyraid", None, "Reply to him or her to start raid"
 ).add_command("dreplyraid", None, "Reply To her Ya him To stop raid").add_type(
     "Addons"
