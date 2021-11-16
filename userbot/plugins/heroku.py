@@ -1,7 +1,6 @@
 import asyncio
 import math
 import os
-
 import heroku3
 import requests
 import urllib3
@@ -9,7 +8,7 @@ import urllib3
 from LEGENDBOT.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
 from userbot.Config import Config
-
+import json
 from . import *
 
 USERID = bot.uid
@@ -38,8 +37,8 @@ async def variable(var):
     Manage most of ConfigVars setting, set new var, get current var,
     or delete var...
     """
-    if Var.HEROKU_APP_NAME is not None:
-        app = Heroku.app(Var.HEROKU_APP_NAME)
+    if Config.HEROKU_APP_NAME is not None:
+        app = Heroku.app(Config.HEROKU_APP_NAME)
     else:
         return await var.edit("`[HEROKU]:" "\nPlease setup your` **HEROKU_APP_NAME**")
     exe = var.pattern_match.group(1)
@@ -53,7 +52,7 @@ async def variable(var):
                 return await var.edit(
                     "**ConfigVars**:" f"\n\n {variable} = `{heroku_var[variable]}`\n"
                 )
-            elif variable is LEGEND_STRING:
+            elif "LEGEND_STRING" in heroku_var:
                 return await var.edit(
                     "**ConfigVars**:" f"\n\n {variable} = `PROTECT`\n"
                 )
