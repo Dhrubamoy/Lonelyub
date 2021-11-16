@@ -1,6 +1,6 @@
 import asyncio
 import os
-
+from userbot.helpers.convert import deEmojify
 import cv2
 from PIL import Image
 
