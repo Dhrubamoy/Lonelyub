@@ -7,44 +7,6 @@ from userbot.cmdhelp import CmdHelp
 
 from . import *
 
-
-
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@LEGEND-OS 
-TeamFussion
-/
-Dark_Fussion
-Public
-1
-1
-0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Dark_Fussion/userbot/plugins/F4f.py /
-@Paramatin-OP
-Paramatin-OP Happy Friendship
-Latest commit 217e092 on Jul 30
- History
- 1 contributor
-134 lines (127 sloc)  6.03 KB
-   
-#salle dalle agar isko kang mara to tere boob gand ek krdunga bsdk 
-#haa tu hi teko hi bol rha machhar ki jhatt
-
-
-import asyncio
 import random
 from userbot import ALIVE_NAME
 
