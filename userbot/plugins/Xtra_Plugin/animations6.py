@@ -169,135 +169,9 @@ async def gn(event):
     )
 
 
-@bot.on(admin_cmd(pattern=f"g1$", outgoing=True))
-async def payf(event):
-    paytext = event.pattern_match.group(1)
-    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-    )
-    await event.edit(pay)
 
 
-@bot.on(admin_cmd(pattern=f"^uff$", outgoing=True))
+@bot.on(admin_cmd(pattern=f"^Uff$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -323,45 +197,6 @@ async def _(event):
         await event.edit(animation_chars[i % 13])
 
 
-@bot.on(admin_cmd(pattern=f"ctext$", outgoing=True))
-async def payf(event):
-    paytext = event.pattern_match.group(1)
-    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
-        paytext * 8,
-        paytext * 8,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 8,
-        paytext * 8,
-    )
-    await event.edit(pay)
-
-
-@bot.on(admin_cmd(pattern=f"ftext$", outgoing=True))
-async def payf(event):
-    paytext = event.pattern_match.group(1)
-    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
-        paytext * 8,
-        paytext * 8,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 6,
-        paytext * 6,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-        paytext * 2,
-    )
-    await event.edit(pay)
-
 
 @bot.on(admin_cmd(pattern=f"kf$", outgoing=True))
 async def _(event):
@@ -372,22 +207,6 @@ async def _(event):
     else:
         r == 1
         await event.edit("╭━━━╮\n┃╭━━╯\n┃╰━━╮\n┃╭━━╯\n┃┃\n╰╯")
-
-
-@bot.on(admin_cmd(pattern=f"f$", outgoing=True))
-async def payf(e):
-    paytext = e.pattern_match.group(1)
-    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
-        paytext * 5,
-        paytext * 1,
-        paytext * 1,
-        paytext * 4,
-        paytext * 1,
-        paytext * 1,
-        paytext * 1,
-    )
-    await event.edit(pay)
-
 
 @bot.on(admin_cmd(pattern=f"animate$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"animate$", allow_sudo=True))
@@ -619,29 +438,19 @@ async def _(event):
 
 
 CmdHelp("animations6").add_command("bigoof", None, "🇮🇳🇮🇳🇮🇳").add_command(
-    "g1", None, "Use and see"
-).add_command("uff", None, "Use and see").add_command(
-    "ctext", None, "Use and see"
-).add_command(
-    "ftext", None, "Use and see"
-).add_command(
     "happy", None, "Use and see"
 ).add_command(
     "smile", None, "Use and see"
 ).add_command(
     "animate", None, "Use a d See"
 ).add_command(
-    "kf", None, "Use and see"
-).add_command(
-    "f", None, "Use and see"
-).add_command(
     "muth", None, "Use And See"
 ).add_command(
     "birthday", None, "Use And See"
 ).add_command(
-    "^Lol", None, "Use and See"
+    "Lol", None, "Use and See Without Dot"
 ).add_command(
-    "^Tlol", None, "Use and See"
+    "Tlol", None, "Use and See But this command Without Dot"
 ).add_command(
     "chutiye", None, "Animation Abuse"
 ).add_command(
