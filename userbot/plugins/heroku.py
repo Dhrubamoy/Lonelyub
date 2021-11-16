@@ -49,8 +49,8 @@ async def variable(var):
         await asyncio.sleep(1.5)
         try:
             variable = var.pattern_match.group(2).split()[0]
-            if "LEGEND_STRING" in heroku_var:
-                heroku_var = heroku_var.replace("LEGEND_STRING", "")
+            if variable is "LEGEND_STRING":
+                variable = variable.replace("LEGEND_STRING", "")
             elif variable in heroku_var:
                 return await var.edit(
                     "**ConfigVars**:" f"\n\n {variable} = `{heroku_var[variable]}`\n"
