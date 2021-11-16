@@ -23,7 +23,7 @@ cap = f"Yeah My Friend This Suprise is for you\nThanks for Being my Friend, I am
 # --over--#
 
 
-@borg.on(admin_cmd(pattern=r"(hfd|friend|friends)$", outgoing=True))
+@borg.on(admin_cmd(pattern=r"friend$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -646,6 +646,8 @@ CmdHelp("animations6").add_command("bigoof", None, "🇮🇳🇮🇳🇮🇳").a
     "chutiye", None, "Animation Abuse"
 ).add_command(
     "sadmin", None, "Its Shout Admin"
+).add_command(
+    "friend", None, "Use and See"
 ).add_info(
     "Its all Animation Use As Anywhere"
 ).add_warning(
