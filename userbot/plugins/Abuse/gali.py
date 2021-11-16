@@ -1,10 +1,10 @@
 from userbot import bot as LEGEND
-from userbot.utils import admin_cmd as choot
+from userbot.utils import admin_cmd
 
 x = True
 
 
-@bot.on(choot(pattern="abuse"))
+@bot.on(admin_cmd(pattern="abuse"))
 async def yashraid(event):
     while x != False:
 
@@ -173,3 +173,6 @@ async def yashraid(event):
             kek,
             "TELEGRAM ME RAHNA HAI TO LEGEND KO PAPA BOLNA PAREGA WARNA TUMHARII BHN XUDEGI AISE HI ROJ",
         )
+
+
+CmdHelp("gali").add_command("abuse", None, "Use And See To Stop .reload").add()
