@@ -75,10 +75,11 @@ async def nope(event):
                 return await eor(event, "Abe chumtiye kuch likhne ke liye de")
             else:
                 return await eor(event, "Doge need some text to make sticker.")
+
     troll = await bot.inline_query("DogeStickerBot", f"{(deEmojify(legend))}")
     if troll:
         await event.delete()
-        legen_ = await troll[0].click(lg_id)
+        legen_ = await troll[0].click(Config.LOGGER_ID)
         if legen_:
             await bot.send_file(
                 event.chat_id,
@@ -113,7 +114,7 @@ async def nope(kraken):
                 legen_,
                 caption="",
             )
-        await legen_.delete()
+        await kraken.delete()
     else:
         await eod(kraken, "Error 404:  Not Found")
 
