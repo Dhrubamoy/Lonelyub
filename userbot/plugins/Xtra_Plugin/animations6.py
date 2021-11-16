@@ -169,8 +169,6 @@ async def gn(event):
     )
 
 
-
-
 @bot.on(admin_cmd(pattern=f"^Uff$", outgoing=True))
 async def _(event):
     if event.fwd_from:
@@ -197,7 +195,6 @@ async def _(event):
         await event.edit(animation_chars[i % 13])
 
 
-
 @bot.on(admin_cmd(pattern=f"kf$", outgoing=True))
 async def _(event):
     r = random.randint(0, 3)
@@ -207,6 +204,7 @@ async def _(event):
     else:
         r == 1
         await event.edit("╭━━━╮\n┃╭━━╯\n┃╰━━╮\n┃╭━━╯\n┃┃\n╰╯")
+
 
 @bot.on(admin_cmd(pattern=f"animate$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"animate$", allow_sudo=True))
@@ -439,9 +437,7 @@ async def _(event):
 
 CmdHelp("animations6").add_command("bigoof", None, "🇮🇳🇮🇳🇮🇳").add_command(
     "happy", None, "Use and see"
-).add_command(
-    "smile", None, "Use and see"
-).add_command(
+).add_command("smile", None, "Use and see").add_command(
     "animate", None, "Use a d See"
 ).add_command(
     "muth", None, "Use And See"
