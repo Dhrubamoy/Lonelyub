@@ -107,7 +107,7 @@ async def nope(kraken):
     if troll:
         await kraken.delete()
         legen_ = await troll[0].click(Config.LOGGER_ID)
-        if hel_:
+        if legen_:
             await bot.send_file(
                 kraken.chat_id,
                 legen_,
