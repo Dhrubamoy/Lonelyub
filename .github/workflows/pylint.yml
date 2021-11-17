@@ -31,5 +31,5 @@ jobs:
           commit_options: '--no-verify'
           repository: .
           commit_user_name: LEGEND-OS
-          commit_user_email: LEGEND-OS@users.noreply.github.com
-          commit_author: LEGEND-OS <LEGEND-OS@users.noreply.github.com>
+          commit_user_email: Krishna045Jaiswal@gmail.com 
+          commit_author: LEGENDBOY
