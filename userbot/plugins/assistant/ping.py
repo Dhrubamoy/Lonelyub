@@ -12,9 +12,6 @@ LEGEND_IMG = os.environ.get(
 
 @tgbot.on(events.NewMessage(pattern="^/ping"))
 async def _(event):
-    start = datetime.now()
-    end = datetime.now()
-    (end - start).microseconds / 1000
     if LEGEND_IMG:
         legend_caption = (
             f"**꧁•⊹٭Ping٭⊹•꧂**\n\n   ⚜ 4\n   ⚜ ❝𝐌𝐲 𝐌𝐚𝐬𝐭𝐞𝐫❞ ~『{Config.ALIVE_NAME}』"
