@@ -15,5 +15,5 @@ async def _(event):
     if LEGEND_IMG:
         legend_caption = (
             f"**꧁•⊹٭Ping٭⊹•꧂**\n\n   ⚜ 4\n   ⚜ ❝𝐌𝐲 𝐌𝐚𝐬𝐭𝐞𝐫❞ ~『{Config.ALIVE_NAME}』"
-        )
+            )
         await tgbot.send_message(event.chat_id, LEGEND_IMG, caption=legend_caption)
