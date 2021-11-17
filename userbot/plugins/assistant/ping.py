@@ -12,8 +12,7 @@ LEGEND_IMG = os.environ.get(
 
 @tgbot.on(events.NewMessage(pattern="^/ping"))
 async def _(event):
-    start = datetime.now()
-    end = datetime.now()
-    ms = (end - start).microseconds / 1000
-    await tgbot.send_message(event.chat_id, LEGEND_IMG, f"**꧁•⊹٭Ping٭⊹•꧂**\n\n   ⚜ {ms}\n   ⚜ ❝𝐌𝐲 𝐌𝐚𝐬𝐭𝐞𝐫❞ ~『{Config.ALIVE_NAME}』"
+    ms = 4
+    ALIVE = Config.ALIVE_NAME
+    await tgbot.send_message(event.chat_id, LEGEND_IMG, f"**꧁•⊹٭Ping٭⊹•꧂**\n\n   ⚜ {ms}\n   ⚜ ❝𝐌𝐲 𝐌𝐚𝐬𝐭𝐞𝐫❞ ~『{ALIVE}』"
                              )
