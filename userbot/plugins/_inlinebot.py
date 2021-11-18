@@ -46,7 +46,6 @@ USER_BOT_WARN_ZERO = (
 )
 
 LEGEND_FIRST = "__{}__\n{}Please choose why u are here.♥️!!"
-from userbot.plugins.pmpermit import PM_WARNS
 
 
 var_txt = """
@@ -120,8 +119,10 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
+        from userbot.plugins.pmpermit import PM_WARNS
         result = None
         query = event.text
+        yup = PM_WARNS[event.chat_id]
         if event.query.user_id == bot.uid and query == "legendbot_help":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
@@ -230,7 +231,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 )
 
         elif event.query.user_id == bot.uid and query == "pm_warn":
-            lege_nd = LEGEND_FIRST.format(mssge, PM_WARNS[event.chat_id])
+            lege_nd = LEGEND_FIRST.format(mssge, yup)
             result = builder.photo(
                 file=legend_pic,
                 text=lege_nd,
