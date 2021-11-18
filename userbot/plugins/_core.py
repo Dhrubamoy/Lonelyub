@@ -37,7 +37,9 @@ async def send(event):
             allow_cache=False,
             reply_to=message_id,
         )
-    if os.path.exists(the_1plugin_file):
+        await event.delete
+        return
+    elif os.path.exists(the_1plugin_file):
         lauda2 = await event.client.send_file(
             event.chat_id,
             the_1plugin_file,
@@ -48,7 +50,8 @@ async def send(event):
             reply_to=message_id,
         )
         await event.delete()
-    if os.path.exists(the_2plugin_file):
+        return
+    elif os.path.exists(the_2plugin_file):
         lauda3 = await event.client.send_file(
             event.chat_id,
             the_2plugin_file,
@@ -59,7 +62,8 @@ async def send(event):
             reply_to=message_id,
         )
         await event.delete()
-    if os.path.exists(the_3plugin_file):
+        return
+    elif os.path.exists(the_3plugin_file):
         lauda4 = await event.client.send_file(
             event.chat_id,
             the_3plugin_file,
