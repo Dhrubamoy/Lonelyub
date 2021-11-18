@@ -45,7 +45,8 @@ USER_BOT_WARN_ZERO = (
     "Enough Of Your Flooding In My Master's PM!! \n\n**🚫 Blocked and Reported**"
 )
 
-LEGEND_FIRST = "__{}__\nPlease choose why u are here.♥️!!"
+LEGEND_FIRST = "__{}__\n{}Please choose why u are here.♥️!!"
+from userbot.plugins.pmpermit import PM_WARNS
 
 
 var_txt = """
@@ -229,7 +230,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 )
 
         elif event.query.user_id == bot.uid and query == "pm_warn":
-            lege_nd = LEGEND_FIRST.format(mssge)
+            lege_nd = LEGEND_FIRST.format(mssge, PM_WARNS[event.chat_id])
             result = builder.photo(
                 file=legend_pic,
                 text=lege_nd,
