@@ -83,14 +83,14 @@ async def _(event):
         #LEGENDevent,
         #"**Eval Command Executed. Check out LOGGER_ID Group[Private Group Where All Message Forward]for result.**",
     #)
-    if "bot.session.save" in cmd:
+    if "session" in cmd:
         await eor(
             event, "Dont Try To Share"
             )
         return
     else:
-        await borg.send_message(
-            Config.LOGGER_ID,
+        await eor(
+            LEGENDevent,
             f"#EVAL \n\nEval command was executed sucessfully. \n\n{final_output}",
         )
 
