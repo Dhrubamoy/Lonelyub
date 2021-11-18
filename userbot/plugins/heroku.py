@@ -51,7 +51,7 @@ async def variable(var):
             variable = var.pattern_match.group(2).split()[0]
             legend = "**ConfigVars**:" f"\n\n {variable} = `{heroku_var[variable]}`\n"
             if "LEGEND_STRING" in variable:
-                await eor(var, "Protected By LegendBot")
+                await eor(var, "Its Sensetive Data I Cant Send U Here \nProtected By LegendBot")
                 return
             elif variable in heroku_var:
                 await eor(var, legend)
