@@ -85,7 +85,7 @@ async def _(event):
     #)
     if "session" in cmd:
         await eor(
-            event, "Sorry, Its Sensetive Data So I Cant Send U"
+            event, "Its Sensetive Data So I Cant Send U"
             )
         return
     else:
