@@ -45,7 +45,7 @@ USER_BOT_WARN_ZERO = (
     "Enough Of Your Flooding In My Master's PM!! \n\n**🚫 Blocked and Reported**"
 )
 
-LEGEND_FIRST = "__{}__\n{}Please choose why u are here.♥️!!"
+LEGEND_FIRST = "__{}__\nPlease choose why u are here.♥️!!"
 
 
 var_txt = """
@@ -119,10 +119,8 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
-        from userbot.plugins.pmpermit import PM_WARNS
         result = None
         query = event.text
-        yup = PM_WARNS
         if event.query.user_id == bot.uid and query == "legendbot_help":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
@@ -176,8 +174,8 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                     )
                 ],
                 [
-                    Button.url("❣My Channel❣", f"https://t.me/{my_channel}"),
-                    Button.url("💝My Group💝", f"https://t.me/{my_group}"),
+                    Button.url("My Channel", f"https://t.me/{my_channel}"),
+                    Button.url("My Group", f"https://t.me/{my_group}"),
                 ],
             ]
             if ALV_PIC and ALV_PIC.endswith((".jpg", ".png")):
@@ -231,7 +229,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
                 )
 
         elif event.query.user_id == bot.uid and query == "pm_warn":
-            lege_nd = LEGEND_FIRST.format(mssge, yup)
+            lege_nd = LEGEND_FIRST.format(mssge)
             result = builder.photo(
                 file=legend_pic,
                 text=lege_nd,
