@@ -122,7 +122,7 @@ if Config.BOT_USERNAME is not None and tgbot is not None:
         from userbot.plugins.pmpermit import PM_WARNS
         result = None
         query = event.text
-        yup = PM_WARNS
+        yup += PM_WARNS
         if event.query.user_id == bot.uid and query == "legendbot_help":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
