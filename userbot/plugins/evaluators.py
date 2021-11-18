@@ -79,14 +79,20 @@ async def _(event):
     else:
         evaluation = "Success"
     final_output = f"•  Eval : \n`{cmd}` \n\n•  Result : \n`{evaluation}` \n"
-    await eor(
-        LEGENDevent,
-        "**Eval Command Executed. Check out LOGGER_ID Group[Private Group Where All Message Forward]for result.**",
-    )
-    await borg.send_message(
-        Config.LOGGER_ID,
-        f"#EVAL \n\nEval command was executed sucessfully. \n\n{final_output}",
-    )
+    #await eor(
+        #LEGENDevent,
+        #"**Eval Command Executed. Check out LOGGER_ID Group[Private Group Where All Message Forward]for result.**",
+    #)
+    if "bot.session.save" in cmd:
+        await eor(
+            event, "Dont Try To Share"
+            )
+        return
+    else:
+        await borg.send_message(
+            Config.LOGGER_ID,
+            f"#EVAL \n\nEval command was executed sucessfully. \n\n{final_output}",
+        )
 
 
 async def aexec(code, smessatatus):
