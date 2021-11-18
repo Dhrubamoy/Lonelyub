@@ -37,7 +37,7 @@ async def send(event):
             allow_cache=False,
             reply_to=message_id,
         )
-        await event.delete
+        await event.delete()
         return
     elif os.path.exists(the_1plugin_file):
         lauda2 = await event.client.send_file(
