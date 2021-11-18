@@ -54,6 +54,9 @@ async def variable(var):
             legend = legend.replace(" ", "")
             if "LEGEND_STRING" in variable:
                 await eor(var, "Protected")
+                return
+            elif variable in heroku_var:
+                await eor(var, legend)
             else:
                 return await var.edit(
                     "**ConfigVars**:" f"\n\n`Error:\n-> {variable} don't exists`"
