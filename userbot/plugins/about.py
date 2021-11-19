@@ -23,9 +23,9 @@ pm_caption = f"** {CUSTOM_ALIVE_TEXT}**\n"
 pm_caption += f"**╭────────────**\n"
 pm_caption += f"┣»»»『{legend_mention}』«««\n"
 pm_caption += f"┣Lêɠêɳ̃dẞø† ~ {LEGENDversion}\n"
-pm_caption += f"┣Lêɠêɳ̃d  ~ [Owner](https://t.me/The_LegendBoy)\n"
-pm_caption += f"┣Support ~ [G𝖗ουρ](https://t.me/Legend_Userbot)\n"
-pm_caption += f"┣Řepô    ~ [Rєρο](https://github.com/LEGEND-OS/LEGENDBOT)\n"
+pm_caption += f"┣Lêɠêɳ̃d  ~ [Owner](https://t.me/Dhruba_XD)\n"
+pm_caption += f"┣Support ~ [G𝖗ουρ](https://t.me/lonely_Userbot)\n"
+pm_caption += f"┣Řepô    ~ [Rєρο](https://github.com/Dhrubamoy/Lonelybot)\n"
 pm_caption += f"**╰────────────**\n"
 
 
