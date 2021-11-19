@@ -155,6 +155,7 @@ print(
 ║┣⪼ Group - Not Yet
 ║┣⪼ OWNER - @Devil_XD_DX
 ║┣⪼ CREATOR/EDITOR - @Akki_ThePro
+║┣⪼ CREDIT - @LegendBoy_OP
 ║┣⪼ VERSOIN - {LEGENDversion}
 ║┣⪼ ✨ 🔱LONELY USERBOT🔱 ✨
 ║╰━━━━━━━━━━━━━━━➣
