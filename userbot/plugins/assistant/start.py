@@ -44,8 +44,8 @@ async def start(event):
                     custom.Button.inline("👾 Cᴏᴍᴍᴀɴᴅs ✘👾", data="gibcmd"),
                 ],
                 [
-                    Button.url(" Support ", "https://t.me/Legend_Userbot"),
-                    Button.url(" Updates ", "https://t.me/Official_LegendBot"),
+                    Button.url(" Support ", "https://t.me/lonely_Userbot"),
+                    Button.url(" Updates ", "https://t.me/lonely_Userbot"),
                 ],
                 [custom.Button.inline("⚙ Sᴇᴛᴛɪɴɢs ⚙", data="settings")],
                 [custom.Button.inline("⚜ Hack ⚜", data="hack")],
