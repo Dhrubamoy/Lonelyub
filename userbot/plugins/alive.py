@@ -62,8 +62,10 @@ async def amireallyalive(alive):
 
         LEGEND_caption += f"~~~~~~~~~~~~~~~~~~~~~~~\n"
         LEGEND_caption += f"        **✘𝕭𝖔† 𝕾𝖙𝖆𝖙𝖚𝖘✘** \n"
-        LEGEND_caption += f"•🔥• **Oաղ̃ҽ̈ɾ**          ~ {ALIVE_NAME}\n\n"
-        LEGEND_caption += f"•🌟• **𝖑𝖊ɠêɳ̃dẞø†**   ~ {LEGENDversion}\n"
+        LEGEND_caption += f"•🔥• **Master**          ~ {ALIVE_NAME}\n\n"
+        LEGEND_caption += f"•🔥• **Owner**          ~ @Devil_XD_DX\n"
+        LEGEND_caption += f"•🔥• **Creator**          ~ @Akki_ThePro\n"
+        LEGEND_caption += f"•🌟• **Version**   ~ {LEGENDversion}\n"
         LEGEND_caption += f"•🌟• **†ҽ̀lҽ́thøղ̃**     ~ `{version.__version__}`\n"
         LEGEND_caption += f"•🌟• **𝚄ρtime**         ~ `{uptime}`\n"
         LEGEND_caption += f"•🌟• **𝙶𝚛𝚘𝚞𝚙**           ~ [𝙶𝚛𝚘𝚞𝚙](t.me/Legend_Userbot)\n"
@@ -80,19 +82,20 @@ async def amireallyalive(alive):
             f"~~~~~~~~~~~~~~~~~~~~~~~ \n"
             f"         \n"
             f"•⚡• 𝕿єℓєτнοи    : `{version.__version__}`\n"
-            f"🇮🇳 ℓєgєи∂ϐοτ  : `{LEGENDversion}`\n"
+            f"🇮🇳 version  : `{LEGENDversion}`\n"
             f"🇮🇳 υρτιмє        : `{uptime}`\n"
-            f"🔱 ɱαรƭεɾ        : {mention}\n"
-            f"🔱 σωɳεɾ         : [ℓєgєи∂](t.me/The_LegendBoy)\n",
+            f"🔱 ɱαรƭεɾ        : {ALIVE_NAME}\n"
+            f"🔱 σωɳεɾ         : [Ujjwal](t.me/@Devil_XD_DX)\n",
         )
 
 
 msg = f"""
-**  ⚜️ Lêɠêɳ̃dẞø† ιѕ σиℓιиє ⚜️**
+**  ⚜️ Lonely ιѕ σиℓιиє ⚜️**
 
        {Config.ALIVE_MSG}
     **  Bø✞︎ ẞ✞︎α✞︎µѕ **
-**•⚜️•Øաղ̃ҽ̈r     :** **{mention}**
+**•⚜️•Master     :** **{mention}**
+**•⚜️•Owner     :**@Devil_XD_DX **
 **•🌹•𝖑𝖊ɠêɳ̃dẞø✞︎  :** {LEGENDversion}
 **•🌹•✞︎ҽ̀lҽ́ƭhøղ  :** {version.__version__}
 **•🌹•Ãbûßê     :**  {abuse_m}
