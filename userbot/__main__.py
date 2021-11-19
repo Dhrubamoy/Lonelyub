@@ -43,16 +43,16 @@ else:
                 "BOT_TOKEN", api_id=Var.APP_ID, api_hash=Var.API_HASH
             ).start(bot_token=Var.BOT_TOKEN)
             LOGS.info("Checking Completed. Proceeding to next step...")
-            LOGS.info("♥️ Starting LegendBot ♥️")
+            LOGS.info("♥️ Starting Lonely ♥️")
             bot.loop.run_until_complete(add_bot(Config.BOT_USERNAME))
-            LOGS.info("🥇🔥 LegendBot Startup Completed 🔥🥇")
+            LOGS.info("🥇🔥 Lonely Startup Completed 🔥🥇")
         else:
             bot.start()
     except Exception as e:
         LOGS.error(f"BOT_TOKEN - {str(e)}")
         sys.exit()
 
-print("📍⚜Loading Modules / Plugins⚜✔")
+print("⚜Loading Modules / Plugins⚜")
 
 
 async def module():
@@ -82,7 +82,7 @@ async def assistants():
                 shortname = path1.stem
                 start_assistant(shortname.replace(".py", ""))
     else:
-        print("⚠️Assistant Not Loaded⚠️")
+        print("Assistant Not Loaded⚠️")
 
 
 addon = os.environ.get("EXTRA_PLUGIN", None)
@@ -149,13 +149,14 @@ bot.loop.run_until_complete(assistants())
 bot.loop.run_until_complete(spams())
 
 print(
-    f"""♥️🇮🇳♥️⚜♥️
-╔════❰LEGENDBOT❱═❍⊱❁۪۪
-║┣⪼ OWNER - {Config.ALIVE_NAME}
-║┣⪼ Group - @Legend_Userbot
-║┣⪼ CREATOR - @The_LegendBoy
-║┣⪼ LEGENDBOT - {LEGENDversion}
-║┣⪼ ✨ 『🔱🇱 🇪 🇬 🇪 🇳 🇩 🔱』𝐔𝐬𝐞𝐫𝐛𝐨𝐭✨
+    f"""♥️✨♥️✨♥️
+╔════❰LonelyBOT❱═❍⊱❁۪۪
+║┣⪼ MASTER - {Config.ALIVE_NAME}
+║┣⪼ Group - Not Yet
+║┣⪼ OWNER - @Devil_XD_DX
+║┣⪼ CREATOR/EDITOR - @Akki_ThePro
+║┣⪼ VERSOIN - {LEGENDversion}
+║┣⪼ ✨ 🔱LONELY USERBOT🔱 ✨
 ║╰━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱"""
 )
@@ -169,7 +170,7 @@ async def legend_op():
             await bot.send_file(
                 Config.LOGGER_ID,
                 LEGEND_PIC,
-                caption=f"#START \nDeployed LEGENDBOT Successfully\n\n**LEGENDBOT- {LEGENDversion}**\n\nType `{l1}help` or `{l1}ping` to check! \n\nJoin [LegendBot Channel](t.me/Official_LegendBot) for Updates & [LegendBot Chat](t.me/Legend_Userbot) for any query regarding LegendBot",
+                caption=f"#START \nDeployed Lonely Successfully\n\n**Version {LEGENDversion}**\n\nType `{l1}help` or `{l1}ping` to check! \n\nJoin [LegendBot Channel](t.me/Official_LegendBot) for Updates & [LegendBot Chat](t.me/Legend_Userbot) for any query regarding LegendBot",
             )
     except Exception as e:
         print(str(e))
