@@ -5,15 +5,15 @@ from userbot import *
 from . import *
 
 PM_IMG = "https://telegra.ph/file/c26fc61e904476083baa7.jpg"
-pm_caption = f"⚜『Lêɠêɳ̃dẞø†』Is Ôñĺîne⚜ \n\n"
-pm_caption += f"Ôwñêř ~ 『{legend_mention}』\n"
+pm_caption = f"⚜『LONELY』Is Ôñĺîne⚜ \n\n"
+pm_caption += f"MASTER ~ 『{legend_mention}』\n"
 pm_caption += f"**╭───────────**\n"
 pm_caption += f"┣Ťêlethon ~ `1.15.0` \n"
-pm_caption += f"┣『Lêɠêɳ̃dẞø†』~ `{LEGENDversion}` \n"
+pm_caption += f"┣『Lonely Version』~ `{LEGENDversion}` \n"
 pm_caption += f"┣Çhâññel ~ [Channel](https://t.me/Its_LegendBot)\n"
 pm_caption += f"┣**License** ~ [License v3.0](github.com/The-LegendBot/LEGENBOT/blob/master/LICENSE)\n"
 pm_caption += f"┣Copyright ~ By [『Lêɠêɳ̃dẞø†』 ](https://t.me/Legend_Userbot)\n"
-pm_caption += f"┣Assistant ~ By [『Lêɠêɳ̃dẞøy』 ](https://t.me/Its_LegendBoy)\n"
+pm_caption += f"┣Assistance ~ By [『Akki』 ](https://t.me/Akki_ThePro)\n"
 pm_caption += f"╰────────────\n"
 pm_caption += f"       »»» [『Lêɠêɳ̃dẞø†』](https://t.me/Legend_Userbot) «««"
 
