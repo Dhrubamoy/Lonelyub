@@ -10,12 +10,13 @@ pm_caption += f"MASTER ~ 『{legend_mention}』\n"
 pm_caption += f"**╭───────────**\n"
 pm_caption += f"┣Ťêlethon ~ `1.15.0` \n"
 pm_caption += f"┣『Lonely Version』~ `{LEGENDversion}` \n"
-pm_caption += f"┣Çhâññel ~ [Channel](https://t.me/Its_LegendBot)\n"
+pm_caption += f"┣Çhâññel ~ [Channel](https://t.me/lonely_userbot)\n"
 pm_caption += f"┣**License** ~ [License v3.0](github.com/The-LegendBot/LEGENBOT/blob/master/LICENSE)\n"
 pm_caption += f"┣Copyright ~ By [『Lêɠêɳ̃dẞø†』 ](https://t.me/Legend_Userbot)\n"
+pm_caption += f"┣Creator ~ By [『Dhruba』 ](https://t.me/Dhruba_XD)\n"
 pm_caption += f"┣Assistance ~ By [『Akki』 ](https://t.me/Akki_ThePro)\n"
 pm_caption += f"╰────────────\n"
-pm_caption += f"       »»» [『Lêɠêɳ̃dẞø†』](https://t.me/Legend_Userbot) «««"
+pm_caption += f"       »»» [『⪨Lonelyboτ⪩』](https://t.me/lonely_Userbot) «««"
 
 
 @tgbot.on(events.NewMessage(pattern="^/alive"))
