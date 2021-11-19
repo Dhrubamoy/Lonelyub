@@ -23,7 +23,7 @@ LEGENDversion = "𝚅2.1"
 perf = "[ †hê Lêɠêɳ̃dẞø† ]"
 
 
-DEVLIST = ["2082798662"]
+DEVLIST = ["1883911756, 2090930061, 1805019557"]
 
 
 async def setit(event, name, value):
