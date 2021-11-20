@@ -1,9 +1,9 @@
 {
-    "LEGENDBOT-INFO": {
-        "version": "3.0",
-        "release-date": "26th October 2021",
+    "LONELYBOT-INFO": {
+        "version": "1.0",
+        "release-date": "20th October 2021",
         "branch": "master",
-        "author": "LEGEND-OS",
-        "author-url": "https://github.com/LEGEND-OS"
+        "author": "Dhrubamoy",
+        "author-url": "https://github.com/Dhrubamoy"
     }
 }
