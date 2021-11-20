@@ -1,4 +1,6 @@
 #   Copyright (C) 2021 LEGEND-OS
+# copyright by Dhrubamoy
+# full permision from Legend-os
 #
 #   Poject VΛDΣЯ is free software: 
 #   you can redistribute it and/or modify it under the terms of the GNU General Public License 
