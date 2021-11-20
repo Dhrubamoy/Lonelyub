@@ -1,5 +1,6 @@
 # by uniborg...Thanks @The_LegendBoy
 # Now will be used in LEGENDBOT too....
+# Now be used in lonelybot too....
 import asyncio
 import datetime
 from datetime import datetime
@@ -11,7 +12,7 @@ from LEGENDBOT.utils import admin_cmd
 from userbot import ALIVE_NAME
 from userbot.cmdhelp import CmdHelp
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ℓєgєи∂"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "⪨Lonely⪩"
 
 LEGEND = bot.uid
 
@@ -59,7 +60,7 @@ async def set_not_afk(event):
                 event.chat_id,
                 "Please set `LOGGER_ID` "
                 + "for the proper functioning of afk functionality "
-                + "Ask in @Legend_Userbot to get help setting this value\n\n `{}`".format(
+                + "Ask in @lonely_Userbot to get help setting this value\n\n `{}`".format(
                     str(e)
                 ),
                 reply_to=event.message.id,
