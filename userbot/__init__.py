@@ -11,8 +11,8 @@ from var import Var
 
 BOTLOG = True
 StartTime = time.time()
-LEGENDversion = "𝚅3.0"
-botversion = "𝚅3.0"
+LEGENDversion = "𝚅1.0"
+botversion = "𝚅1.0"
 from .k import *
 
 if Config.LEGEND_STRING:
