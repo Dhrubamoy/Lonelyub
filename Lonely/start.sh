@@ -31,7 +31,7 @@ echo """
 ┃╰━╯┃╰━╯┃╱┃┃
 ╰━━━┻━━━╯╱╰╯
 """
-rm -rf LEGENDUSERBOT
-git clone https://github.com/The-LegendBot/LEGENDUSERBOT
-cd LEGENDUSERBOT
+rm -rf Lonelyup
+git clone https://github.com/Dhrubamoy/Lonelyub
+cd Lonelyup
 python3 -m userbot
