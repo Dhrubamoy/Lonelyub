@@ -11,7 +11,7 @@ from var import Var
 
 BOTLOG = True
 StartTime = time.time()
-LEGENDversion = "𝚅1.0"
+LonelyVersion = "𝚅1.0"
 botversion = "𝚅1.0"
 from .k import *
 
@@ -45,11 +45,11 @@ LegendBot = TelegramClient(
 ).start(bot_token=Config.BOT_TOKEN)
 
 
-bot = kbot = Legend
-tbot = LegendBot
+bot = kbot = Lonely
+tbot = LonelyBot
 
 
-DEVS = ["2082798662"]
+DEVS = ["1805019557, 1883911756"]
 CMD_LIST = {}
 # for later purposes
 CMD_HELP = {}
@@ -61,7 +61,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-LEGEND_ID = ["2082798662"]
+LEGEND_ID = ["1883911756"]
 
 """ PPE initialization. """
 
