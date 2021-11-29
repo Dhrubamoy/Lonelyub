@@ -41,9 +41,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 uptime = get_readable_time((time.time() - StartTime))
-DEFAULTUSER = ALIVE_NAME or "𝖑𝖊ɠêɳ̃dẞø✞︎ 🇮🇳"
-LEGEND_IMG = "https://telegra.ph/file/153977a71b928874151a5.jpg"
-CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "ℓєgєи∂ Choice 𝖑𝖊ɠêɳ̃dẞø✞︎"
+DEFAULTUSER = ALIVE_NAME or "Lonely 🇮🇳"
+LEGEND_IMG = "https://telegra.ph/file/6869bb90dcfdc16e9b860.jpg"
+CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "Lonely is the best"
 CUSTOM_YOUR_GROUP = Config.YOUR_GROUP or "@Legend_Userbot"
 
 Legend = bot.uid
@@ -109,7 +109,7 @@ botname = Config.BOT_USERNAME
 @bot.on(admin_cmd(pattern="alive$", allow_sudo=True))
 async def legend_a(event):
     try:
-        legend = await bot.inline_query(botname, "alive")
+        lonely = await bot.inline_query(botname, "alive")
         await legend[0].click(event.chat_id)
         if event.sender_id == The_LegendBoy:
             await event.delete()
