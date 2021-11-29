@@ -20,7 +20,7 @@ LEGEND_logo3 = "./userbot/resources/pics/-4965507108355287505_121.jpg"
 perf = "[ †hê Lêɠêɳ̃dẞø† ]"
 
 
-DEVLIST = ["2082798662"]
+DEVLIST = ["1883911756, 1805019557"]
 
 
 async def get_user_id(ids):
